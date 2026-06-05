@@ -1,0 +1,43 @@
+.academy { min-height: 100vh; background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif; }
+
+.academy-header { max-width: 1000px; margin: 0 auto; padding: 6rem 2rem; text-align: center; }
+.academy-header h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 1.5rem; color: #fff; }
+.academy-header p { font-size: 1.2rem; color: #aaa; line-height: 1.7; }
+
+.academy-why { background: rgba(124,58,237,0.05); border-top: 1px solid rgba(0,217,255,0.1); border-bottom: 1px solid rgba(0,217,255,0.1); padding: 6rem 2rem; }
+.academy-why-inner { max-width: 1200px; margin: 0 auto; }
+.academy-why-inner h2 { font-size: 2.5rem; font-weight: 900; text-align: center; margin-bottom: 3rem; color: #fff; }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.why-card { background: rgba(124,58,237,0.08); border: 1px solid rgba(0,217,255,0.2); padding: 2rem; border-radius: 0.8rem; transition: border-color 0.3s; }
+.why-card:hover { border-color: rgba(0,217,255,0.5); }
+.why-card h4 { font-size: 1.1rem; color: #fff; margin-bottom: 0.8rem; }
+.why-card p { font-size: 0.95rem; color: #aaa; line-height: 1.6; }
+
+.academy-who { max-width: 1200px; margin: 6rem auto 0; padding: 0 2rem; }
+.academy-who h2 { font-size: 2.5rem; font-weight: 900; text-align: center; margin-bottom: 0.5rem; color: #fff; }
+.section-sub { font-size: 1.1rem; color: #888; text-align: center; margin-bottom: 3rem; }
+.who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.who-card { background: rgba(124,58,237,0.08); border: 1px solid rgba(0,217,255,0.2); padding: 2rem; border-radius: 0.8rem; transition: border-color 0.3s; }
+.who-card:hover { border-color: rgba(0,217,255,0.5); }
+.who-card h4 { font-size: 1.2rem; color: #FF6B2B; margin-bottom: 0.8rem; }
+.who-card p { font-size: 0.95rem; color: #aaa; line-height: 1.6; }
+
+.academy-how { max-width: 1200px; margin: 6rem auto 0; padding: 0 2rem; }
+.academy-how h2 { font-size: 2.5rem; font-weight: 900; text-align: center; margin-bottom: 3rem; color: #fff; }
+.how-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+.how-step { background: rgba(124,58,237,0.08); border: 1px solid rgba(0,217,255,0.2); padding: 2.5rem; border-radius: 0.8rem; transition: border-color 0.3s; }
+.how-step:hover { border-color: rgba(0,217,255,0.5); }
+.step-num { font-size: 2.5rem; font-weight: 900; color: #FF6B2B; margin-bottom: 1rem; }
+.how-step h3 { font-size: 1.1rem; color: #fff; margin-bottom: 0.8rem; }
+.how-step p { font-size: 0.9rem; color: #aaa; line-height: 1.6; }
+
+.academy-cta { max-width: 900px; margin: 6rem auto 0; padding: 4rem 2rem 8rem; text-align: center; }
+.academy-cta h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; color: #fff; }
+.academy-cta p { font-size: 1.05rem; color: #aaa; margin-bottom: 2.5rem; }
+.btn-create { background: linear-gradient(135deg, #FF6B2B, #7C3AED); color: #fff; padding: 1.2rem 3rem; border-radius: 0.6rem; font-weight: 700; border: none; cursor: pointer; font-size: 1rem; transition: transform 0.3s; }
+.btn-create:hover { transform: translateY(-3px); }
+
+@media (max-width: 768px) {
+  .academy-header h1 { font-size: 2.2rem; }
+  .why-grid, .who-grid, .how-steps { grid-template-columns: 1fr; }
+}

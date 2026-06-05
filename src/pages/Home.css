@@ -1,0 +1,86 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+.home { min-height: 100vh; background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif; }
+
+.hero { max-width: 1400px; margin: 0 auto; padding: 6rem 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.hero-tag { display: inline-block; background: rgba(0,217,255,0.1); border: 1px solid rgba(0,217,255,0.3); color: #00D9FF; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 1.5rem; text-transform: uppercase; }
+.hero-content h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.2; margin-bottom: 1.5rem; color: #fff; }
+.hero-content h1 span { background: linear-gradient(135deg, #FF6B2B, #00D9FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-content p { font-size: 1.1rem; color: #aaa; margin-bottom: 2rem; line-height: 1.7; }
+.hero-buttons { display: flex; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
+.btn-primary { background: linear-gradient(135deg, #FF6B2B, #7C3AED); color: #fff; padding: 1rem 2rem; border-radius: 0.6rem; font-weight: 700; cursor: pointer; transition: transform 0.3s; border: none; display: inline-block; font-size: 0.95rem; text-decoration: none; }
+.btn-primary:hover { transform: translateY(-3px); }
+.btn-secondary { background: transparent; border: 2px solid #00D9FF; color: #00D9FF; padding: 1rem 2rem; border-radius: 0.6rem; font-weight: 700; cursor: pointer; transition: all 0.3s; display: inline-block; font-size: 0.95rem; text-decoration: none; }
+.btn-secondary:hover { background: rgba(0,217,255,0.1); }
+.hero-social { display: flex; align-items: center; gap: 1rem; }
+.avatars { display: flex; }
+.avatar { width: 2.5rem; height: 2.5rem; border-radius: 50%; background: linear-gradient(135deg, #FF6B2B, #00D9FF); border: 2px solid #0a0a0a; margin-right: -0.8rem; }
+.hero-social p { color: #888; font-size: 0.9rem; margin: 0; padding-left: 1.2rem; }
+
+.hero-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.card { background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(0,217,255,0.08)); border: 1px solid rgba(0,217,255,0.25); padding: 2rem; border-radius: 1rem; position: relative; min-height: 180px; display: flex; flex-direction: column; justify-content: flex-end; transition: border-color 0.3s; }
+.card:hover { border-color: rgba(0,217,255,0.5); }
+.card-circle { position: absolute; top: 20px; right: 20px; width: 60px; height: 60px; border: 2px solid rgba(0,217,255,0.3); border-radius: 50%; background: radial-gradient(circle, rgba(0,217,255,0.15), transparent); }
+.card-badge { position: absolute; top: 1rem; right: 1rem; background: #FF6B2B; color: #fff; padding: 0.3rem 0.7rem; border-radius: 0.3rem; font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; z-index: 10; }
+.card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.4rem; color: #fff; }
+.card p { color: #aaa; font-size: 0.85rem; }
+
+.problem-section { max-width: 1200px; margin: 6rem auto 0; padding: 0 2rem; text-align: center; }
+.problem-section h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; color: #fff; }
+.section-sub { font-size: 1.1rem; color: #aaa; max-width: 700px; margin: 0 auto 3rem; line-height: 1.7; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+.stat-card { background: rgba(124,58,237,0.1); border: 1px solid rgba(0,217,255,0.2); padding: 2.5rem 2rem; border-radius: 0.8rem; text-align: center; }
+.stat-card h3 { font-size: 2.2rem; color: #FF6B2B; font-weight: 900; margin-bottom: 0.8rem; }
+.stat-card p { color: #aaa; font-size: 0.95rem; line-height: 1.6; }
+
+.solution-section { background: rgba(124,58,237,0.05); border-top: 1px solid rgba(0,217,255,0.1); border-bottom: 1px solid rgba(0,217,255,0.1); padding: 6rem 2rem; margin-top: 6rem; }
+.solution-inner { max-width: 1200px; margin: 0 auto; }
+.solution-inner h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; color: #fff; text-align: center; }
+.solution-inner > p { font-size: 1.05rem; color: #aaa; line-height: 1.7; text-align: center; max-width: 800px; margin: 0 auto 3rem; }
+.solution-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.solution-card { background: rgba(124,58,237,0.08); border: 1px solid rgba(0,217,255,0.2); padding: 2rem; border-radius: 0.8rem; transition: border-color 0.3s; }
+.solution-card:hover { border-color: rgba(0,217,255,0.5); }
+.solution-card h4 { font-size: 1.1rem; color: #fff; margin-bottom: 0.8rem; }
+.solution-card p { font-size: 0.95rem; color: #aaa; line-height: 1.6; }
+
+.for-section { max-width: 1200px; margin: 6rem auto 0; padding: 0 2rem; }
+.for-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.for-card { background: rgba(124,58,237,0.08); border: 1px solid rgba(0,217,255,0.2); padding: 3rem; border-radius: 1rem; }
+.for-card h2 { font-size: 2rem; font-weight: 900; margin-bottom: 1rem; color: #fff; }
+.for-card p { font-size: 1rem; color: #aaa; line-height: 1.7; margin-bottom: 2rem; }
+.for-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; }
+.for-list li { font-size: 0.95rem; color: #ccc; }
+
+.instructor-section { background: rgba(124,58,237,0.05); border-top: 1px solid rgba(0,217,255,0.1); border-bottom: 1px solid rgba(0,217,255,0.1); padding: 6rem 2rem; margin-top: 6rem; }
+.instructor-inner { max-width: 1200px; margin: 0 auto; }
+.instructor-inner h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; color: #fff; text-align: center; }
+.instructor-inner > p { font-size: 1.05rem; color: #aaa; line-height: 1.7; text-align: center; max-width: 800px; margin: 0 auto 3rem; }
+.instructor-points { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+.instructor-point { background: rgba(124,58,237,0.1); border: 1px solid rgba(0,217,255,0.2); padding: 2rem; border-radius: 0.8rem; }
+.instructor-point h4 { font-size: 1.1rem; color: #00D9FF; margin-bottom: 0.8rem; }
+.instructor-point p { font-size: 0.95rem; color: #aaa; line-height: 1.6; }
+.instructor-inner .btn-primary { display: block; width: fit-content; margin: 0 auto; }
+
+.schools-section { max-width: 1200px; margin: 6rem auto 0; padding: 0 2rem; }
+.schools-inner h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; color: #fff; text-align: center; }
+.schools-inner > p { font-size: 1.05rem; color: #aaa; line-height: 1.7; text-align: center; max-width: 800px; margin: 0 auto 3rem; }
+.schools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+.schools-card { background: rgba(124,58,237,0.08); border: 1px solid rgba(0,217,255,0.2); padding: 2rem; border-radius: 0.8rem; transition: border-color 0.3s; }
+.schools-card:hover { border-color: rgba(0,217,255,0.5); }
+.schools-card h4 { font-size: 1.1rem; color: #FF6B2B; margin-bottom: 0.8rem; }
+.schools-card p { font-size: 0.95rem; color: #aaa; line-height: 1.6; }
+
+.cta-section { max-width: 1400px; margin: 6rem auto 0; padding: 4rem 2rem 8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.cta-learner { background: linear-gradient(135deg, #FF6B2B, #7C3AED); padding: 3rem; border-radius: 1rem; text-align: center; }
+.cta-instructor { background: linear-gradient(135deg, #7C3AED, #00D9FF); padding: 3rem; border-radius: 1rem; text-align: center; }
+.cta-learner h2, .cta-instructor h2 { font-size: 2rem; margin-bottom: 1rem; color: #fff; }
+.cta-learner p, .cta-instructor p { font-size: 1rem; margin-bottom: 2rem; color: rgba(255,255,255,0.85); line-height: 1.6; }
+.btn-cta { background: #fff; padding: 1rem 2rem; border-radius: 0.6rem; font-weight: 700; cursor: pointer; border: none; display: inline-block; font-size: 0.95rem; text-decoration: none; transition: transform 0.3s; color: #FF6B2B; }
+.btn-cta:hover { transform: translateY(-3px); }
+
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; padding: 3rem 1rem; }
+  .hero-content h1 { font-size: 2.2rem; }
+  .hero-cards { grid-template-columns: 1fr; }
+  .for-inner { grid-template-columns: 1fr; }
+  .cta-section { grid-template-columns: 1fr; }
+}

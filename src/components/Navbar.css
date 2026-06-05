@@ -1,0 +1,96 @@
+.navbar {
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 0;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #4C1D95, #00D9FF, #39FF14);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-icon {
+  width: 2rem;
+  height: 2rem;
+  background: linear-gradient(135deg, #4C1D95, #00D9FF);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  color: #999;
+  transition: color 0.3s;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #00D9FF;
+}
+
+.nav-auth {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-get-app {
+  background: linear-gradient(135deg, #4C1D95, #00D9FF);
+  border: none;
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: transform 0.3s, opacity 0.3s;
+  display: inline-block;
+}
+
+.btn-get-app:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    gap: 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .navbar-container {
+    padding: 0 1rem;
+  }
+}
