@@ -1,12 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#3D72E8"/>
-      <stop offset="35%" stop-color="#8530C0"/>
-      <stop offset="65%" stop-color="#C82060"/>
-      <stop offset="100%" stop-color="#F87820"/>
+    <linearGradient id="g" x1="0" y1="0" x2="520" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4C1D95"/>
+      <stop offset="50%" stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#39FF14"/>
     </linearGradient>
   </defs>
-  <path d="M 35,8 L 165,8 Q 192,8 192,35 L 192,148 Q 192,175 165,175 L 118,175 Q 112,197 104,222 Q 95,200 86,175 L 35,175 Q 8,175 8,148 L 8,35 Q 8,8 35,8 Z" fill="url(#g)"/>
-  <text x="100" y="97" fill="white" font-size="60" font-weight="900" text-anchor="middle" dominant-baseline="middle" font-family="'Arial Black', Impact, 'Helvetica Neue', sans-serif">LERN</text>
+
+  <!-- Wing outer (upper feather) -->
+  <path d="M 188,105 L 66,45 L 84,62 L 198,130 Z" fill="url(#g)"/>
+
+  <!-- Wing inner (lower feather) -->
+  <path d="M 186,132 L 104,80 L 118,96 L 198,157 Z" fill="url(#g)"/>
+
+  <!-- Main body: L-form + head -->
+  <path d="
+    M 198,88
+    C 230,76 275,80 316,104
+    C 337,116 346,130 342,134
+    C 320,122 298,120 278,128
+    L 260,136 L 248,140
+    L 248,252 L 323,252 L 323,272
+    L 220,272 Q 198,272 198,252
+    Z
+  " fill="url(#g)"/>
+
+  <!-- Tail -->
+  <path d="M 198,254 L 78,326 L 188,252 Z" fill="url(#g)"/>
+
+  <!-- White separator: outer / inner wing -->
+  <line x1="84" y1="62" x2="198" y2="130" stroke="white" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- White separator: L vertical stroke -->
+  <line x1="198" y1="88" x2="198" y2="272" stroke="white" stroke-width="7"/>
+
+  <!-- White separator: L horizontal stroke -->
+  <line x1="198" y1="252" x2="323" y2="252" stroke="white" stroke-width="7"/>
+
+  <!-- White inner detail at L corner -->
+  <line x1="248" y1="140" x2="262" y2="135" stroke="white" stroke-width="5"/>
+
+  <!-- LERN text -->
+  <text
+    x="264" y="418"
+    text-anchor="middle"
+    fill="url(#g)"
+    font-size="74"
+    font-weight="900"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    letter-spacing="22"
+    dx="-8"
+  >LERN</text>
 </svg>

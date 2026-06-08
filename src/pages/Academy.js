@@ -7,7 +7,7 @@ export default function Academy() {
 
       <section className="academy-header">
         <h1>Teach on LERN.</h1>
-        <p>Share your knowledge. Teach live. Build an audience. Earn real income. Your students learn for free — that's what makes LERN different.</p>
+        <p>Share your knowledge, teach live, build a global audience, and earn real income — all while your students learn completely for free. That is what makes LERN different.</p>
       </section>
 
       <section className="academy-why">
@@ -44,9 +44,9 @@ export default function Academy() {
 
       <section className="academy-who">
         <h2>Who can teach.</h2>
-        <p className="section-sub">If you have real knowledge and can teach it live, you belong here.</p>
+        <p className="section-sub">If you have genuine knowledge and can teach it live, you belong on LERN.</p>
         <div className="who-grid">
-          <div className="who-card"><h4>Coaches</h4><p>Football, life, business, wellness. Transform lives at scale.</p></div>
+          <div className="who-card"><h4>Coaches</h4><p>Football, life coaching, business, and wellness. Transform lives at scale.</p></div>
           <div className="who-card"><h4>Developers</h4><p>Frontend, backend, full stack. Teach the next generation of engineers.</p></div>
           <div className="who-card"><h4>Business Owners</h4><p>You've built something. Share the playbook. Get paid for it.</p></div>
           <div className="who-card"><h4>Teachers & Educators</h4><p>You already teach. Reach a global audience. Keep what you earn.</p></div>

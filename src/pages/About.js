@@ -45,8 +45,8 @@ export default function About() {
 
       <section className="about-contact">
         <h2>Get in touch.</h2>
-        <p>Schools. Institutions. Instructors. Employers. Partners.</p>
-        <p className="contact-info">IRL Connect Ltd — Registered in England & Wales</p>
+        <p>Whether you represent a school, local authority, employer, or organisation — or you are an instructor or potential partner — we would love to hear from you.</p>
+        <p className="contact-info">IRL Connect Ltd — Registered in England &amp; Wales</p>
       </section>
 
     </div>

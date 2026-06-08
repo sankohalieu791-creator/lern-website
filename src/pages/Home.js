@@ -21,7 +21,7 @@ export default function Home() {
               have skills.<br />
               <span>No way to prove it.</span>
             </h1>
-            <p>LERN is where that changes. Free courses. Live instruction. Real projects. Verified credentials. Real opportunities.</p>
+            <p>LERN is where that changes. Free courses, live instruction, real projects, verified credentials, and real opportunities — all in one place.</p>
           </motion.div>
           <motion.div
             className="hero-buttons"
@@ -43,7 +43,7 @@ export default function Home() {
               <div className="avatar"></div>
               <div className="avatar"></div>
             </div>
-            <p>Young people learning. Instructors earning. Right now.</p>
+            <p>Learners growing. Instructors earning. In real time.</p>
           </motion.div>
         </div>
 
@@ -92,10 +92,10 @@ export default function Home() {
         <h2>The problem is real.</h2>
         <p className="section-sub">1 million young people in the UK are NEET. Not because they lack ability. Because the system failed them.</p>
         <div className="stats-grid">
-          <div className="stat-card"><h3>273M</h3><p>Young people locked out of education globally</p></div>
-          <div className="stat-card"><h3>1M</h3><p>NEETs in the UK right now with no clear path</p></div>
-          <div className="stat-card"><h3>£27,000+</h3><p>University costs. Most people cannot afford it</p></div>
-          <div className="stat-card"><h3>90%</h3><p>Dropout rate on Coursera and Udemy. It doesn't work</p></div>
+          <div className="stat-card"><h3>273M</h3><p>Young people worldwide locked out of quality education</p></div>
+          <div className="stat-card"><h3>1M</h3><p>Young people in the UK classified as NEET with no clear path forward</p></div>
+          <div className="stat-card"><h3>£27,000+</h3><p>Average UK university tuition — a barrier most families simply cannot afford</p></div>
+          <div className="stat-card"><h3>90%</h3><p>Average dropout rate on platforms like Coursera and Udemy — passive video learning does not work</p></div>
         </div>
       </section>
 
@@ -103,7 +103,7 @@ export default function Home() {
       <section className="solution-section">
         <div className="solution-inner">
           <h2>Our solution.</h2>
-          <p>LERN is a live learning platform where anyone can learn for free, build real proof of their skills, earn verified credentials, and access real opportunities. No gatekeepers. No cost to learners. No pre-recorded videos.</p>
+          <p>LERN is a live learning platform where anyone can learn for free, build real proof of their skills, earn verified credentials, and access genuine opportunities. No gatekeepers. No cost to learners. No pre-recorded videos collecting dust.</p>
           <div className="solution-grid">
             <div className="solution-card">
               <h4>🔴 Live Instruction</h4>
@@ -193,7 +193,7 @@ export default function Home() {
       <section className="schools-section">
         <div className="schools-inner">
           <h2>For schools and institutions.</h2>
-          <p>LERN gives schools and councils a real tool to engage young people, track their progress, and prove impact. Access real-time data on student engagement, skills being built, and credentials earned.</p>
+          <p>LERN gives schools and local councils a practical tool to engage young people, track their progress, and demonstrate real impact. Access live data on student engagement, skills being developed, and credentials earned.</p>
           <div className="schools-grid">
             <div className="schools-card">
               <h4>Track outcomes</h4>
