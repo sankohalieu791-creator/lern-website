@@ -29,7 +29,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <Link to="/explore" className="btn-primary">Start Learning Free →</Link>
+            <Link to="/explore" className="btn-primary">Learn for Free →</Link>
             <Link to="/academy" className="btn-secondary">Start Teaching →</Link>
           </motion.div>
           <motion.div
@@ -43,7 +43,7 @@ export default function Home() {
               <div className="avatar"></div>
               <div className="avatar"></div>
             </div>
-            <p>Learners growing. Instructors earning. In real time.</p>
+            <p>Learners thriving. Instructors earning. In real time.</p>
           </motion.div>
         </div>
 
@@ -107,11 +107,11 @@ export default function Home() {
           <div className="solution-grid">
             <div className="solution-card">
               <h4>🔴 Live Instruction</h4>
-              <p>Real instructors teaching right now. Join live. Ask questions. Learn with others. Not a recording. Not a video. Real teaching.</p>
+              <p>Real instructors teaching right now. Join live, ask questions, and learn alongside others — not a recording, not a pre-made video, but real teaching.</p>
             </div>
             <div className="solution-card">
               <h4>💰 Free for Everyone</h4>
-              <p>Every course is 100% free. Every learner. Always. No paywalls. No barriers. Education for everyone.</p>
+              <p>Every course is 100% free for every learner, always. No paywalls, no barriers — just open education for everyone.</p>
             </div>
             <div className="solution-card">
               <h4>📁 Build Real Proof</h4>
@@ -150,7 +150,7 @@ export default function Home() {
 
           <div className="for-card">
             <h2>For adults.</h2>
-            <p>Career changers. Parents upskilling. People locked out of expensive universities. LERN gives adults the same access. Free live courses. Real credentials. Skills that matter today — taught by people doing the job right now.</p>
+            <p>Whether you are a career changer, a parent upskilling, or someone locked out of expensive universities — LERN gives you the same access. Free live courses, real credentials, and skills that matter today, taught by people doing the job right now.</p>
             <ul className="for-list">
               <li>✓ No tuition fees</li>
               <li>✓ Flexible learning</li>
@@ -219,12 +219,12 @@ export default function Home() {
       <section className="cta-section">
         <div className="cta-learner">
           <h2>Ready to start?</h2>
-          <p>Free courses. Live instruction. Real proof. Real opportunities.</p>
+          <p>Everything you need to learn, grow, and get hired — completely free.</p>
           <Link to="/explore" className="btn-cta">Explore Courses →</Link>
         </div>
         <div className="cta-instructor">
           <h2>Ready to teach?</h2>
-          <p>Live teaching. Real audience. Real income.</p>
+          <p>Teach live, build a real audience, and earn genuine income from your knowledge.</p>
           <Link to="/academy" className="btn-cta">Start Teaching →</Link>
         </div>
       </section>
