@@ -13,14 +13,12 @@ export default function Footer() {
           <div className="footer-section">
             <h4>Product</h4>
             <a href="#explore">Explore</a>
-            <a href="#academy">Academy</a>
+            <a href="/academy">Instructor</a>
             <a href="#about">About</a>
           </div>
           <div className="footer-section">
-            <h4>Community</h4>
-            <a href="#discord">Discord</a>
-            <a href="#twitter">Twitter</a>
-            <a href="#instagram">Instagram</a>
+            <h4>Follow Us</h4>
+            <a href="https://www.instagram.com/lern_alieu" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
 
