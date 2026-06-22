@@ -185,7 +185,7 @@ export default function Home() {
               <p>Your audience isn't limited to your city. Reach anyone. Build everywhere.</p>
             </div>
           </div>
-          <Link to="/academy" className="btn-primary">Learn More →</Link>
+          <Link to="/academy" className="btn-primary">Become an Instructor →</Link>
         </div>
       </section>
 
