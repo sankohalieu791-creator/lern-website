@@ -1,43 +1,248 @@
-.academy { min-height: 100vh; background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif; }
+.academy {
+  min-height: 100vh;
+  background-color: #050505;
+  background-image:
+    linear-gradient(rgba(255, 102, 0, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 102, 0, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+}
 
-.academy-header { max-width: 1000px; margin: 0 auto; padding: 6rem 2rem; text-align: center; }
-.academy-header h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 1.5rem; color: #fff; }
-.academy-header p { font-size: 1.2rem; color: #aaa; line-height: 1.7; }
+.academy-header {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 7rem 2rem 5rem;
+  text-align: center;
+}
 
-.academy-why { background: rgba(124,58,237,0.05); border-top: 1px solid rgba(0,217,255,0.1); border-bottom: 1px solid rgba(0,217,255,0.1); padding: 6rem 2rem; }
-.academy-why-inner { max-width: 1200px; margin: 0 auto; }
-.academy-why-inner h2 { font-size: 2.5rem; font-weight: 900; text-align: center; margin-bottom: 3rem; color: #fff; }
-.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-.why-card { background: rgba(124,58,237,0.08); border: 1px solid rgba(0,217,255,0.2); padding: 2rem; border-radius: 0.8rem; transition: border-color 0.3s; }
-.why-card:hover { border-color: rgba(0,217,255,0.5); }
-.why-card h4 { font-size: 1.1rem; color: #fff; margin-bottom: 0.8rem; }
-.why-card p { font-size: 0.95rem; color: #aaa; line-height: 1.6; }
+.academy-header h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  letter-spacing: -0.04em;
+}
 
-.academy-who { max-width: 1200px; margin: 6rem auto 0; padding: 0 2rem; }
-.academy-who h2 { font-size: 2.5rem; font-weight: 900; text-align: center; margin-bottom: 0.5rem; color: #fff; }
-.section-sub { font-size: 1.1rem; color: #888; text-align: center; margin-bottom: 3rem; }
-.who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-.who-card { background: rgba(124,58,237,0.08); border: 1px solid rgba(0,217,255,0.2); padding: 2rem; border-radius: 0.8rem; transition: border-color 0.3s; }
-.who-card:hover { border-color: rgba(0,217,255,0.5); }
-.who-card h4 { font-size: 1.2rem; color: #FF6B2B; margin-bottom: 0.8rem; }
-.who-card p { font-size: 0.95rem; color: #aaa; line-height: 1.6; }
+.academy-header p {
+  font-size: 1.1rem;
+  color: #888;
+  line-height: 1.75;
+}
 
-.academy-how { max-width: 1200px; margin: 6rem auto 0; padding: 0 2rem; }
-.academy-how h2 { font-size: 2.5rem; font-weight: 900; text-align: center; margin-bottom: 3rem; color: #fff; }
-.how-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
-.how-step { background: rgba(124,58,237,0.08); border: 1px solid rgba(0,217,255,0.2); padding: 2.5rem; border-radius: 0.8rem; transition: border-color 0.3s; }
-.how-step:hover { border-color: rgba(0,217,255,0.5); }
-.step-num { font-size: 2.5rem; font-weight: 900; color: #FF6B2B; margin-bottom: 1rem; }
-.how-step h3 { font-size: 1.1rem; color: #fff; margin-bottom: 0.8rem; }
-.how-step p { font-size: 0.9rem; color: #aaa; line-height: 1.6; }
+.academy-why {
+  border-top: 1px solid rgba(255, 102, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 102, 0, 0.1);
+  padding: 6rem 2rem;
+}
 
-.academy-cta { max-width: 900px; margin: 6rem auto 0; padding: 4rem 2rem 8rem; text-align: center; }
-.academy-cta h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; color: #fff; }
-.academy-cta p { font-size: 1.05rem; color: #aaa; margin-bottom: 2.5rem; }
-.btn-create { background: linear-gradient(135deg, #FF6B2B, #7C3AED); color: #fff; padding: 1.2rem 3rem; border-radius: 0.6rem; font-weight: 700; border: none; cursor: pointer; font-size: 1rem; transition: transform 0.3s; }
-.btn-create:hover { transform: translateY(-3px); }
+.academy-why-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.academy-why-inner h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #fff;
+  letter-spacing: -0.04em;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1px;
+  background: rgba(255, 102, 0, 0.1);
+  border: 1px solid rgba(255, 102, 0, 0.1);
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+
+.why-card {
+  background: #050505;
+  padding: 2.25rem;
+  transition: background 0.2s ease;
+}
+
+.why-card:hover {
+  background: rgba(255, 102, 0, 0.05);
+}
+
+.why-card h4 {
+  font-size: 0.95rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.why-card p {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.65;
+}
+
+.academy-who {
+  max-width: 1200px;
+  margin: 6rem auto 0;
+  padding: 0 2rem;
+}
+
+.academy-who h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  color: #fff;
+  letter-spacing: -0.04em;
+}
+
+.section-sub {
+  font-size: 1rem;
+  color: #888;
+  text-align: center;
+  margin-bottom: 3rem;
+  line-height: 1.75;
+}
+
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.who-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 102, 0, 0.1);
+  padding: 2rem;
+  border-radius: 0.3rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.who-card:hover {
+  border-color: rgba(255, 102, 0, 0.35);
+  background: rgba(255, 102, 0, 0.04);
+}
+
+.who-card h4 {
+  font-size: 1rem;
+  color: #FF6600;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.who-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.65;
+}
+
+.academy-how {
+  max-width: 1200px;
+  margin: 6rem auto 0;
+  padding: 0 2rem;
+}
+
+.academy-how h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #fff;
+  letter-spacing: -0.04em;
+}
+
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: rgba(255, 102, 0, 0.1);
+  border: 1px solid rgba(255, 102, 0, 0.1);
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+
+.how-step {
+  background: #050505;
+  padding: 2.5rem;
+  transition: background 0.2s ease;
+}
+
+.how-step:hover {
+  background: rgba(255, 102, 0, 0.05);
+}
+
+.step-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #FF6600;
+  margin-bottom: 1rem;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.how-step h3 {
+  font-size: 0.95rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.how-step p {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.65;
+}
+
+.academy-cta {
+  max-width: 900px;
+  margin: 6rem auto 0;
+  padding: 4rem 2rem 8rem;
+  text-align: center;
+}
+
+.academy-cta h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #fff;
+  letter-spacing: -0.04em;
+}
+
+.academy-cta p {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 2.5rem;
+  line-height: 1.75;
+}
+
+.btn-create {
+  background: #FF6600;
+  color: #fff;
+  padding: 0.875rem 2.5rem;
+  border-radius: 0.2rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.15s, box-shadow 0.15s, transform 0.15s;
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.btn-create:hover {
+  background: #E55A00;
+  box-shadow: 0 0 24px rgba(255, 102, 0, 0.35);
+  transform: translateY(-1px);
+}
 
 @media (max-width: 768px) {
-  .academy-header h1 { font-size: 2.2rem; }
+  .academy-header h1 { font-size: 2.25rem; }
   .why-grid, .who-grid, .how-steps { grid-template-columns: 1fr; }
+  .academy-header { padding: 4rem 1.5rem 3rem; }
 }

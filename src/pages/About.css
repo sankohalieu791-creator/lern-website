@@ -1,40 +1,230 @@
-.about { min-height: 100vh; background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif; }
+.about {
+  min-height: 100vh;
+  background-color: #050505;
+  background-image:
+    linear-gradient(rgba(255, 102, 0, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 102, 0, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+}
 
-.about-header { max-width: 1000px; margin: 0 auto; padding: 6rem 2rem; text-align: center; }
-.about-header h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 1.5rem; color: #fff; }
-.about-header p { font-size: 1.2rem; color: #aaa; line-height: 1.7; }
+.about-header {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 7rem 2rem 5rem;
+  text-align: center;
+}
 
-.about-mission { background: rgba(124,58,237,0.05); border-top: 1px solid rgba(0,217,255,0.1); border-bottom: 1px solid rgba(0,217,255,0.1); padding: 6rem 2rem; }
-.mission-inner { max-width: 900px; margin: 0 auto; }
-.mission-inner h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 2rem; color: #fff; }
-.mission-inner p { font-size: 1.05rem; color: #aaa; line-height: 1.8; margin-bottom: 1.5rem; }
-.mission-statement { margin-top: 3rem; padding: 2.5rem; border-left: 4px solid #FF6B2B; background: rgba(255,107,43,0.06); border-radius: 0 0.8rem 0.8rem 0; }
-.mission-statement p { font-size: 1.4rem; font-weight: 700; color: #fff; font-style: italic; margin: 0; }
+.about-header h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  letter-spacing: -0.04em;
+}
 
-.about-problem { max-width: 1200px; margin: 6rem auto 0; padding: 0 2rem; }
-.about-problem h2 { font-size: 2.5rem; font-weight: 900; text-align: center; margin-bottom: 3rem; color: #fff; }
-.problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-.problem-item { background: rgba(124,58,237,0.08); border: 1px solid rgba(0,217,255,0.2); padding: 2.5rem; border-radius: 0.8rem; transition: border-color 0.3s; }
-.problem-item:hover { border-color: rgba(0,217,255,0.5); }
-.problem-item h3 { font-size: 1.2rem; color: #FF6B2B; margin-bottom: 1rem; }
-.problem-item p { font-size: 0.95rem; color: #aaa; line-height: 1.7; }
+.about-header p {
+  font-size: 1.1rem;
+  color: #888;
+  line-height: 1.75;
+}
 
-.about-approach { background: rgba(124,58,237,0.05); border-top: 1px solid rgba(0,217,255,0.1); border-bottom: 1px solid rgba(0,217,255,0.1); padding: 6rem 2rem; margin-top: 6rem; }
-.approach-inner { max-width: 900px; margin: 0 auto; }
-.approach-inner h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 3rem; color: #fff; text-align: center; }
-.approach-items { display: flex; flex-direction: column; gap: 2rem; }
-.approach-item { display: flex; gap: 2rem; align-items: flex-start; background: rgba(124,58,237,0.08); border: 1px solid rgba(0,217,255,0.15); padding: 2rem; border-radius: 0.8rem; }
-.approach-num { font-size: 2.5rem; font-weight: 900; color: #FF6B2B; line-height: 1; flex-shrink: 0; }
-.approach-item h4 { font-size: 1.1rem; color: #00D9FF; margin-bottom: 0.5rem; }
-.approach-item p { font-size: 0.95rem; color: #aaa; line-height: 1.6; }
+.about-mission {
+  border-top: 1px solid rgba(255, 102, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 102, 0, 0.1);
+  padding: 6rem 2rem;
+}
 
-.about-contact { max-width: 900px; margin: 6rem auto 0; padding: 4rem 2rem 8rem; text-align: center; background: rgba(124,58,237,0.08); border: 1px solid rgba(0,217,255,0.2); border-radius: 1rem; }
-.about-contact h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; color: #fff; }
-.about-contact p { font-size: 1.05rem; color: #aaa; line-height: 1.6; margin-bottom: 0.5rem; }
-.contact-info { font-size: 0.9rem; color: #666; margin-top: 1rem; }
+.mission-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mission-inner h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: #fff;
+  letter-spacing: -0.04em;
+}
+
+.mission-inner p {
+  font-size: 1rem;
+  color: #888;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.mission-statement {
+  margin-top: 3rem;
+  padding: 2rem 2.5rem;
+  border-left: 3px solid #FF6600;
+  background: rgba(255, 102, 0, 0.05);
+  border-radius: 0 0.25rem 0.25rem 0;
+  box-shadow: -3px 0 20px rgba(255, 102, 0, 0.1);
+}
+
+.mission-statement p {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.about-problem {
+  max-width: 1200px;
+  margin: 6rem auto 0;
+  padding: 0 2rem;
+}
+
+.about-problem h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #fff;
+  letter-spacing: -0.04em;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.problem-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 102, 0, 0.1);
+  padding: 2.25rem;
+  border-radius: 0.3rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.problem-item:hover {
+  border-color: rgba(255, 102, 0, 0.35);
+  background: rgba(255, 102, 0, 0.04);
+}
+
+.problem-item h3 {
+  font-size: 1rem;
+  color: #FF6600;
+  margin-bottom: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.problem-item p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+.about-approach {
+  border-top: 1px solid rgba(255, 102, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 102, 0, 0.1);
+  padding: 6rem 2rem;
+  margin-top: 6rem;
+}
+
+.approach-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.approach-inner h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  color: #fff;
+  text-align: center;
+  letter-spacing: -0.04em;
+}
+
+.approach-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: rgba(255, 102, 0, 0.1);
+  border: 1px solid rgba(255, 102, 0, 0.1);
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+
+.approach-item {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  background: #050505;
+  padding: 2rem 2.5rem;
+  transition: background 0.2s ease;
+}
+
+.approach-item:hover {
+  background: rgba(255, 102, 0, 0.04);
+}
+
+.approach-num {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #FF6600;
+  line-height: 1;
+  flex-shrink: 0;
+  letter-spacing: -0.04em;
+  min-width: 2rem;
+}
+
+.approach-item h4 {
+  font-size: 0.95rem;
+  color: #FF8C00;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.approach-item p {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.65;
+}
+
+.about-contact {
+  max-width: 900px;
+  margin: 6rem auto 0;
+  padding: 4rem 3rem 8rem;
+  text-align: center;
+  background: rgba(255, 102, 0, 0.04);
+  border: 1px solid rgba(255, 102, 0, 0.18);
+  border-radius: 0.3rem;
+}
+
+.about-contact h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #fff;
+  letter-spacing: -0.04em;
+}
+
+.about-contact p {
+  font-size: 1rem;
+  color: #888;
+  line-height: 1.65;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 1rem;
+}
 
 @media (max-width: 768px) {
-  .about-header h1 { font-size: 2.2rem; }
+  .about-header h1 { font-size: 2.25rem; }
+  .about-header { padding: 4rem 1.5rem 3rem; }
   .problem-grid { grid-template-columns: 1fr; }
-  .approach-item { flex-direction: column; gap: 1rem; }
+  .approach-item { flex-direction: column; gap: 0.75rem; }
+  .about-contact { margin: 4rem 1.5rem 0; padding: 3rem 2rem 5rem; }
 }

@@ -229,12 +229,6 @@ export default function Home() {
               <p>Real instructors teaching in real time. Join live, ask questions, and learn alongside thousands — not a recording, not a pre-made video.</p>
             </motion.div>
 
-            <motion.div className="bento-card bento-free" variants={fadeUp}>
-              <div className="bento-price">$0</div>
-              <h3>Always free.</h3>
-              <p>Every course. Every learner. No paywalls, no trials, no hidden fees.</p>
-            </motion.div>
-
             <motion.div className="bento-card bento-proof" variants={fadeUp}>
               <div className="bento-icon-wrap">📁</div>
               <h3>Build real proof.</h3>
