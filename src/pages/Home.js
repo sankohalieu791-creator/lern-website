@@ -37,7 +37,7 @@ export default function Home() {
             initial="hidden" animate="visible" variants={fadeUp} custom={0}>
             <span className="eyebrow">
               <span className="pulse-dot" />
-              Live cohorts · Verified proof · No tuition
+              Live cohorts · Verified proof · Real outcomes
             </span>
             <h1>
               Skill-building<br />
@@ -69,6 +69,11 @@ export default function Home() {
 
           {/* ── 3D Floating glass cards (iOS-style spatial arrangement) ── */}
           <div className="hero-visual">
+
+            {/* ── Scene spheres behind glass (low z-index) ── */}
+            <div className="sp sp-a" />
+            <div className="sp sp-b" />
+            <div className="sp sp-e" />
 
             {/* Main live-session card — tilted in 3D space */}
             <div className="tilt-wrap tilt-main">
@@ -133,18 +138,22 @@ export default function Home() {
               </motion.div>
             </div>
 
-            {/* Badge 3 — free forever (top-right, tilted sideways) */}
+            {/* Badge 3 — verified outcome (top-right) */}
             <div className="tilt-wrap tilt-b3">
               <motion.div className="g-badge"
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}>
                 <span className="badge-icon b-orange">★</span>
                 <div>
-                  <div className="badge-label">Free forever</div>
-                  <div className="badge-sub">No card required</div>
+                  <div className="badge-label">Verified outcome</div>
+                  <div className="badge-sub">Employer-recognised</div>
                 </div>
               </motion.div>
             </div>
+
+            {/* ── Foreground spheres IN FRONT of glass ── */}
+            <div className="sp sp-c" />
+            <div className="sp sp-d" />
 
           </div>
         </div>
@@ -172,7 +181,7 @@ export default function Home() {
           <div className="value-grid">
             {[
               { icon: '◈', title: 'Built for real impact', body: 'Live learning, real projects, verified outcomes — designed for people who need a pathway, not an extra expense.' },
-              { icon: '◎', title: 'Free for every learner', body: 'No subscription. No hidden fees. No gatekeepers. Ever.' },
+              { icon: '◎', title: 'No barriers to entry', body: 'Live learning, real projects, verified outcomes — built to be as accessible as possible for those who need it.' },
               { icon: '◆', title: 'Industry-aligned proof', body: 'Projects and credentials employers actually recognise, not just another badge to collect.' },
               { icon: '◉', title: 'Community-led cohorts', body: 'Learn live with peers, ask questions in real time, and stay motivated through every course.' },
             ].map((c, i) => (
@@ -233,7 +242,7 @@ export default function Home() {
               {
                 tag: 'New pathways', title: 'Career changers',
                 desc: 'Transition into a new field with flexible live learning and employer-ready skills.',
-                bullets: ['Flexible schedules', 'Employer-ready skills', 'No tuition burden'],
+                bullets: ['Flexible schedules', 'Employer-ready skills', 'Accessible pathways'],
                 href: '/explore', label: 'Start changing', external: false,
               },
               {
@@ -273,7 +282,7 @@ export default function Home() {
             <div className="cta-glow" />
             <span className="sec-tag">GET STARTED</span>
             <h2>Live learning that lets you<br />build proof, not pass tests.</h2>
-            <p className="cta-sub">No fees. No gatekeepers. Just real skills and real credentials.</p>
+            <p className="cta-sub">Real skills. Real credentials. Built for the learners who need it most.</p>
             <div className="cta-btns">
               <Link to="/explore" className="btn btn-orange btn-lg">Start learning today →</Link>
               <a href="https://www.lernapp.uk" target="_blank" rel="noopener noreferrer"
