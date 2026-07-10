@@ -1,230 +1,290 @@
+/* ══════════════════════════════════════
+   ABOUT — Glass premium theme
+══════════════════════════════════════ */
 .about {
   min-height: 100vh;
-  background-color: #050505;
-  background-image:
-    linear-gradient(rgba(255, 102, 0, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 102, 0, 0.025) 1px, transparent 1px);
-  background-size: 48px 48px;
-  color: #fff;
+  color: #1a1a2e;
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  position: relative;
+  z-index: 1;
 }
 
+/* ── Shared glass base for this page ── */
+.about-glass {
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(48px) saturate(220%) brightness(108%);
+  -webkit-backdrop-filter: blur(48px) saturate(220%) brightness(108%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.04),
+    0 24px 64px rgba(0, 0, 0, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(140deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.08) 35%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-glass:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.04),
+    0 32px 80px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* ── Hero header ── */
 .about-header {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 7rem 2rem 5rem;
+  padding: 8rem 2rem 5rem;
   text-align: center;
 }
 
 .about-header h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1.06;
+  color: #0d0d1f;
   margin-bottom: 1.5rem;
-  color: #fff;
-  letter-spacing: -0.04em;
+}
+
+.about-header h1 em {
+  color: #FF6600;
+  font-style: italic;
 }
 
 .about-header p {
   font-size: 1.1rem;
-  color: #888;
-  line-height: 1.75;
-}
-
-.about-mission {
-  border-top: 1px solid rgba(255, 102, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 102, 0, 0.1);
-  padding: 6rem 2rem;
-}
-
-.mission-inner {
-  max-width: 900px;
+  color: #5a5a7a;
+  line-height: 1.8;
+  max-width: 640px;
   margin: 0 auto;
 }
 
-.mission-inner h2 {
-  font-size: 2.25rem;
-  font-weight: 800;
-  margin-bottom: 2rem;
-  color: #fff;
+/* ── Mission section ── */
+.about-mission {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem 6rem;
+}
+
+.mission-card {
+  padding: 4rem;
+  border-radius: 32px;
+}
+
+.mission-card h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 900;
+  color: #0d0d1f;
   letter-spacing: -0.04em;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
-.mission-inner p {
+.mission-card p {
   font-size: 1rem;
-  color: #888;
-  line-height: 1.8;
+  color: #5a5a7a;
+  line-height: 1.85;
   margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
-.mission-statement {
-  margin-top: 3rem;
-  padding: 2rem 2.5rem;
+.mission-quote {
+  margin-top: 2.5rem;
+  padding: 1.75rem 2rem;
+  background: rgba(255, 102, 0, 0.07);
   border-left: 3px solid #FF6600;
-  background: rgba(255, 102, 0, 0.05);
-  border-radius: 0 0.25rem 0.25rem 0;
-  box-shadow: -3px 0 20px rgba(255, 102, 0, 0.1);
+  border-radius: 0 14px 14px 0;
+  position: relative;
+  z-index: 1;
 }
 
-.mission-statement p {
-  font-size: 1.3rem;
+.mission-quote p {
+  font-size: 1.25rem;
   font-weight: 700;
-  color: #fff;
+  color: #0d0d1f;
   font-style: italic;
   margin: 0;
   line-height: 1.5;
 }
 
+/* ── Problem section ── */
 .about-problem {
-  max-width: 1200px;
-  margin: 6rem auto 0;
-  padding: 0 2rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 2rem 6rem;
 }
 
 .about-problem h2 {
-  font-size: 2.25rem;
-  font-weight: 800;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 900;
   text-align: center;
   margin-bottom: 3rem;
-  color: #fff;
+  color: #0d0d1f;
   letter-spacing: -0.04em;
 }
 
 .problem-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .problem-item {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 102, 0, 0.1);
-  padding: 2.25rem;
-  border-radius: 0.3rem;
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-
-.problem-item:hover {
-  border-color: rgba(255, 102, 0, 0.35);
-  background: rgba(255, 102, 0, 0.04);
+  padding: 2.2rem;
 }
 
 .problem-item h3 {
-  font-size: 1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: #FF6600;
-  margin-bottom: 0.875rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  margin-bottom: 0.85rem;
+  position: relative;
+  z-index: 1;
 }
 
 .problem-item p {
   font-size: 0.9rem;
-  color: #666;
-  line-height: 1.7;
+  color: #5a5a7a;
+  line-height: 1.75;
+  position: relative;
+  z-index: 1;
 }
 
+/* ── Approach section ── */
 .about-approach {
-  border-top: 1px solid rgba(255, 102, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 102, 0, 0.1);
-  padding: 6rem 2rem;
-  margin-top: 6rem;
-}
-
-.approach-inner {
-  max-width: 900px;
+  max-width: 860px;
   margin: 0 auto;
+  padding: 0 2rem 6rem;
 }
 
-.approach-inner h2 {
-  font-size: 2.25rem;
-  font-weight: 800;
-  margin-bottom: 3rem;
-  color: #fff;
+.about-approach h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 900;
   text-align: center;
+  margin-bottom: 3rem;
+  color: #0d0d1f;
   letter-spacing: -0.04em;
 }
 
 .approach-items {
   display: flex;
   flex-direction: column;
-  gap: 1px;
-  background: rgba(255, 102, 0, 0.1);
-  border: 1px solid rgba(255, 102, 0, 0.1);
-  border-radius: 0.3rem;
-  overflow: hidden;
+  gap: 1.25rem;
 }
 
 .approach-item {
   display: flex;
-  gap: 2rem;
   align-items: flex-start;
-  background: #050505;
-  padding: 2rem 2.5rem;
-  transition: background 0.2s ease;
-}
-
-.approach-item:hover {
-  background: rgba(255, 102, 0, 0.04);
+  gap: 2rem;
+  padding: 2rem 2.4rem;
 }
 
 .approach-num {
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: #FF6600;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: rgba(255, 102, 0, 0.25);
+  letter-spacing: -0.06em;
   line-height: 1;
   flex-shrink: 0;
-  letter-spacing: -0.04em;
-  min-width: 2rem;
+  min-width: 2.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .approach-item h4 {
-  font-size: 0.95rem;
-  color: #FF8C00;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FF6600;
   margin-bottom: 0.5rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  position: relative;
+  z-index: 1;
 }
 
 .approach-item p {
-  font-size: 0.875rem;
-  color: #666;
-  line-height: 1.65;
+  font-size: 0.9rem;
+  color: #5a5a7a;
+  line-height: 1.75;
+  position: relative;
+  z-index: 1;
 }
 
+.approach-item > div { position: relative; z-index: 1; }
+
+/* ── Contact section ── */
 .about-contact {
-  max-width: 900px;
-  margin: 6rem auto 0;
-  padding: 4rem 3rem 8rem;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 2rem 8rem;
   text-align: center;
-  background: rgba(255, 102, 0, 0.04);
-  border: 1px solid rgba(255, 102, 0, 0.18);
-  border-radius: 0.3rem;
+}
+
+.contact-card {
+  padding: 4.5rem 4rem;
+  border-radius: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card .contact-glow {
+  position: absolute;
+  width: 360px; height: 220px;
+  background: radial-gradient(circle, rgba(255, 102, 0, 0.12) 0%, transparent 70%);
+  filter: blur(50px);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .about-contact h2 {
-  font-size: 2.25rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  color: #fff;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 900;
+  color: #0d0d1f;
   letter-spacing: -0.04em;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .about-contact p {
   font-size: 1rem;
-  color: #888;
-  line-height: 1.65;
+  color: #5a5a7a;
+  line-height: 1.75;
   margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-info {
   font-size: 0.85rem;
-  color: #555;
-  margin-top: 1rem;
+  color: #aaa;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
+/* ── Responsive ── */
 @media (max-width: 768px) {
-  .about-header h1 { font-size: 2.25rem; }
-  .about-header { padding: 4rem 1.5rem 3rem; }
+  .about-header { padding: 5rem 1.5rem 3rem; }
+  .about-header h1 { font-size: 2.4rem; }
+  .mission-card { padding: 2.5rem 1.75rem; }
   .problem-grid { grid-template-columns: 1fr; }
   .approach-item { flex-direction: column; gap: 0.75rem; }
-  .about-contact { margin: 4rem 1.5rem 0; padding: 3rem 2rem 5rem; }
+  .contact-card { padding: 3rem 1.75rem; }
 }

@@ -1,20 +1,128 @@
+/* ── Global reset ── */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html { scroll-behavior: smooth; }
+
+/* ── Global body — warm Apple-style backdrop, fixed so glass slides over it ── */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background: #050505;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #1a1a2e;
+  min-height: 100vh;
+
+  background-color: #FFF8F0;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% 30%, rgba(255, 160, 60, 0.28) 0%, transparent 65%),
+    radial-gradient(ellipse 65% 55% at 90% 10%, rgba(255, 190, 100, 0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 75% 65% at 50% 105%, rgba(140, 200, 255, 0.22) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 80% 72%, rgba(255, 135, 50, 0.16) 0%, transparent 55%),
+    linear-gradient(165deg, #FFFAF4 0%, #FFF5EC 45%, #F8FBFF 100%);
+  background-attachment: fixed;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ── Shared glass card — used across all pages ── */
+.glass {
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(48px) saturate(220%) brightness(108%);
+  -webkit-backdrop-filter: blur(48px) saturate(220%) brightness(108%);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-radius: 24px;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.04),
+    0 24px 64px rgba(0, 0, 0, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    140deg,
+    rgba(255, 255, 255, 0.65) 0%,
+    rgba(255, 255, 255, 0.12) 35%,
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glass:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.04),
+    0 32px 80px rgba(0, 0, 0, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* ── Shared button styles ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.9rem 1.85rem;
+  border-radius: 999px;
+  background: #FF6600;
   color: #fff;
-}
-
-a {
+  font-size: 0.95rem;
+  font-weight: 700;
   text-decoration: none;
-  color: inherit;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(255, 102, 0, 0.35);
+  transition: all 0.22s ease;
+  white-space: nowrap;
 }
 
-html {
-  scroll-behavior: smooth;
+.btn-primary:hover {
+  background: #e55a00;
+  box-shadow: 0 8px 36px rgba(255, 102, 0, 0.45);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.9rem 1.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #1a1a2e;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  white-space: nowrap;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 102, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ── Shared section label ── */
+.page-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #FF6600;
+  margin-bottom: 1rem;
 }
