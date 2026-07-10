@@ -52,13 +52,10 @@ export default function Home() {
               <Link to="/explore" className="btn btn-orange">
                 Browse free courses <span aria-hidden="true">→</span>
               </Link>
-              <Link to="/academy" className="btn btn-glass">Teach on LERN</Link>
+              <a href="https://www.lernapp.uk" target="_blank" rel="noopener noreferrer"
+                className="btn btn-glass">Get the App</a>
             </div>
             <div className="hero-pills">
-              <div className="stat-pill">
-                <strong>£0</strong>
-                <span>Cost to learners</span>
-              </div>
               <div className="stat-pill">
                 <strong>100+</strong>
                 <span>Live sessions / month</span>
@@ -70,78 +67,84 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Floating glass UI */}
+          {/* ── 3D Floating glass cards (iOS-style spatial arrangement) ── */}
           <div className="hero-visual">
 
-            {/* Main live-session card */}
-            <motion.div className="g-card main-card"
-              animate={{ y: [0, -18, 0] }}
-              transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}>
-              <div className="mc-bar">
-                <span className="live-chip">
-                  <span className="live-ring" />LIVE
-                </span>
-                <span className="mc-time">2:34 remaining</span>
-              </div>
-              <p className="mc-course">Web Development<br />Fundamentals</p>
-              <div className="mc-instructor">
-                <div className="mc-ava">A</div>
-                <div className="mc-ava-info">
-                  <div className="mc-iname">Alieu S.</div>
-                  <div className="mc-irole">Lead Instructor</div>
+            {/* Main live-session card — tilted in 3D space */}
+            <div className="tilt-wrap tilt-main">
+              <motion.div className="g-card main-card"
+                animate={{ y: [0, -18, 0] }}
+                transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}>
+                <div className="mc-bar">
+                  <span className="live-chip"><span className="live-ring" />LIVE</span>
+                  <span className="mc-time">2:34 remaining</span>
                 </div>
-                <span className="mc-viewers">247 live</span>
-              </div>
-              <div className="mc-prog">
-                <div className="mc-prog-bar">
-                  <div className="mc-prog-fill" style={{ width: '62%' }} />
+                <p className="mc-course">Web Development<br />Fundamentals</p>
+                <div className="mc-instructor">
+                  <div className="mc-ava">A</div>
+                  <div className="mc-ava-info">
+                    <div className="mc-iname">Alieu S.</div>
+                    <div className="mc-irole">Lead Instructor</div>
+                  </div>
+                  <span className="mc-viewers">247 live</span>
                 </div>
-                <div className="mc-prog-meta">
-                  <span>62% complete</span><span>38% left</span>
+                <div className="mc-prog">
+                  <div className="mc-prog-bar">
+                    <div className="mc-prog-fill" style={{ width: '62%' }} />
+                  </div>
+                  <div className="mc-prog-meta">
+                    <span>62% complete</span><span>38% left</span>
+                  </div>
                 </div>
-              </div>
-              <div className="mc-footer">
-                <div className="mc-faces">
-                  {MINI_FACES.map((l, i) => (
-                    <div key={i} className="mc-face" style={{ zIndex: 5 - i }}>{l}</div>
-                  ))}
-                  <span className="mc-more">+242 more learners</span>
+                <div className="mc-footer">
+                  <div className="mc-faces">
+                    {MINI_FACES.map((l, i) => (
+                      <div key={i} className="mc-face" style={{ zIndex: 5 - i }}>{l}</div>
+                    ))}
+                    <span className="mc-more">+242 learners</span>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
 
-            {/* Badge: credential earned */}
-            <motion.div className="g-card g-badge badge-tl"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}>
-              <span className="badge-icon b-green">✓</span>
-              <div>
-                <div className="badge-label">Credential earned</div>
-                <div className="badge-sub">Web Dev · Cohort 12</div>
-              </div>
-            </motion.div>
+            {/* Badge 1 — credential earned (top-left, tilted away) */}
+            <div className="tilt-wrap tilt-b1">
+              <motion.div className="g-badge"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}>
+                <span className="badge-icon b-green">✓</span>
+                <div>
+                  <div className="badge-label">Credential earned</div>
+                  <div className="badge-sub">Web Dev · Cohort 12</div>
+                </div>
+              </motion.div>
+            </div>
 
-            {/* Badge: next session */}
-            <motion.div className="g-card g-badge badge-br"
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}>
-              <span className="badge-icon b-blue">◷</span>
-              <div>
-                <div className="badge-label">Next live session</div>
-                <div className="badge-sub">Starts in 2 hours</div>
-              </div>
-            </motion.div>
+            {/* Badge 2 — next session (bottom-right, tilted forward) */}
+            <div className="tilt-wrap tilt-b2">
+              <motion.div className="g-badge"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}>
+                <span className="badge-icon b-blue">◷</span>
+                <div>
+                  <div className="badge-label">Next live session</div>
+                  <div className="badge-sub">Starts in 2 hours</div>
+                </div>
+              </motion.div>
+            </div>
 
-            {/* Badge: free forever */}
-            <motion.div className="g-card g-badge badge-tr"
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}>
-              <span className="badge-icon b-orange">★</span>
-              <div>
-                <div className="badge-label">Free forever</div>
-                <div className="badge-sub">No card required</div>
-              </div>
-            </motion.div>
+            {/* Badge 3 — free forever (top-right, tilted sideways) */}
+            <div className="tilt-wrap tilt-b3">
+              <motion.div className="g-badge"
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}>
+                <span className="badge-icon b-orange">★</span>
+                <div>
+                  <div className="badge-label">Free forever</div>
+                  <div className="badge-sub">No card required</div>
+                </div>
+              </motion.div>
+            </div>
 
           </div>
         </div>
@@ -225,19 +228,19 @@ export default function Home() {
                 tag: 'Free learning', title: 'Learners',
                 desc: 'Access live courses, build real projects, and earn verified credentials without spending a penny.',
                 bullets: ['Live classes with real feedback', 'Project-based curriculum', 'Verified credentials'],
-                cta: '/explore', ctaLabel: 'Browse courses',
+                href: '/explore', label: 'Browse courses', external: false,
               },
               {
                 tag: 'New pathways', title: 'Career changers',
                 desc: 'Transition into a new field with flexible live learning and employer-ready skills.',
                 bullets: ['Flexible schedules', 'Employer-ready skills', 'No tuition burden'],
-                cta: '/explore', ctaLabel: 'Start changing',
+                href: '/explore', label: 'Start changing', external: false,
               },
               {
                 tag: 'Teach live', title: 'Instructors',
                 desc: 'Reach real learners, deliver live sessions, and earn from your expertise on your terms.',
                 bullets: ['Reach motivated learners', 'Verify outcomes', 'Earn from your expertise'],
-                cta: '/academy', ctaLabel: 'Start teaching',
+                href: 'https://www.lernapp.uk', label: 'Start teaching →', external: true,
               },
             ].map((c, i) => (
               <motion.article key={c.title} className="g-card for-card"
@@ -251,7 +254,11 @@ export default function Home() {
                     <li key={b}><span className="for-dot" />{b}</li>
                   ))}
                 </ul>
-                <Link to={c.cta} className="btn btn-orange btn-sm">{c.ctaLabel} →</Link>
+                {c.external
+                  ? <a href={c.href} target="_blank" rel="noopener noreferrer"
+                      className="btn btn-orange btn-sm">{c.label}</a>
+                  : <Link to={c.href} className="btn btn-orange btn-sm">{c.label} →</Link>
+                }
               </motion.article>
             ))}
           </div>
@@ -269,7 +276,8 @@ export default function Home() {
             <p className="cta-sub">No fees. No gatekeepers. Just real skills and real credentials.</p>
             <div className="cta-btns">
               <Link to="/explore" className="btn btn-orange btn-lg">Start learning today →</Link>
-              <Link to="/academy" className="btn btn-glass">Become an instructor</Link>
+              <a href="https://www.lernapp.uk" target="_blank" rel="noopener noreferrer"
+                className="btn btn-glass btn-lg">Get the App</a>
             </div>
           </motion.div>
         </div>
