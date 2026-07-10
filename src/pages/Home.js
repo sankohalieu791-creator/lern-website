@@ -27,6 +27,7 @@ export default function Home() {
     <main className="home">
       <div className="blob blob-a" />
       <div className="blob blob-b" />
+      <div className="blob blob-c" />
 
       {/* ─── HERO ─── */}
       <section className="hero">
