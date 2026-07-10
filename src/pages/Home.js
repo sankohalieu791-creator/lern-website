@@ -4,153 +4,276 @@ import { Link } from 'react-router-dom'
 import './Home.css'
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 22 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } }
+  hidden: { opacity: 0, y: 36 },
+  visible: (d = 0) => ({
+    opacity: 1, y: 0,
+    transition: { duration: 0.65, delay: d, ease: [0.16, 1, 0.3, 1] },
+  }),
 }
-
-const HERO_STATS = [
-  { value: '0', label: 'Fees for learners' },
-  { value: '100+', label: 'Live sessions each month' },
-  { value: '98%', label: 'Learners say LERN helped them progress' },
-]
-
-const VALUE_CARDS = [
-  { title: 'Built for real impact', body: 'Live learning, real projects, verified outcomes designed for people who need a pathway — not an extra expense.' },
-  { title: 'Free for every learner', body: 'No subscription. No hidden fees. No gatekeepers. Ever.' },
-  { title: 'Industry-aligned proof', body: 'Projects and credentials employers actually recognise, not just another badge.' },
-  { title: 'Community-led cohorts', body: 'Learn live with peers, ask questions in real time, and stay motivated through every course.' },
-]
-
-const HOW_IT_WORKS = [
-  { label: '01', title: 'Join a live cohort', text: 'Start every course with a live session, guided by instructors who answer your questions as you learn.' },
-  { label: '02', title: 'Build real work', text: 'Complete a meaningful project that demonstrates your skills, not just your ability to click through videos.' },
-  { label: '03', title: 'Earn verified proof', text: 'Receive verification from instructors and community review that signals readiness to employers.' },
-]
-
-const AUDIENCE_CARDS = [
-  { title: 'Learners', tag: 'Free learning', bullets: ['Live classes with feedback', 'Real projects, not slides', 'Verified credentials'], cta: '/explore' },
-  { title: 'Career changers', tag: 'New pathways', bullets: ['Flexible schedules', 'Employer-ready skills', 'No tuition burden'], cta: '/explore' },
-  { title: 'Instructors', tag: 'Teach live', bullets: ['Reach real learners', 'Verify outcomes', 'Earn from your expertise'], cta: '/academy' },
-]
 
 const TICKER = [
   'Free live pathways',
   'Verified proof employers trust',
-  'Real projects, real outcomes',
+  'Real projects · Real outcomes',
   'Built for learners left behind',
+  'No fees · No gatekeepers',
+  'Live instructor feedback',
 ]
+
+const MINI_FACES = ['A', 'J', 'M', 'K', 'S']
 
 export default function Home() {
   return (
     <main className="home">
+      <div className="blob blob-a" />
+      <div className="blob blob-b" />
+
+      {/* ─── HERO ─── */}
       <section className="hero">
-        <div className="hero-grid">
-          <motion.div className="hero-copy" initial="hidden" animate="visible" variants={fadeUp}>
-            <span className="eyebrow">Live cohorts · Verified proof · No tuition</span>
-            <h1>Skill-building for people the system left behind.</h1>
-            <p className="hero-paragraph">
-              LERN combines live teaching, practical projects, and employer-aligned credentials so every learner can prove what they can do.
+        <div className="hero-inner">
+
+          <motion.div className="hero-copy"
+            initial="hidden" animate="visible" variants={fadeUp} custom={0}>
+            <span className="eyebrow">
+              <span className="pulse-dot" />
+              Live cohorts · Verified proof · No tuition
+            </span>
+            <h1>
+              Skill-building<br />
+              <em className="h1-em">for the ones</em><br />
+              left behind.
+            </h1>
+            <p className="hero-lead">
+              LERN combines live teaching, real projects, and employer-aligned
+              credentials — so every learner can prove what they can do.
             </p>
             <div className="hero-actions">
-              <Link to="/explore" className="btn btn-primary">Browse free courses</Link>
-              <Link to="/academy" className="btn btn-secondary">Teach on LERN</Link>
+              <Link to="/explore" className="btn btn-orange">
+                Browse free courses <span aria-hidden="true">→</span>
+              </Link>
+              <Link to="/academy" className="btn btn-glass">Teach on LERN</Link>
             </div>
-            <div className="hero-stats">
-              {HERO_STATS.map((stat) => (
-                <div key={stat.label} className="hero-stat">
-                  <span>{stat.value}</span>
-                  <p>{stat.label}</p>
-                </div>
-              ))}
+            <div className="hero-pills">
+              <div className="stat-pill">
+                <strong>£0</strong>
+                <span>Cost to learners</span>
+              </div>
+              <div className="stat-pill">
+                <strong>100+</strong>
+                <span>Live sessions / month</span>
+              </div>
+              <div className="stat-pill">
+                <strong>98%</strong>
+                <span>Learner satisfaction</span>
+              </div>
             </div>
           </motion.div>
 
-          <motion.div className="hero-panel" initial="hidden" animate="visible" variants={fadeUp}>
-            <div className="panel-badge">Next cohort opens soon</div>
-            <h2>Learn live, build proof, get recognised.</h2>
-            <p className="panel-copy">Every course is structured around a real project and a verified outcome so you leave with a portfolio piece and proof you can use.</p>
-            <ul className="panel-list">
-              <li>Live sessions with active instructor feedback</li>
-              <li>Project-based learning that employers can see</li>
-              <li>Verified credentials backed by review</li>
-            </ul>
-          </motion.div>
+          {/* Floating glass UI */}
+          <div className="hero-visual">
+
+            {/* Main live-session card */}
+            <motion.div className="g-card main-card"
+              animate={{ y: [0, -18, 0] }}
+              transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}>
+              <div className="mc-bar">
+                <span className="live-chip">
+                  <span className="live-ring" />LIVE
+                </span>
+                <span className="mc-time">2:34 remaining</span>
+              </div>
+              <p className="mc-course">Web Development<br />Fundamentals</p>
+              <div className="mc-instructor">
+                <div className="mc-ava">A</div>
+                <div className="mc-ava-info">
+                  <div className="mc-iname">Alieu S.</div>
+                  <div className="mc-irole">Lead Instructor</div>
+                </div>
+                <span className="mc-viewers">247 live</span>
+              </div>
+              <div className="mc-prog">
+                <div className="mc-prog-bar">
+                  <div className="mc-prog-fill" style={{ width: '62%' }} />
+                </div>
+                <div className="mc-prog-meta">
+                  <span>62% complete</span><span>38% left</span>
+                </div>
+              </div>
+              <div className="mc-footer">
+                <div className="mc-faces">
+                  {MINI_FACES.map((l, i) => (
+                    <div key={i} className="mc-face" style={{ zIndex: 5 - i }}>{l}</div>
+                  ))}
+                  <span className="mc-more">+242 more learners</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Badge: credential earned */}
+            <motion.div className="g-card g-badge badge-tl"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}>
+              <span className="badge-icon b-green">✓</span>
+              <div>
+                <div className="badge-label">Credential earned</div>
+                <div className="badge-sub">Web Dev · Cohort 12</div>
+              </div>
+            </motion.div>
+
+            {/* Badge: next session */}
+            <motion.div className="g-card g-badge badge-br"
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}>
+              <span className="badge-icon b-blue">◷</span>
+              <div>
+                <div className="badge-label">Next live session</div>
+                <div className="badge-sub">Starts in 2 hours</div>
+              </div>
+            </motion.div>
+
+            {/* Badge: free forever */}
+            <motion.div className="g-card g-badge badge-tr"
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}>
+              <span className="badge-icon b-orange">★</span>
+              <div>
+                <div className="badge-label">Free forever</div>
+                <div className="badge-sub">No card required</div>
+              </div>
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
-      <section className="ribbon">
+      {/* ─── RIBBON ─── */}
+      <div className="ribbon">
         <div className="ribbon-track">
-          {[...TICKER, ...TICKER].map((item, index) => (
-            <span key={index} className="ribbon-item">{item}</span>
+          {[...TICKER, ...TICKER].map((t, i) => (
+            <span key={i} className="ribbon-item">
+              {t} <span className="rdot" aria-hidden="true">◆</span>
+            </span>
           ))}
         </div>
-      </section>
+      </div>
 
-      <section className="value-section">
+      {/* ─── WHY LERN ─── */}
+      <section className="lsec value-sec">
         <div className="section-inner">
-          <div className="section-header">
-            <span className="section-label">WHY LERN</span>
-            <h2>Designed to change who can learn and how they prove it.</h2>
-          </div>
+          <motion.header className="sec-head"
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <span className="sec-tag">WHY LERN</span>
+            <h2>Designed to change who can learn<br />and how they prove it.</h2>
+          </motion.header>
           <div className="value-grid">
-            {VALUE_CARDS.map((card) => (
-              <article key={card.title} className="value-card">
-                <h3>{card.title}</h3>
-                <p>{card.body}</p>
-              </article>
+            {[
+              { icon: '◈', title: 'Built for real impact', body: 'Live learning, real projects, verified outcomes — designed for people who need a pathway, not an extra expense.' },
+              { icon: '◎', title: 'Free for every learner', body: 'No subscription. No hidden fees. No gatekeepers. Ever.' },
+              { icon: '◆', title: 'Industry-aligned proof', body: 'Projects and credentials employers actually recognise, not just another badge to collect.' },
+              { icon: '◉', title: 'Community-led cohorts', body: 'Learn live with peers, ask questions in real time, and stay motivated through every course.' },
+            ].map((c, i) => (
+              <motion.article key={c.title} className="g-card v-card"
+                custom={i * 0.08} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}>
+                <span className="v-icon">{c.icon}</span>
+                <h3>{c.title}</h3>
+                <p>{c.body}</p>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="how-section">
+      {/* ─── HOW IT WORKS ─── */}
+      <section className="lsec how-sec">
         <div className="section-inner">
-          <div className="section-header">
-            <span className="section-label">HOW IT WORKS</span>
-            <h2>Three steps from joining to verified proof.</h2>
-          </div>
+          <motion.header className="sec-head"
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <span className="sec-tag">HOW IT WORKS</span>
+            <h2>Three steps from joining<br />to verified proof.</h2>
+          </motion.header>
           <div className="how-grid">
-            {HOW_IT_WORKS.map((item) => (
-              <article key={item.label} className="how-card">
-                <div className="how-step">{item.label}</div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
+            {[
+              { n: '01', title: 'Join a live cohort', body: 'Start every course with a live session guided by instructors who answer your questions as you learn.' },
+              { n: '02', title: 'Build real work', body: 'Complete a meaningful project that shows your skills — not just your ability to click through videos.' },
+              { n: '03', title: 'Earn verified proof', body: 'Receive verification from instructors and community review that signals readiness to employers.' },
+            ].map((s, i) => (
+              <motion.div key={s.n} className="g-card how-card"
+                custom={i * 0.1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}>
+                <div className="how-num">{s.n}</div>
+                <h3>{s.title}</h3>
+                <p>{s.body}</p>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="audience-section">
+      {/* ─── WHO IT'S FOR ─── */}
+      <section className="lsec for-sec">
         <div className="section-inner">
-          <div className="section-header">
-            <span className="section-label">WHO IT'S FOR</span>
-            <h2>For learners, changers, and instructors who want a better path.</h2>
-          </div>
-          <div className="audience-grid">
-            {AUDIENCE_CARDS.map((card) => (
-              <article key={card.title} className="audience-card">
-                <span className="audience-tag">{card.tag}</span>
-                <h3>{card.title}</h3>
-                <ul>
-                  {card.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
+          <motion.header className="sec-head"
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <span className="sec-tag">WHO IT'S FOR</span>
+            <h2>For learners, changers,<br />and instructors.</h2>
+          </motion.header>
+          <div className="for-grid">
+            {[
+              {
+                tag: 'Free learning', title: 'Learners',
+                desc: 'Access live courses, build real projects, and earn verified credentials without spending a penny.',
+                bullets: ['Live classes with real feedback', 'Project-based curriculum', 'Verified credentials'],
+                cta: '/explore', ctaLabel: 'Browse courses',
+              },
+              {
+                tag: 'New pathways', title: 'Career changers',
+                desc: 'Transition into a new field with flexible live learning and employer-ready skills.',
+                bullets: ['Flexible schedules', 'Employer-ready skills', 'No tuition burden'],
+                cta: '/explore', ctaLabel: 'Start changing',
+              },
+              {
+                tag: 'Teach live', title: 'Instructors',
+                desc: 'Reach real learners, deliver live sessions, and earn from your expertise on your terms.',
+                bullets: ['Reach motivated learners', 'Verify outcomes', 'Earn from your expertise'],
+                cta: '/academy', ctaLabel: 'Start teaching',
+              },
+            ].map((c, i) => (
+              <motion.article key={c.title} className="g-card for-card"
+                custom={i * 0.1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                whileHover={{ y: -8, transition: { duration: 0.2 } }}>
+                <span className="for-tag">{c.tag}</span>
+                <h3>{c.title}</h3>
+                <p className="for-desc">{c.desc}</p>
+                <ul className="for-list">
+                  {c.bullets.map(b => (
+                    <li key={b}><span className="for-dot" />{b}</li>
                   ))}
                 </ul>
-                <Link to={card.cta} className="btn btn-primary btn-audience">Explore now</Link>
-              </article>
+                <Link to={c.cta} className="btn btn-orange btn-sm">{c.ctaLabel} →</Link>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="final-cta">
-        <div className="final-cta-inner">
-          <p className="final-kicker">Launch your path without the barriers.</p>
-          <h2>Live learning that lets you build proof, not pass tests.</h2>
-          <Link to="/explore" className="btn btn-primary">Start learning today</Link>
+      {/* ─── CTA ─── */}
+      <section className="lsec cta-sec">
+        <div className="section-inner">
+          <motion.div className="g-card cta-inner"
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <div className="cta-glow" />
+            <span className="sec-tag">GET STARTED</span>
+            <h2>Live learning that lets you<br />build proof, not pass tests.</h2>
+            <p className="cta-sub">No fees. No gatekeepers. Just real skills and real credentials.</p>
+            <div className="cta-btns">
+              <Link to="/explore" className="btn btn-orange btn-lg">Start learning today →</Link>
+              <Link to="/academy" className="btn btn-glass">Become an instructor</Link>
+            </div>
+          </motion.div>
         </div>
       </section>
+
     </main>
   )
 }
