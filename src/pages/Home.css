@@ -144,11 +144,12 @@
 .sec-head { margin-bottom: 3.5rem; }
 
 .sec-head h2 {
-  font-size: clamp(2.4rem, 4vw, 3.5rem);
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  line-height: 1.07;
+  font-size: clamp(2.8rem, 4.5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
   color: #1a0a00;
+  font-family: 'Barlow Condensed', -apple-system, sans-serif;
 }
 
 /* ── Buttons ── */
@@ -214,12 +215,13 @@
 .hero-copy { position: relative; z-index: 2; }
 
 .hero-copy h1 {
-  font-size: clamp(3.4rem, 5.5vw, 5.4rem);
-  font-weight: 900;
-  line-height: 1.0;
-  letter-spacing: -0.065em;
+  font-size: clamp(3.8rem, 6.5vw, 6.2rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
   color: #1a0a00;
   margin: 0 0 1.7rem;
+  font-family: 'Barlow Condensed', -apple-system, sans-serif;
 }
 
 .h1-em {
@@ -282,24 +284,25 @@
 ───────────────────────────────────────────────── */
 .hero-visual {
   position: relative;
-  height: 560px;
+  height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
-  /* 3D perspective: makes child rotations look spatial */
-  perspective: 900px;
-  perspective-origin: 50% 50%;
+  perspective: 1000px;
+  perspective-origin: 50% 45%;
+  cursor: none;
+  overflow: visible;
 }
 
-/* Tilt wrappers — static 3D rotation, motion.div inside does the float */
+/* Tilt wrappers — transforms are now JS-driven (inline style via mouse parallax)
+   CSS here only provides positioning; transform comes from onMouseMove state */
 .tilt-wrap {
   transform-style: preserve-3d;
 }
 
-.tilt-main {
-  /* Main card tilts slightly toward viewer, like iOS phone tilted */
-  transform: rotateX(8deg) rotateY(-12deg);
+/* Default resting positions (overridden by JS inline style) */
+.tilt-wrap:first-of-type {
   z-index: 3;
   flex-shrink: 0;
 }
@@ -307,21 +310,18 @@
 .tilt-b1 {
   position: absolute;
   top: 55px; left: 10px;
-  transform: rotateX(-7deg) rotateY(18deg) rotateZ(-3deg);
   z-index: 4;
 }
 
 .tilt-b2 {
   position: absolute;
   bottom: 55px; right: 10px;
-  transform: rotateX(10deg) rotateY(-7deg) rotateZ(2.5deg);
   z-index: 4;
 }
 
 .tilt-b3 {
   position: absolute;
   top: 140px; right: 5px;
-  transform: rotateX(-5deg) rotateY(-14deg) rotateZ(1.5deg);
   z-index: 4;
 }
 

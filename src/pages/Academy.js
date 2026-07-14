@@ -108,7 +108,7 @@ export default function Academy() {
           <div className="cta-glow" />
           <h2>Ready to start?</h2>
           <p>Your knowledge has real value. LERN is where you get paid for it.</p>
-          <button className="btn-create">Create Your Course →</button>
+          <a href="https://www.lernapp.uk" target="_blank" rel="noopener noreferrer" className="btn-create">Start Teaching on LERN →</a>
         </motion.div>
       </section>
 

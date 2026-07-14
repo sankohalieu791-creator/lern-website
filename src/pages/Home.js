@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import './Home.css'
@@ -11,18 +11,93 @@ const fadeUp = {
   }),
 }
 
+/* ── Interactive tilt card — every glass card responds to mouse hover ── */
+function TiltCard({ children, className, initial, whileInView, viewport, variants, custom, style, ...rest }) {
+  const ref = useRef(null)
+  const [t, setT] = useState({ x: 0, y: 0, on: false })
+
+  const onMove = useCallback((e) => {
+    const r = ref.current?.getBoundingClientRect()
+    if (!r) return
+    setT({ x: (e.clientX - r.left) / r.width - 0.5, y: (e.clientY - r.top) / r.height - 0.5, on: true })
+  }, [])
+
+  const onLeave = useCallback(() => setT({ x: 0, y: 0, on: false }), [])
+
+  return (
+    <motion.div
+      ref={ref}
+      className={className}
+      initial={initial}
+      whileInView={whileInView}
+      viewport={viewport}
+      variants={variants}
+      custom={custom}
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
+      style={{
+        ...style,
+        transform: `perspective(800px) rotateX(${t.y * -7}deg) rotateY(${t.x * 7}deg) ${t.on ? 'scale(1.025)' : 'scale(1)'}`,
+        transition: 'transform 0.18s ease-out',
+        willChange: 'transform',
+      }}
+      {...rest}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
 const TICKER = [
-  'Free live pathways',
+  'Live instructor-led cohorts',
   'Verified proof employers trust',
   'Real projects · Real outcomes',
   'Built for learners left behind',
-  'No fees · No gatekeepers',
+  'Industry-aligned credentials',
   'Live instructor feedback',
 ]
 
 const MINI_FACES = ['A', 'J', 'M', 'K', 'S']
 
 export default function Home() {
+  const heroRef = useRef(null)
+  const [mouse, setMouse] = useState({ x: 0, y: 0 })
+
+  const onHeroMove = useCallback((e) => {
+    const r = heroRef.current?.getBoundingClientRect()
+    if (!r) return
+    setMouse({ x: (e.clientX - r.left) / r.width - 0.5, y: (e.clientY - r.top) / r.height - 0.5 })
+  }, [])
+
+  const onHeroLeave = useCallback(() => setMouse({ x: 0, y: 0 }), [])
+
+  /* Parallax helpers — each depth gives a different speed so layers separate */
+  const sp = (dx, dy) => ({
+    transform: `translate(${mouse.x * dx}px, ${mouse.y * dy}px)`,
+    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
+  })
+
+  /* Main card tilt — follows mouse on top of its static CSS angle */
+  const mainTilt = {
+    transform: `rotateX(${8 + mouse.y * -12}deg) rotateY(${-12 + mouse.x * 16}deg)`,
+    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
+  }
+
+  const b1Tilt = {
+    transform: `rotateX(${-7 + mouse.y * 6}deg) rotateY(${18 + mouse.x * -9}deg) rotateZ(-3deg)`,
+    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
+  }
+
+  const b2Tilt = {
+    transform: `rotateX(${10 + mouse.y * 5}deg) rotateY(${-7 + mouse.x * 7}deg) rotateZ(2.5deg)`,
+    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
+  }
+
+  const b3Tilt = {
+    transform: `rotateX(${-5 + mouse.y * 4}deg) rotateY(${-14 + mouse.x * -7}deg) rotateZ(1.5deg)`,
+    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
+  }
+
   return (
     <main className="home">
       <div className="blob blob-a" />
@@ -50,7 +125,7 @@ export default function Home() {
             </p>
             <div className="hero-actions">
               <Link to="/explore" className="btn btn-orange">
-                Browse free courses <span aria-hidden="true">→</span>
+                Browse courses <span aria-hidden="true">→</span>
               </Link>
               <a href="https://www.lernapp.uk" target="_blank" rel="noopener noreferrer"
                 className="btn btn-glass">Get the App</a>
@@ -67,16 +142,17 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* ── 3D Floating glass cards (iOS-style spatial arrangement) ── */}
-          <div className="hero-visual">
+          {/* ── Interactive 3D glass hero ── */}
+          <div className="hero-visual" ref={heroRef}
+            onMouseMove={onHeroMove} onMouseLeave={onHeroLeave}>
 
-            {/* ── Scene spheres behind glass (low z-index) ── */}
-            <div className="sp sp-a" />
-            <div className="sp sp-b" />
-            <div className="sp sp-e" />
+            {/* Background spheres — move opposite to cursor (parallax) */}
+            <div className="sp sp-a" style={sp(-55, -38)} />
+            <div className="sp sp-b" style={sp(-32, -22)} />
+            <div className="sp sp-e" style={sp(-18, -14)} />
 
-            {/* Main live-session card — tilted in 3D space */}
-            <div className="tilt-wrap tilt-main">
+            {/* Main live-session glass card */}
+            <div className="tilt-wrap" style={mainTilt}>
               <motion.div className="g-card main-card"
                 animate={{ y: [0, -18, 0] }}
                 transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}>
@@ -112,8 +188,8 @@ export default function Home() {
               </motion.div>
             </div>
 
-            {/* Badge 1 — credential earned (top-left, tilted away) */}
-            <div className="tilt-wrap tilt-b1">
+            {/* Badges — also respond to mouse, each at its own depth */}
+            <div className="tilt-wrap tilt-b1" style={b1Tilt}>
               <motion.div className="g-badge"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}>
@@ -125,8 +201,7 @@ export default function Home() {
               </motion.div>
             </div>
 
-            {/* Badge 2 — next session (bottom-right, tilted forward) */}
-            <div className="tilt-wrap tilt-b2">
+            <div className="tilt-wrap tilt-b2" style={b2Tilt}>
               <motion.div className="g-badge"
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}>
@@ -138,8 +213,7 @@ export default function Home() {
               </motion.div>
             </div>
 
-            {/* Badge 3 — verified outcome (top-right) */}
-            <div className="tilt-wrap tilt-b3">
+            <div className="tilt-wrap tilt-b3" style={b3Tilt}>
               <motion.div className="g-badge"
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}>
@@ -151,9 +225,9 @@ export default function Home() {
               </motion.div>
             </div>
 
-            {/* ── Foreground spheres IN FRONT of glass ── */}
-            <div className="sp sp-c" />
-            <div className="sp sp-d" />
+            {/* Foreground spheres — move WITH cursor (closer layer) */}
+            <div className="sp sp-c" style={sp(42, 28)} />
+            <div className="sp sp-d" style={sp(62, 44)} />
 
           </div>
         </div>
@@ -181,17 +255,16 @@ export default function Home() {
           <div className="value-grid">
             {[
               { icon: '◈', title: 'Built for real impact', body: 'Live learning, real projects, verified outcomes — designed for people who need a pathway, not an extra expense.' },
-              { icon: '◎', title: 'No barriers to entry', body: 'Live learning, real projects, verified outcomes — built to be as accessible as possible for those who need it.' },
+              { icon: '◎', title: 'No barriers to entry', body: 'Live learning, real projects, and verified outcomes built to be as accessible as possible for those who need it.' },
               { icon: '◆', title: 'Industry-aligned proof', body: 'Projects and credentials employers actually recognise, not just another badge to collect.' },
               { icon: '◉', title: 'Community-led cohorts', body: 'Learn live with peers, ask questions in real time, and stay motivated through every course.' },
             ].map((c, i) => (
-              <motion.article key={c.title} className="g-card v-card"
-                custom={i * 0.08} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-                whileHover={{ y: -6, transition: { duration: 0.2 } }}>
+              <TiltCard key={c.title} className="g-card v-card"
+                custom={i * 0.08} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                 <span className="v-icon">{c.icon}</span>
                 <h3>{c.title}</h3>
                 <p>{c.body}</p>
-              </motion.article>
+              </TiltCard>
             ))}
           </div>
         </div>
@@ -211,13 +284,12 @@ export default function Home() {
               { n: '02', title: 'Build real work', body: 'Complete a meaningful project that shows your skills — not just your ability to click through videos.' },
               { n: '03', title: 'Earn verified proof', body: 'Receive verification from instructors and community review that signals readiness to employers.' },
             ].map((s, i) => (
-              <motion.div key={s.n} className="g-card how-card"
-                custom={i * 0.1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-                whileHover={{ y: -6, transition: { duration: 0.2 } }}>
+              <TiltCard key={s.n} className="g-card how-card"
+                custom={i * 0.1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                 <div className="how-num">{s.n}</div>
                 <h3>{s.title}</h3>
                 <p>{s.body}</p>
-              </motion.div>
+              </TiltCard>
             ))}
           </div>
         </div>
@@ -234,8 +306,8 @@ export default function Home() {
           <div className="for-grid">
             {[
               {
-                tag: 'Free learning', title: 'Learners',
-                desc: 'Access live courses, build real projects, and earn verified credentials without spending a penny.',
+                tag: 'Pathways', title: 'Learners',
+                desc: 'Access live courses, build real projects, and earn verified credentials.',
                 bullets: ['Live classes with real feedback', 'Project-based curriculum', 'Verified credentials'],
                 href: '/explore', label: 'Browse courses', external: false,
               },
@@ -252,9 +324,8 @@ export default function Home() {
                 href: 'https://www.lernapp.uk', label: 'Start teaching →', external: true,
               },
             ].map((c, i) => (
-              <motion.article key={c.title} className="g-card for-card"
-                custom={i * 0.1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-                whileHover={{ y: -8, transition: { duration: 0.2 } }}>
+              <TiltCard key={c.title} className="g-card for-card"
+                custom={i * 0.1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                 <span className="for-tag">{c.tag}</span>
                 <h3>{c.title}</h3>
                 <p className="for-desc">{c.desc}</p>
@@ -268,7 +339,7 @@ export default function Home() {
                       className="btn btn-orange btn-sm">{c.label}</a>
                   : <Link to={c.href} className="btn btn-orange btn-sm">{c.label} →</Link>
                 }
-              </motion.article>
+              </TiltCard>
             ))}
           </div>
         </div>
@@ -277,7 +348,7 @@ export default function Home() {
       {/* ─── CTA ─── */}
       <section className="lsec cta-sec">
         <div className="section-inner">
-          <motion.div className="g-card cta-inner"
+          <TiltCard className="g-card cta-inner"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="cta-glow" />
             <span className="sec-tag">GET STARTED</span>
@@ -288,7 +359,7 @@ export default function Home() {
               <a href="https://www.lernapp.uk" target="_blank" rel="noopener noreferrer"
                 className="btn btn-glass btn-lg">Get the App</a>
             </div>
-          </motion.div>
+          </TiltCard>
         </div>
       </section>
 
