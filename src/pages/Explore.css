@@ -62,10 +62,10 @@
 }
 
 .explore .how-card {
-  background: rgba(255, 255, 255, 0.10);
-  backdrop-filter: blur(36px) saturate(200%);
-  -webkit-backdrop-filter: blur(36px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.36);
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
   border-radius: 24px;
   padding: 2.2rem;
   box-shadow:
@@ -130,10 +130,10 @@
 }
 
 .explore-unlimited-card {
-  background: rgba(255, 255, 255, 0.10);
-  backdrop-filter: blur(36px) saturate(200%);
-  -webkit-backdrop-filter: blur(36px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.36);
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
   border-radius: 28px;
   padding: 4rem;
   text-align: center;
@@ -222,10 +222,10 @@
 }
 
 .explore-cta-box {
-  background: rgba(255, 255, 255, 0.10);
-  backdrop-filter: blur(36px) saturate(200%);
-  -webkit-backdrop-filter: blur(36px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.36);
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
   border-radius: 28px;
   padding: 3.5rem;
   text-align: center;

@@ -106,6 +106,16 @@ export default function Home() {
 
       {/* ─── HERO ─── */}
       <section className="hero">
+
+        {/* Spheres at hero level — behind hero-inner in the z-stack.
+            backdrop-filter on glass cards sees them as actual background. */}
+        <div className="sp sp-a" style={sp(-55, -38)} />
+        <div className="sp sp-b" style={sp(-32, -22)} />
+        <div className="sp sp-e" style={sp(-18, -14)} />
+        {/* Foreground spheres — in front of everything */}
+        <div className="sp sp-c" style={{ transform: `translate(${mouse.x * 42}px, ${mouse.y * 28}px)`, transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)', zIndex: 10 }} />
+        <div className="sp sp-d" style={{ transform: `translate(${mouse.x * 62}px, ${mouse.y * 44}px)`, transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)', zIndex: 10 }} />
+
         <div className="hero-inner">
 
           <motion.div className="hero-copy"
@@ -145,11 +155,6 @@ export default function Home() {
           {/* ── Interactive 3D glass hero ── */}
           <div className="hero-visual" ref={heroRef}
             onMouseMove={onHeroMove} onMouseLeave={onHeroLeave}>
-
-            {/* Background spheres — move opposite to cursor (parallax) */}
-            <div className="sp sp-a" style={sp(-55, -38)} />
-            <div className="sp sp-b" style={sp(-32, -22)} />
-            <div className="sp sp-e" style={sp(-18, -14)} />
 
             {/* Main live-session glass card */}
             <div className="tilt-wrap" style={mainTilt}>
@@ -225,9 +230,6 @@ export default function Home() {
               </motion.div>
             </div>
 
-            {/* Foreground spheres — move WITH cursor (closer layer) */}
-            <div className="sp sp-c" style={sp(42, 28)} />
-            <div className="sp sp-d" style={sp(62, 44)} />
 
           </div>
         </div>
