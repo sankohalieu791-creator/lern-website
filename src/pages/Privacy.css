@@ -1,0 +1,142 @@
+/* ══════════════════════════════════════
+   PRIVACY — clean document page
+══════════════════════════════════════ */
+.privacy-page {
+  min-height: 100vh;
+  padding: 7rem 1.5rem 6rem;
+}
+
+.privacy-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  box-shadow:
+    0 8px 48px rgba(0, 0, 0, 0.10),
+    0 2px 8px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  padding: 3.5rem 4rem;
+}
+
+/* Termly custom class overrides — keep their defaults but adapt to our wrapper */
+.privacy-wrap [data-custom-class='body'],
+.privacy-wrap [data-custom-class='body'] * {
+  background: transparent !important;
+}
+
+.privacy-wrap [data-custom-class='title'],
+.privacy-wrap [data-custom-class='title'] * {
+  font-family: 'Barlow Condensed', Arial, sans-serif !important;
+  font-size: 2.4rem !important;
+  color: #0d0d1f !important;
+}
+
+.privacy-wrap [data-custom-class='title'] h1 {
+  font-size: 2.4rem !important;
+  margin-bottom: 0.5rem;
+}
+
+.privacy-wrap [data-custom-class='subtitle'],
+.privacy-wrap [data-custom-class='subtitle'] * {
+  color: #666 !important;
+  font-size: 0.9rem !important;
+}
+
+.privacy-wrap [data-custom-class='heading_1'],
+.privacy-wrap [data-custom-class='heading_1'] * {
+  font-family: 'Barlow Condensed', Arial, sans-serif !important;
+  font-size: 1.4rem !important;
+  color: #0d0d1f !important;
+}
+
+.privacy-wrap [data-custom-class='heading_1'] h2 {
+  font-size: 1.35rem !important;
+  margin: 2rem 0 0.75rem;
+  border-bottom: 2px solid rgba(255, 102, 0, 0.18);
+  padding-bottom: 0.4rem;
+}
+
+.privacy-wrap [data-custom-class='heading_2'],
+.privacy-wrap [data-custom-class='heading_2'] * {
+  font-size: 1.05rem !important;
+  color: #0d0d1f !important;
+}
+
+.privacy-wrap [data-custom-class='heading_2'] h3 {
+  font-size: 1rem !important;
+  margin: 1.25rem 0 0.5rem;
+  font-weight: 700;
+}
+
+.privacy-wrap [data-custom-class='body_text'],
+.privacy-wrap [data-custom-class='body_text'] * {
+  color: #4a4a5a !important;
+  font-size: 0.9rem !important;
+  line-height: 1.75 !important;
+}
+
+.privacy-wrap [data-custom-class='link'],
+.privacy-wrap [data-custom-class='link'] * {
+  color: #FF6600 !important;
+  font-size: 0.9rem !important;
+  word-break: break-word !important;
+}
+
+.privacy-wrap a {
+  color: #FF6600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.privacy-wrap ul {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.privacy-wrap li {
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  color: #4a4a5a;
+  line-height: 1.75;
+}
+
+.privacy-wrap p {
+  font-size: 0.9rem;
+  color: #4a4a5a;
+  line-height: 1.75;
+  margin-bottom: 0.5rem;
+}
+
+/* Hide the Termly branding logo span */
+.privacy-wrap > div > span:first-child {
+  display: none !important;
+}
+
+/* bdt elements are template markers — hide empties */
+bdt {
+  display: none;
+}
+
+.privacy-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+  color: #4a4a5a;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.18s;
+}
+
+.privacy-back:hover { opacity: 1; }
+
+@media (max-width: 768px) {
+  .privacy-wrap {
+    padding: 2rem 1.5rem;
+  }
+}

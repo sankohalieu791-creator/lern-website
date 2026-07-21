@@ -59,3 +59,19 @@
   font-size: 0.82rem;
   letter-spacing: 0.02em;
 }
+
+.footer-legal {
+  margin-top: 0.6rem;
+}
+
+.footer-legal a {
+  color: #555;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-size: 0.82rem;
+  transition: color 0.15s;
+}
+
+.footer-legal a:hover {
+  color: #FF6600;
+}
