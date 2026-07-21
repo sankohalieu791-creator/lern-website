@@ -7,6 +7,7 @@ import Explore from './pages/Explore'
 import Academy from './pages/Academy'
 import About from './pages/About'
 import Privacy from './pages/Privacy'
+import Cookies from './pages/Cookies'
 import './App.css'
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/academy" element={<Academy />} />
         <Route path="/about" element={<About />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/cookies" element={<Cookies />} />
       </Routes>
       <Footer />
     </Router>

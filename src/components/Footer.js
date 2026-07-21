@@ -27,6 +27,8 @@ export default function Footer() {
           <p>&copy; 2026 IRL CONNECT LTD. All rights reserved.</p>
           <p className="footer-legal">
             <Link to="/privacy">Privacy Policy</Link>
+            {' · '}
+            <Link to="/cookies">Cookie Policy</Link>
           </p>
         </div>
       </div>
