@@ -75,7 +75,7 @@ const WHO_FOR = [
     tag: 'Hire better', title: 'Employers',
     desc: 'Hire early-career talent you can actually assess before you interview.',
     bullets: ['Search by verified skill', 'Set live employer briefs', 'Contact candidates directly'],
-    href: '/employers', label: 'Talk to us',
+    href: 'mailto:alieu@joinirl.co.uk', label: 'Talk to us', external: true,
   },
   {
     tag: 'Young people', title: 'Students',
@@ -351,7 +351,10 @@ export default function Home() {
                     <li key={b}><span className="for-dot" />{b}</li>
                   ))}
                 </ul>
-                <Link to={c.href} className="btn btn-orange btn-sm">{c.label} →</Link>
+                {c.external
+                  ? <a href={c.href} className="btn btn-orange btn-sm">{c.label} →</a>
+                  : <Link to={c.href} className="btn btn-orange btn-sm">{c.label} →</Link>
+                }
               </TiltCard>
             ))}
           </div>

@@ -109,7 +109,7 @@ export default function Institutions() {
             <span className="sec-tag">WHAT YOU GET</span>
             <h2>Everything your careers programme<br />needs. Nothing it doesn't.</h2>
           </motion.header>
-          <div className="value-grid">
+          <div className="value-grid value-grid-3">
             {WHAT_YOU_GET.map((c, i) => (
               <TiltCard key={c.title} className="g-card v-card"
                 custom={i * 0.07} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
@@ -156,7 +156,7 @@ export default function Institutions() {
               further and higher education — all recorded and reportable.
             </p>
           </motion.header>
-          <div className="diff-grid">
+          <div className="gatsby-grid">
             {[
               'Stable careers programme',
               'Learning from career & labour market information',
