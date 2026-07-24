@@ -46,26 +46,144 @@ const PRINCIPLES = [
 ]
 
 export default function About() {
+  const heroRef = useRef(null)
+  const [mouse, setMouse] = useState({ x: 0, y: 0 })
+
+  const onHeroMove = useCallback((e) => {
+    const r = heroRef.current?.getBoundingClientRect()
+    if (!r) return
+    setMouse({ x: (e.clientX - r.left) / r.width - 0.5, y: (e.clientY - r.top) / r.height - 0.5 })
+  }, [])
+  const onHeroLeave = useCallback(() => setMouse({ x: 0, y: 0 }), [])
+
+  const sp = (dx, dy) => ({
+    transform: `translate(${mouse.x * dx}px, ${mouse.y * dy}px)`,
+    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
+  })
+  const mainTilt = {
+    transform: `rotateX(${8 + mouse.y * -12}deg) rotateY(${-12 + mouse.x * 16}deg)`,
+    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
+  }
+  const b1Tilt = {
+    transform: `rotateX(${-7 + mouse.y * 6}deg) rotateY(${18 + mouse.x * -9}deg) rotateZ(-3deg)`,
+    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
+  }
+  const b2Tilt = {
+    transform: `rotateX(${10 + mouse.y * 5}deg) rotateY(${-7 + mouse.x * 7}deg) rotateZ(2.5deg)`,
+    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
+  }
+  const b3Tilt = {
+    transform: `rotateX(${-5 + mouse.y * 4}deg) rotateY(${-14 + mouse.x * -7}deg) rotateZ(1.5deg)`,
+    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
+  }
+
   return (
-    <main className="about">
+    <main className="about page">
       <div className="blob blob-a" />
       <div className="blob blob-b" />
+      <div className="blob blob-c" />
 
       {/* ─── HERO ─── */}
-      <motion.section className="page-hero"
-        initial="hidden" animate="visible" variants={fadeUp} custom={0}>
-        <div className="page-hero-inner">
-          <span className="eyebrow">
-            <span className="pulse-dot" />
-            Our story
-          </span>
-          <h1>
-            This started because<br />
-            <em className="h1-em">someone needed it</em><br />
-            to exist.
-          </h1>
+      <section className="page-hero">
+        <div className="sp sp-a" style={sp(-55, -38)} />
+        <div className="sp sp-b" style={sp(-32, -22)} />
+        <div className="sp sp-e" style={sp(-18, -14)} />
+        <div className="sp sp-c" style={{ transform: `translate(${mouse.x * 42}px, ${mouse.y * 28}px)`, transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)', zIndex: 10 }} />
+        <div className="sp sp-d" style={{ transform: `translate(${mouse.x * 62}px, ${mouse.y * 44}px)`, transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)', zIndex: 10 }} />
+
+        <div className="page-hero-split">
+          <motion.div className="page-hero-text" initial="hidden" animate="visible" variants={fadeUp} custom={0}>
+            <span className="eyebrow">
+              <span className="pulse-dot" />
+              Our story
+            </span>
+            <h1>
+              This started because<br />
+              <em className="h1-em">someone needed it</em><br />
+              to exist.
+            </h1>
+            <p className="hero-lead">
+              Alieu Sankoh built LERN because he was the student who needed it.
+              Good at school. Couldn't go to university. Watched the system decide
+              his future before he had a chance to prove what he could do.
+            </p>
+            <div className="hero-actions">
+              <a href="mailto:alieu@joinirl.co.uk" className="btn btn-orange">
+                Talk to us →
+              </a>
+              <Link to="/students" className="btn btn-glass">For students</Link>
+            </div>
+          </motion.div>
+
+          <div className="page-hero-visual" ref={heroRef} onMouseMove={onHeroMove} onMouseLeave={onHeroLeave}>
+            <div className="tilt-wrap" style={mainTilt}>
+              <motion.div className="g-card main-card"
+                animate={{ y: [0, -18, 0] }}
+                transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}>
+                <div className="mc-bar">
+                  <span className="live-chip" style={{ background: 'rgba(255,102,0,0.15)', color: '#CC4400' }}><span className="live-ring" style={{ background: '#FF6600' }} />STORY</span>
+                  <span className="mc-time">Founder · Alieu Sankoh</span>
+                </div>
+                <p className="mc-course" style={{ fontSize: '0.92rem', lineHeight: 1.55, fontStyle: 'italic', color: 'rgba(40,10,0,0.75)' }}>
+                  "I built LERN because I needed it<br />to exist when I was 18."
+                </p>
+                <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)', paddingTop: '1rem', position: 'relative', zIndex: 1 }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.5rem', textAlign: 'center' }}>
+                    <div>
+                      <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#FF6600' }}>Free</div>
+                      <div style={{ fontSize: '0.68rem', color: 'rgba(80,30,0,0.55)', fontWeight: 600 }}>for students</div>
+                    </div>
+                    <div>
+                      <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#FF6600' }}>Live</div>
+                      <div style={{ fontSize: '0.68rem', color: 'rgba(80,30,0,0.55)', fontWeight: 600 }}>teaching only</div>
+                    </div>
+                    <div>
+                      <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#FF6600' }}>Real</div>
+                      <div style={{ fontSize: '0.68rem', color: 'rgba(80,30,0,0.55)', fontWeight: 600 }}>verified work</div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="tilt-wrap tilt-b1" style={b1Tilt}>
+              <motion.div className="g-badge"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}>
+                <span className="badge-icon b-green">✓</span>
+                <div>
+                  <div className="badge-label">First college partnership</div>
+                  <div className="badge-sub">Starts this autumn term</div>
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="tilt-wrap tilt-b2" style={b2Tilt}>
+              <motion.div className="g-badge"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}>
+                <span className="badge-icon b-blue">◆</span>
+                <div>
+                  <div className="badge-label">NHS live on platform</div>
+                  <div className="badge-sub">Employer posting briefs now</div>
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="tilt-wrap tilt-b3" style={b3Tilt}>
+              <motion.div className="g-badge"
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}>
+                <span className="badge-icon b-orange">★</span>
+                <div>
+                  <div className="badge-label">Onboarding now</div>
+                  <div className="badge-sub">Schools · Employers · Instructors</div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* ─── FOUNDER STORY ─── */}
       <section className="lsec">

@@ -55,46 +55,160 @@ const WHAT_FREE_MEANS = [
 
 const PLUS_FEATURES = [
   'Everything free, always',
-  'Priority access to new live briefs',
+  'Priority access to new live employer briefs',
   'Live interview practice with hiring managers',
   'Instructor referral programme — get vouched for directly',
   'Exclusive employer Q&A sessions',
   'Career coaching add-ons',
 ]
 
+const MINI_FACES = ['A', 'J', 'M', 'K', 'S']
+
 export default function Students() {
+  const heroRef = useRef(null)
+  const [mouse, setMouse] = useState({ x: 0, y: 0 })
+
+  const onHeroMove = useCallback((e) => {
+    const r = heroRef.current?.getBoundingClientRect()
+    if (!r) return
+    setMouse({ x: (e.clientX - r.left) / r.width - 0.5, y: (e.clientY - r.top) / r.height - 0.5 })
+  }, [])
+  const onHeroLeave = useCallback(() => setMouse({ x: 0, y: 0 }), [])
+
+  const sp = (dx, dy) => ({
+    transform: `translate(${mouse.x * dx}px, ${mouse.y * dy}px)`,
+    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
+  })
+  const mainTilt = {
+    transform: `rotateX(${8 + mouse.y * -12}deg) rotateY(${-12 + mouse.x * 16}deg)`,
+    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
+  }
+  const b1Tilt = {
+    transform: `rotateX(${-7 + mouse.y * 6}deg) rotateY(${18 + mouse.x * -9}deg) rotateZ(-3deg)`,
+    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
+  }
+  const b2Tilt = {
+    transform: `rotateX(${10 + mouse.y * 5}deg) rotateY(${-7 + mouse.x * 7}deg) rotateZ(2.5deg)`,
+    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
+  }
+  const b3Tilt = {
+    transform: `rotateX(${-5 + mouse.y * 4}deg) rotateY(${-14 + mouse.x * -7}deg) rotateZ(1.5deg)`,
+    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
+  }
+
   return (
     <main className="page">
       <div className="blob blob-a" />
       <div className="blob blob-b" />
+      <div className="blob blob-c" />
 
       {/* ─── HERO ─── */}
       <section className="page-hero">
-        <motion.div className="page-hero-inner" initial="hidden" animate="visible" variants={fadeUp} custom={0}>
-          <span className="eyebrow">
-            <span className="pulse-dot" />
-            Free · Live · Real
-          </span>
-          <h1>
-            Learn something real.<br />
-            <em className="h1-em">Prove you can do it.</em><br />
-            Get hired.
-          </h1>
-          <p className="hero-lead">
-            LERN is where you learn live from real professionals, build actual
-            work that proves your skills, and get discovered by employers who
-            are actively hiring. Free, always.
-          </p>
-          <div className="hero-actions">
-            <a href="https://lernapp.uk" target="_blank" rel="noopener noreferrer" className="btn btn-orange">
-              Join free →
-            </a>
-            <Link to="/institutions" className="btn btn-glass">For your school</Link>
+        <div className="sp sp-a" style={sp(-55, -38)} />
+        <div className="sp sp-b" style={sp(-32, -22)} />
+        <div className="sp sp-e" style={sp(-18, -14)} />
+        <div className="sp sp-c" style={{ transform: `translate(${mouse.x * 42}px, ${mouse.y * 28}px)`, transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)', zIndex: 10 }} />
+        <div className="sp sp-d" style={{ transform: `translate(${mouse.x * 62}px, ${mouse.y * 44}px)`, transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)', zIndex: 10 }} />
+
+        <div className="page-hero-split">
+          <motion.div className="page-hero-text" initial="hidden" animate="visible" variants={fadeUp} custom={0}>
+            <span className="eyebrow">
+              <span className="pulse-dot" />
+              Free · Live · Real
+            </span>
+            <h1>
+              Learn something real.<br />
+              <em className="h1-em">Prove you can do it.</em><br />
+              Get hired.
+            </h1>
+            <p className="hero-lead">
+              LERN is where you learn live from real professionals, build actual work
+              that proves your skills, and get discovered by employers who are actively hiring.
+              Free, always.
+            </p>
+            <div className="hero-actions">
+              <a href="https://lernapp.uk" target="_blank" rel="noopener noreferrer" className="btn btn-orange">
+                Join free →
+              </a>
+              <Link to="/institutions" className="btn btn-glass">For your school</Link>
+            </div>
+          </motion.div>
+
+          <div className="page-hero-visual" ref={heroRef} onMouseMove={onHeroMove} onMouseLeave={onHeroLeave}>
+            <div className="tilt-wrap" style={mainTilt}>
+              <motion.div className="g-card main-card"
+                animate={{ y: [0, -18, 0] }}
+                transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}>
+                <div className="mc-bar">
+                  <span className="live-chip"><span className="live-ring" />LIVE</span>
+                  <span className="mc-time">22 mins remaining</span>
+                </div>
+                <p className="mc-course">Design for Impact<br />UX &amp; Product Thinking</p>
+                <div className="mc-instructor">
+                  <div className="mc-ava">A</div>
+                  <div className="mc-ava-info">
+                    <div className="mc-iname">Alieu S.</div>
+                    <div className="mc-irole">Product Designer</div>
+                  </div>
+                  <span className="mc-viewers">189 live</span>
+                </div>
+                <div className="mc-prog">
+                  <div className="mc-prog-bar">
+                    <div className="mc-prog-fill" style={{ width: '62%' }} />
+                  </div>
+                  <div className="mc-prog-meta"><span>62% complete</span><span>38% left</span></div>
+                </div>
+                <div className="mc-footer">
+                  <div className="mc-faces">
+                    {MINI_FACES.map((l, i) => (
+                      <div key={i} className="mc-face" style={{ zIndex: 5 - i }}>{l}</div>
+                    ))}
+                    <span className="mc-more">+184 learners</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="tilt-wrap tilt-b1" style={b1Tilt}>
+              <motion.div className="g-badge"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}>
+                <span className="badge-icon b-green">✓</span>
+                <div>
+                  <div className="badge-label">Skill verified</div>
+                  <div className="badge-sub">UX Research · Project reviewed</div>
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="tilt-wrap tilt-b2" style={b2Tilt}>
+              <motion.div className="g-badge"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}>
+                <span className="badge-icon b-blue">👁</span>
+                <div>
+                  <div className="badge-label">NHS Digital viewed your work</div>
+                  <div className="badge-sub">3 employers this week</div>
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="tilt-wrap tilt-b3" style={b3Tilt}>
+              <motion.div className="g-badge"
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}>
+                <span className="badge-icon b-orange">★</span>
+                <div>
+                  <div className="badge-label">Job match unlocked</div>
+                  <div className="badge-sub">Employer contacted you directly</div>
+                </div>
+              </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
-      {/* ─── THE PROBLEM YOU'RE FACING ─── */}
+      {/* ─── THE PROBLEM ─── */}
       <section className="lsec">
         <div className="section-inner">
           <motion.header className="sec-head"
@@ -102,17 +216,16 @@ export default function Students() {
             <span className="sec-tag">THE PROBLEM</span>
             <h2>The system was built<br />for people who already have connections.</h2>
             <p className="sec-sub">
-              If you didn't go to the right school, don't have the right family contacts, or can't afford
-              unpaid internships — the traditional route to a career wasn't designed for you.
-              LERN was.
+              If you didn't go to the right school, don't have the right contacts, or can't afford
+              unpaid internships — the traditional route to a career wasn't designed for you. LERN was.
             </p>
           </motion.header>
           <div className="diff-grid">
             {[
               { title: 'Experience is locked behind contacts', body: 'Work experience, internships, and referrals go to people whose parents know someone. If yours don\'t, you start behind.' },
               { title: 'Your CV proves nothing', body: 'You haven\'t worked yet. Employers know that. A CV at 18 is basically a list of things you claim about yourself.' },
-              { title: 'Nobody tells you why you didn\'t get the job', body: '98% of early-career applicants never hear back. You apply into silence and have no idea what to improve.' },
-              { title: 'Most training doesn\'t lead anywhere real', body: 'Completing a course online gives you a PDF certificate. Employers have seen thousands of them. It proves almost nothing.' },
+              { title: 'Nobody tells you why', body: '98% of early-career applicants never hear back. You apply into silence and have no idea what to improve.' },
+              { title: 'Most training leads nowhere', body: 'Completing a course online gives you a PDF certificate. Employers have seen thousands of them. It proves almost nothing.' },
             ].map((d, i) => (
               <TiltCard key={d.title} className="g-card diff-card"
                 custom={i * 0.08} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
@@ -153,8 +266,7 @@ export default function Students() {
             <span className="sec-tag">PRICING</span>
             <h2>Everything that matters<br />is free. Full stop.</h2>
             <p className="sec-sub">
-              We built LERN so that cost is never a reason someone can't access it.
-              LERN Plus exists for people who want more — not for people who need it.
+              LERN Plus exists for people who want every advantage — not for people who need the basics.
             </p>
           </motion.header>
 

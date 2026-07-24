@@ -1,6 +1,5 @@
 /* ════════════════════════════════════════════════════
-   INNER PAGES — shared styles for Institutions,
-   Employers, Students, Instructors, About
+   INNER PAGES — shared styles
 ════════════════════════════════════════════════════ */
 
 .page {
@@ -9,26 +8,38 @@
   position: relative;
 }
 
-/* ─── PAGE HERO ─── */
+/* ─── PAGE HERO — split layout matching Home ─── */
 .page-hero {
-  min-height: 66vh;
+  position: relative;
+  z-index: 1;
+  padding: 6.5rem 0 4rem;
+  overflow: visible;
+  min-height: 88vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 8rem 2rem 5rem;
-  position: relative;
 }
 
-.page-hero-inner {
-  max-width: 820px;
+.page-hero-split {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 2rem;
   width: 100%;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
-/* Big impactful heading — same scale as Home hero */
-.page-hero-inner h1 {
+.page-hero-text {
+  position: relative;
+  z-index: 2;
+}
+
+.page-hero-text h1 {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(3rem, 6.5vw, 5.8rem);
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
   font-weight: 900;
   line-height: 0.97;
   letter-spacing: -0.03em;
@@ -36,28 +47,17 @@
   margin: 0 0 1.6rem;
 }
 
-.page-hero-inner .h1-em {
-  font-style: italic;
-  color: #FF6600;
-}
-
-/* Centre the eyebrow badge */
-.page-hero-inner .eyebrow {
+.page-hero-visual {
+  position: relative;
+  height: 580px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
-}
-
-/* Centre and widen hero paragraph */
-.page-hero-inner .hero-lead {
-  max-width: 620px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-/* Centre CTA buttons */
-.page-hero-inner .hero-actions {
-  justify-content: center;
+  z-index: 1;
+  perspective: 1000px;
+  perspective-origin: 50% 45%;
+  cursor: none;
+  overflow: visible;
 }
 
 /* ─── PRICING GRID — 2 × 2 ─── */
@@ -77,14 +77,13 @@
   margin-right: auto;
 }
 
-/* Allow the "Most popular" badge to poke above the card */
 .pricing-card {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 2rem;
-  overflow: visible !important; /* badge sits outside border */
+  overflow: visible !important;
 }
 
 .pricing-featured {
@@ -108,7 +107,7 @@
   padding: 0.28rem 0.9rem;
   border-radius: 999px;
   white-space: nowrap;
-  box-shadow: 0 2px 12px rgba(255,102,0,0.35);
+  box-shadow: 0 2px 12px rgba(255, 102, 0, 0.35);
 }
 
 .pricing-name {
@@ -263,9 +262,7 @@
 }
 
 /* ─── REVENUE CARD ─── */
-.revenue-card {
-  text-align: center;
-}
+.revenue-card { text-align: center; }
 
 .revenue-stats {
   display: flex;
@@ -295,7 +292,7 @@
   color: #7a4010;
 }
 
-/* ─── APPROACH ITEMS (About page principles) ─── */
+/* ─── APPROACH ITEMS ─── */
 .approach-items {
   display: flex;
   flex-direction: column;
@@ -343,10 +340,7 @@
   z-index: 1;
 }
 
-.approach-item > div {
-  position: relative;
-  z-index: 1;
-}
+.approach-item > div { position: relative; z-index: 1; }
 
 /* ─── ABOUT LEGAL ─── */
 .about-legal {
@@ -358,44 +352,36 @@
 }
 
 /* ─── RESPONSIVE ─── */
-@media (max-width: 900px) {
-  .pricing-grid {
-    grid-template-columns: 1fr 1fr;
+@media (max-width: 1100px) {
+  .page-hero-split {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
-  .gatsby-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .page-hero-visual {
+    height: 420px;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+  .page-hero {
+    min-height: auto;
+    padding: 5rem 0 3.5rem;
   }
 }
 
+@media (max-width: 900px) {
+  .pricing-grid { grid-template-columns: 1fr 1fr; }
+  .gatsby-grid  { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 640px) {
-  .page-hero {
-    padding: 6rem 1.5rem 3.5rem;
-    min-height: 55vh;
-  }
-  .page-hero-inner h1 {
-    font-size: clamp(2.4rem, 8vw, 3.2rem);
-  }
-  .pricing-grid,
-  .pricing-two {
-    grid-template-columns: 1fr;
-    max-width: 100%;
-  }
-  .gatsby-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .story-card {
-    padding: 1.75rem 1.5rem;
-  }
-  .approach-item {
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 1.25rem 1.5rem;
-  }
-  .revenue-stats {
-    gap: 2rem;
-  }
-  .gatsby-card {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-  }
+  .page-hero-text h1 { font-size: clamp(2.4rem, 8vw, 3.2rem); }
+  .page-hero-visual .tilt-b1,
+  .page-hero-visual .tilt-b2,
+  .page-hero-visual .tilt-b3 { display: none; }
+  .pricing-grid, .pricing-two { grid-template-columns: 1fr; max-width: 100%; }
+  .gatsby-grid { grid-template-columns: 1fr 1fr; }
+  .story-card { padding: 1.75rem 1.5rem; }
+  .approach-item { flex-direction: column; gap: 0.5rem; padding: 1.25rem 1.5rem; }
+  .revenue-stats { gap: 2rem; }
+  .gatsby-card { flex-direction: column !important; align-items: flex-start !important; }
 }
