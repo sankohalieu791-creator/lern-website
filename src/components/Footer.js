@@ -9,22 +9,28 @@ export default function Footer() {
         <div className="footer-content">
           <div className="footer-section">
             <h3>LERN</h3>
-            <p>Learn. Connect. Earn.</p>
+            <p>Training and jobs young people can't get anywhere else.</p>
           </div>
           <div className="footer-section">
-            <h4>Product</h4>
-            <a href="#explore">Explore</a>
-            <a href="/academy">Instructor</a>
-            <a href="#about">About</a>
+            <h4>Platform</h4>
+            <Link to="/institutions">Institutions</Link>
+            <Link to="/employers">Employers</Link>
+            <Link to="/students">Students</Link>
+            <Link to="/instructors">Instructors</Link>
           </div>
           <div className="footer-section">
-            <h4>Follow Us</h4>
+            <h4>Company</h4>
+            <Link to="/about">About</Link>
+            <a href="mailto:alieu@joinirl.co.uk">Contact</a>
+          </div>
+          <div className="footer-section">
+            <h4>Follow us</h4>
             <a href="https://www.instagram.com/lern_alieu" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2026 IRL CONNECT LTD. All rights reserved.</p>
+          <p>&copy; 2026 IRL Connect Ltd. All rights reserved.</p>
           <p className="footer-legal">
             <Link to="/privacy">Privacy Policy</Link>
             {' · '}

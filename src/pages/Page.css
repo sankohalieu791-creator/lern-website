@@ -1,0 +1,280 @@
+/* Shared styles for Institutions, Employers, Students, Instructors pages */
+
+.page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ─── HERO ─── */
+.page-hero {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 7rem 2rem 4rem;
+  position: relative;
+}
+
+.page-hero-inner {
+  max-width: 860px;
+}
+
+/* ─── PRICING ─── */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.pricing-two {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: 1fr 1fr;
+}
+
+.pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.pricing-featured {
+  border-color: rgba(255, 102, 0, 0.45) !important;
+  box-shadow: 0 0 0 1px rgba(255, 102, 0, 0.15), 0 20px 60px rgba(255, 102, 0, 0.1) !important;
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FF6600;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.pricing-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0d0d1f;
+}
+
+.pricing-price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #0d0d1f;
+  line-height: 1;
+}
+
+.pricing-per {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin-left: 0.15rem;
+}
+
+.pricing-desc {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.55;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: #374151;
+  line-height: 1.4;
+}
+
+/* ─── GATSBY ─── */
+.gatsby-card {
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem !important;
+}
+
+.gatsby-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #FF6600;
+  opacity: 0.6;
+  flex-shrink: 0;
+  min-width: 2rem;
+}
+
+.gatsby-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #374151;
+  line-height: 1.4;
+}
+
+/* ─── STORY CARD ─── */
+.story-card {
+  padding: 2.5rem 3rem;
+}
+
+.story-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.story-body p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #374151;
+  margin: 0;
+}
+
+.story-quote {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.35rem !important;
+  font-weight: 600;
+  font-style: italic;
+  color: #0d0d1f !important;
+  border-left: 3px solid #FF6600;
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 !important;
+}
+
+.story-attr {
+  font-size: 0.9rem !important;
+  color: #9ca3af !important;
+  font-style: italic;
+}
+
+/* ─── REVENUE CARD ─── */
+.revenue-card {
+  text-align: center;
+}
+
+.revenue-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.rev-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.rev-stat strong {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #FF6600;
+  line-height: 1;
+}
+
+.rev-stat span {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* ─── APPROACH ─── */
+.approach-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.approach-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1.75rem 2rem;
+}
+
+.approach-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #FF6600;
+  opacity: 0.5;
+  flex-shrink: 0;
+  min-width: 2.5rem;
+  line-height: 1;
+}
+
+.approach-item h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0d0d1f;
+  margin: 0 0 0.4rem;
+}
+
+.approach-item p {
+  font-size: 0.92rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ─── ABOUT LEGAL ─── */
+.about-legal {
+  margin-top: 1.5rem;
+  font-size: 0.82rem;
+  color: #9ca3af;
+}
+
+@media (max-width: 640px) {
+  .page-hero {
+    padding: 6rem 1.5rem 3rem;
+    min-height: 60vh;
+  }
+  .pricing-two {
+    grid-template-columns: 1fr;
+  }
+  .story-card {
+    padding: 1.75rem 1.5rem;
+  }
+  .approach-item {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.25rem 1.5rem;
+  }
+  .revenue-stats {
+    gap: 2rem;
+  }
+  .gatsby-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+}
