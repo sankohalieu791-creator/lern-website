@@ -37,75 +37,21 @@ function TiltCard({ children, className, initial, whileInView, viewport, variant
   )
 }
 
+const WHAT_YOU_GET = [
+  { icon: '◈', title: 'Browse verified profiles', body: 'See the actual work a young person has produced. Not what they claim to be able to do — what they demonstrably can.' },
+  { icon: '◎', title: 'Filter by skill, location and role', body: 'Find exactly who you need. Search across verified skills and reach out to the candidates that actually fit.' },
+  { icon: '◆', title: 'Request interest and connect', body: 'Reach the ones who fit. For under-18s, contact is routed through their school or college, keeping safeguarding built in.' },
+  { icon: '◉', title: 'Set a live brief', body: 'Give a real task and see how young people perform on it before you interview. An audition, not an application.' },
+  { icon: '◈', title: 'Application tracking', body: 'So no promising candidate slips through the cracks. See who applied, who you responded to, who you missed.' },
+]
+
 const PLANS = [
-  {
-    name: 'Starter',
-    price: '£750',
-    period: '/month',
-    desc: 'For organisations starting to build an early-career pipeline.',
-    features: [
-      'Post up to 2 live employer briefs per month',
-      'Search verified student profiles',
-      'Direct messaging with candidates',
-      'Basic analytics dashboard',
-    ],
-    cta: 'Get started',
-  },
-  {
-    name: 'Growth',
-    price: '£2,000',
-    period: '/month',
-    desc: 'For organisations actively hiring and engaging young talent.',
-    features: [
-      'Post unlimited employer briefs',
-      'Live brief review sessions with students',
-      'Priority placement in student discovery',
-      'Gatsby Benchmark employer encounter logging',
-      'Dedicated account support',
-    ],
-    cta: 'Talk to us',
-    featured: true,
-  },
-  {
-    name: 'Enterprise',
-    price: '£5,000',
-    period: '/month',
-    desc: 'For large employers building structured early-career programmes.',
-    features: [
-      'Everything in Growth',
-      'Custom employer brief formats',
-      'Live employer Q&A sessions',
-      'Early access to top candidates',
-      'Co-branded institution partnerships',
-      'Full data and reporting suite',
-    ],
-    cta: 'Contact us',
-  },
-  {
-    name: 'Talent pipeline',
-    price: '£10,000',
-    period: '/month',
-    desc: 'For employers who want to shape what the next generation learns.',
-    features: [
-      'Everything in Enterprise',
-      'Curriculum co-design with institutions',
-      'Named employer presence on student profiles',
-      'First-look access to all new graduates',
-      'Live hiring manager sessions in schools',
-      'Bespoke partnership agreement',
-    ],
-    cta: 'Contact us',
-  },
+  { name: 'Starter', price: '£750', per: '/month', desc: 'For organisations hiring occasionally. Post roles, browse profiles, reach out directly.' },
+  { name: 'Growth', price: '£2,000', per: '/month', desc: 'For growing teams hiring regularly. Live briefs, deeper filtering, priority access to new talent.' },
+  { name: 'Enterprise', price: '£5,000+', per: '/month', desc: 'For large employers and volume hiring. Custom briefs, dedicated support, cohort access.' },
 ]
 
-const HOW_IT_WORKS = [
-  { n: '01', title: 'Post a live brief', body: 'Set a real task connected to your actual work. Students complete it live over a session or a week.' },
-  { n: '02', title: 'Review the work', body: 'See what candidates actually produce, not what they claim on a CV. Search profiles by verified skill.' },
-  { n: '03', title: 'Contact directly', body: 'Message candidates you want to speak to. No recruiter fee. No middleman. Direct access.' },
-  { n: '04', title: 'Run live sessions', body: 'Host a Q&A, interview practice, or live assessment session. Students join from partnered institutions.' },
-]
-
-const SKILLS = ['UI Design', 'UX Research', 'Figma', 'Data Analysis']
+const SKILLS = ['UX Design', 'Data Analysis', 'Project Management', 'Copywriting']
 
 export default function Employers() {
   const heroRef = useRef(null)
@@ -145,7 +91,6 @@ export default function Employers() {
       <div className="blob blob-b" />
       <div className="blob blob-c" />
 
-      {/* ─── HERO ─── */}
       <section className="page-hero">
         <div className="sp sp-a" style={sp(-55, -38)} />
         <div className="sp sp-b" style={sp(-32, -22)} />
@@ -157,23 +102,23 @@ export default function Employers() {
           <motion.div className="page-hero-text" initial="hidden" animate="visible" variants={fadeUp} custom={0}>
             <span className="eyebrow">
               <span className="pulse-dot" />
-              Early-career hiring · Verified talent · No recruiter fees
+              Hire from verified work, not guesswork
             </span>
             <h1>
-              Hire people you can<br />
-              <em className="h1-em">actually assess</em><br />
-              before you interview.
+              Hire from real,<br />
+              verified work.<br />
+              <em className="h1-em">Not a CV.</em>
             </h1>
             <p className="hero-lead">
-              LERN gives employers direct access to verified early-career talent.
-              See their real work, not their CV. Run live briefs in partnered schools.
-              Contact candidates directly.
+              See what a young person can actually do before you ever interview them.
+              Young people on LERN have a verified profile of real, reviewed work — so you
+              can find the ones who fit and reach out directly.
             </p>
             <div className="hero-actions">
               <a href="mailto:alieu@joinirl.co.uk" className="btn btn-orange">
                 Talk to us →
               </a>
-              <Link to="/institutions" className="btn btn-glass">For institutions</Link>
+              <Link to="/institutions" className="btn btn-glass">How it works</Link>
             </div>
           </motion.div>
 
@@ -183,172 +128,126 @@ export default function Employers() {
                 animate={{ y: [0, -18, 0] }}
                 transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}>
                 <div className="mc-bar">
-                  <span className="live-chip" style={{ background: 'rgba(50,120,255,0.12)', border: '1px solid rgba(50,120,255,0.3)', color: '#0044cc' }}>
-                    MATCH
-                  </span>
-                  <span className="mc-time">NHS Digital brief</span>
+                  <span className="live-chip" style={{ background: 'rgba(0,150,80,0.12)', color: '#006630' }}><span className="live-ring" style={{ background: '#00a050' }} />VERIFIED</span>
+                  <span className="mc-time">92% match</span>
                 </div>
-                <p className="mc-course">Jordan M.<br />UX &amp; Product Design</p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1rem', position: 'relative', zIndex: 1 }}>
+                <p className="mc-course">Candidate Profile<br />UX Designer · London</p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', margin: '0.75rem 0', position: 'relative', zIndex: 1 }}>
                   {SKILLS.map(s => (
-                    <span key={s} style={{ fontSize: '0.7rem', fontWeight: 700, padding: '0.25rem 0.65rem', background: 'rgba(0,180,90,0.12)', border: '1px solid rgba(0,180,90,0.25)', color: '#005522', borderRadius: '999px' }}>✓ {s}</span>
+                    <span key={s} style={{ fontSize: '0.7rem', padding: '0.2rem 0.6rem', background: 'rgba(255,102,0,0.1)', border: '1px solid rgba(255,102,0,0.25)', color: '#CC4400', borderRadius: '999px', fontWeight: 700 }}>{s} ✓</span>
                   ))}
                 </div>
                 <div className="mc-prog">
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
+                    <span style={{ fontSize: '0.72rem', color: 'rgba(80,30,0,0.6)' }}>Profile match</span>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#FF6600' }}>92%</span>
+                  </div>
                   <div className="mc-prog-bar">
                     <div className="mc-prog-fill" style={{ width: '92%' }} />
-                  </div>
-                  <div className="mc-prog-meta"><span>Profile match: 92%</span><span>Top candidate</span></div>
-                </div>
-                <div className="mc-footer">
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'relative', zIndex: 1 }}>
-                    <span style={{ fontSize: '0.75rem', color: '#FF6600', fontWeight: 700 }}>3 employers viewed</span>
-                    <span style={{ fontSize: '0.72rem', color: 'rgba(80,30,0,0.5)' }}>Contact directly →</span>
                   </div>
                 </div>
               </motion.div>
             </div>
 
             <div className="tilt-wrap tilt-b1" style={b1Tilt}>
-              <motion.div className="g-badge"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}>
+              <motion.div className="g-badge" animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}>
                 <span className="badge-icon b-green">✓</span>
-                <div>
-                  <div className="badge-label">Skills verified</div>
-                  <div className="badge-sub">Reviewed by professionals</div>
-                </div>
+                <div><div className="badge-label">Skills verified</div><div className="badge-sub">Work reviewed by professional</div></div>
               </motion.div>
             </div>
 
             <div className="tilt-wrap tilt-b2" style={b2Tilt}>
-              <motion.div className="g-badge"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}>
-                <span className="badge-icon b-blue">◷</span>
-                <div>
-                  <div className="badge-label">Live brief closes in 2 days</div>
-                  <div className="badge-sub">47 submissions so far</div>
-                </div>
+              <motion.div className="g-badge" animate={{ y: [0, 10, 0] }} transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}>
+                <span className="badge-icon b-orange">◷</span>
+                <div><div className="badge-label">Live brief closes Friday</div><div className="badge-sub">14 submissions so far</div></div>
               </motion.div>
             </div>
 
             <div className="tilt-wrap tilt-b3" style={b3Tilt}>
-              <motion.div className="g-badge"
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}>
-                <span className="badge-icon b-orange">★</span>
-                <div>
-                  <div className="badge-label">No recruiter fee</div>
-                  <div className="badge-sub">Contact candidates directly</div>
-                </div>
+              <motion.div className="g-badge" animate={{ y: [0, -8, 0] }} transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}>
+                <span className="badge-icon b-blue">★</span>
+                <div><div className="badge-label">Below agency rates</div><div className="badge-sub">Placement fees scaled to role</div></div>
               </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── THE PROBLEM WITH EARLY HIRING ─── */}
       <section className="lsec">
         <div className="section-inner">
-          <motion.header className="sec-head"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <span className="sec-tag">THE PROBLEM WITH EARLY HIRING</span>
-            <h2>CVs don't tell you<br />if someone can do the job.</h2>
+          <motion.header className="sec-head" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <span className="sec-tag">WHY LERN</span>
+            <h2>A CV tells you what someone<br />says they can do. LERN shows you.</h2>
             <p className="sec-sub">
-              Early-career candidates have no work history to speak of.
-              You're hiring on predicted grades, cover letters, and a 30-minute interview.
-              Half your hires don't work out. You don't know why until six months in.
+              Young people on the platform have a verified profile of real, reviewed work. You can find the ones
+              who fit and reach out directly — or set a live brief and see how they perform on a real task before
+              you ever interview them.
             </p>
           </motion.header>
-          <div className="diff-grid">
-            {[
-              { title: 'The CV problem', body: 'A 19-year-old\'s CV is mostly self-written speculation. You have no way to verify any of it before you commit time to an interview.' },
-              { title: 'The volume problem', body: 'Entry-level roles attract hundreds of applications. You can\'t meaningfully review them all. Most candidates never hear back.' },
-              { title: 'The proof problem', body: 'Grades tell you how someone performed in an exam. They say nothing about how they work, think, or solve real problems.' },
-              { title: 'The cost problem', body: 'Recruiters charge 15–20% of first year salary. For entry-level hires, that\'s money spent without any better signal on quality.' },
-            ].map((d, i) => (
-              <TiltCard key={d.title} className="g-card diff-card"
-                custom={i * 0.08} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                <h3>{d.title}</h3>
-                <p>{d.body}</p>
-              </TiltCard>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* ─── HOW IT WORKS ─── */}
       <section className="lsec">
         <div className="section-inner">
-          <motion.header className="sec-head"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <span className="sec-tag">HOW IT WORKS</span>
-            <h2>See what candidates<br />can actually do.</h2>
+          <motion.header className="sec-head" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <span className="sec-tag">WHAT YOU GET</span>
+            <h2>Find who you need.<br />Reach them directly.</h2>
           </motion.header>
-          <div className="how-grid">
-            {HOW_IT_WORKS.map((s, i) => (
-              <TiltCard key={s.n} className="g-card how-card"
-                custom={i * 0.1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                <div className="how-num">{s.n}</div>
-                <h3>{s.title}</h3>
-                <p>{s.body}</p>
+          <div className="value-grid value-grid-3">
+            {WHAT_YOU_GET.map((c, i) => (
+              <TiltCard key={c.title} className="g-card v-card"
+                custom={i * 0.07} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+                <span className="v-icon">{c.icon}</span>
+                <h3>{c.title}</h3>
+                <p>{c.body}</p>
               </TiltCard>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── PRICING ─── */}
       <section className="lsec">
         <div className="section-inner">
-          <motion.header className="sec-head"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+          <motion.header className="sec-head" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <span className="sec-tag">PRICING</span>
-            <h2>Straightforward plans.<br />No recruiter markup.</h2>
-            <p className="sec-sub">
-              All prices ex VAT. Cancel anytime. Students and institutions always free.
-            </p>
+            <h2>Start with a free one-month trial.<br />No commitment.</h2>
+            <p className="sec-sub">Small businesses can post a couple of roles free. Placement fees are scaled to the role and always below agency rates.</p>
           </motion.header>
           <div className="pricing-grid">
             {PLANS.map((p, i) => (
-              <TiltCard key={p.name} className={`g-card pricing-card${p.featured ? ' pricing-featured' : ''}`}
-                custom={i * 0.1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                {p.featured && <span className="pricing-badge">Most popular</span>}
+              <TiltCard key={p.name} className="g-card pricing-card"
+                custom={i * 0.08} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                 <div className="pricing-name">{p.name}</div>
-                <div className="pricing-price">
-                  {p.price}<span className="pricing-per">{p.period}</span>
-                </div>
+                <div className="pricing-price">{p.price}<span className="pricing-per">{p.per}</span></div>
                 <p className="pricing-desc">{p.desc}</p>
-                <ul className="pricing-features">
-                  {p.features.map(f => (
-                    <li key={f}><span className="for-dot" />{f}</li>
-                  ))}
-                </ul>
-                <a href="mailto:alieu@joinirl.co.uk" className={`btn btn-sm ${p.featured ? 'btn-orange' : 'btn-glass'}`}>
-                  {p.cta} →
-                </a>
+                <a href="mailto:alieu@joinirl.co.uk" className="btn btn-orange btn-sm">Get in touch →</a>
               </TiltCard>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── CTA ─── */}
+      <section className="lsec">
+        <div className="section-inner">
+          <TiltCard className="g-card story-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <span className="sec-tag">WHY WORK WITH US EARLY</span>
+            <div className="story-body">
+              <p>We're onboarding our first employers now. Getting in at this stage means you help shape the platform and get first access to the talent coming through — as a founding employer.</p>
+            </div>
+          </TiltCard>
+        </div>
+      </section>
+
       <section className="lsec cta-sec">
         <div className="section-inner">
-          <TiltCard className="g-card cta-inner"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+          <TiltCard className="g-card cta-inner" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="cta-glow" />
             <span className="sec-tag">GET STARTED</span>
-            <h2>Talk to us.<br />We'll set everything up.</h2>
-            <p className="cta-sub">
-              Drop us an email and we'll walk you through the platform, set up your employer
-              account, and help you post your first live brief.
-            </p>
+            <h2>Start your free trial.<br />No commitment required.</h2>
+            <p className="cta-sub">Email us and we'll get you set up. A free one-month trial with real young people, real verified work, and no risk.</p>
             <div className="cta-btns">
-              <a href="mailto:alieu@joinirl.co.uk" className="btn btn-orange btn-lg">Email alieu@joinirl.co.uk →</a>
-              <Link to="/students" className="btn btn-glass btn-lg">See the student view</Link>
+              <a href="mailto:alieu@joinirl.co.uk" className="btn btn-orange btn-lg">Talk to us →</a>
+              <Link to="/institutions" className="btn btn-glass btn-lg">How it works</Link>
             </div>
           </TiltCard>
         </div>

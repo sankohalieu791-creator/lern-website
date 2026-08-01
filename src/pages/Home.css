@@ -810,6 +810,19 @@
   gap: 1.25rem;
 }
 
+/* 5-card wrap variant — 3+2 layout */
+.for-grid-wrap {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1100px) {
+  .for-grid-wrap { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .for-grid-wrap { grid-template-columns: 1fr; }
+}
+
 .for-card {
   padding: 2.4rem;
   display: flex;

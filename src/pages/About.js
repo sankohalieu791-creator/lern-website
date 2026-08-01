@@ -38,11 +38,11 @@ function TiltCard({ children, className, initial, whileInView, viewport, variant
   )
 }
 
-const PRINCIPLES = [
-  { n: '01', title: 'Free for anyone who learns', body: 'Every student, everywhere. No exceptions, no trial period, no bait-and-switch. The product that changes a young person\'s life cannot have a paywall in front of it.' },
-  { n: '02', title: 'Proof over certificates', body: 'A certificate from LERN means a professional reviewed your actual work and said: this is good. That\'s different from a PDF that says you completed a course.' },
-  { n: '03', title: 'Live over recorded', body: 'You can\'t ask a video a question. Live teaching means real instructors, real interaction, and real accountability. The learning that changes careers happens in rooms — even virtual ones.' },
-  { n: '04', title: 'Access over advantage', body: 'We built LERN so that where you grew up, who your parents know, and how much money your family has are not the deciding factors in whether you get a career. That\'s the whole point.' },
+const BELIEFS = [
+  { n: '01', title: 'Talent is everywhere. Opportunity isn\'t.', body: 'The gap between them is proof — a credible, verified record of what a young person can actually do, and a direct line to the people who hire. That\'s what LERN exists to close.' },
+  { n: '02', title: 'The platform has to be free.', body: 'You can\'t charge the schools and students who need this most. We\'re funded by the employers who hire from the platform. That\'s how the model works. It\'s not charity — it\'s alignment.' },
+  { n: '03', title: 'Live over recorded.', body: 'You can\'t ask a video a question. Live teaching means real instructors, real interaction, and real accountability. The learning that changes careers happens in rooms — even virtual ones.' },
+  { n: '04', title: 'Proof over certificates.', body: 'A mark on LERN means a professional reviewed your actual work and said: this is good. That\'s different from a PDF that says you completed a course.' },
 ]
 
 export default function About() {
@@ -98,20 +98,20 @@ export default function About() {
               Our story
             </span>
             <h1>
-              This started because<br />
-              <em className="h1-em">someone needed it</em><br />
-              to exist.
+              We're building the route into work<br />
+              <em className="h1-em">too many young people</em><br />
+              never get.
             </h1>
             <p className="hero-lead">
-              Alieu Sankoh built LERN because he was the student who needed it.
-              Good at school. Couldn't go to university. Watched the system decide
-              his future before he had a chance to prove what he could do.
+              LERN was founded by Alieu Sankoh. He came to the UK at twelve, was told
+              at eighteen he couldn't go to university on financial grounds, and taught
+              himself to build instead.
             </p>
             <div className="hero-actions">
               <a href="mailto:alieu@joinirl.co.uk" className="btn btn-orange">
                 Talk to us →
               </a>
-              <Link to="/students" className="btn btn-glass">For students</Link>
+              <a href="https://lernapp.uk" target="_blank" rel="noopener noreferrer" className="btn btn-glass">Sign up</a>
             </div>
           </motion.div>
 
@@ -121,25 +121,21 @@ export default function About() {
                 animate={{ y: [0, -18, 0] }}
                 transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}>
                 <div className="mc-bar">
-                  <span className="live-chip" style={{ background: 'rgba(255,102,0,0.15)', color: '#CC4400' }}><span className="live-ring" style={{ background: '#FF6600' }} />STORY</span>
-                  <span className="mc-time">Founder · Alieu Sankoh</span>
+                  <span className="live-chip" style={{ background: 'rgba(255,102,0,0.15)', color: '#CC4400' }}><span className="live-ring" style={{ background: '#FF6600' }} />FOUNDER</span>
+                  <span className="mc-time">Alieu Sankoh</span>
                 </div>
-                <p className="mc-course" style={{ fontSize: '0.92rem', lineHeight: 1.55, fontStyle: 'italic', color: 'rgba(40,10,0,0.75)' }}>
-                  "I built LERN because I needed it<br />to exist when I was 18."
+                <p className="mc-course" style={{ fontSize: '0.9rem', lineHeight: 1.6, fontStyle: 'italic', color: 'rgba(40,10,0,0.75)' }}>
+                  "LERN is the platform I wished I'd had: a way for young people to prove what they can do, regardless of where they started."
                 </p>
                 <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)', paddingTop: '1rem', position: 'relative', zIndex: 1 }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.5rem', textAlign: 'center' }}>
-                    <div>
-                      <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#FF6600' }}>Free</div>
-                      <div style={{ fontSize: '0.68rem', color: 'rgba(80,30,0,0.55)', fontWeight: 600 }}>for students</div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                    <div style={{ textAlign: 'center' }}>
+                      <div style={{ fontSize: '1.1rem', fontWeight: 900, color: '#FF6600' }}>Free</div>
+                      <div style={{ fontSize: '0.68rem', color: 'rgba(80,30,0,0.55)', fontWeight: 600 }}>always</div>
                     </div>
-                    <div>
-                      <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#FF6600' }}>Live</div>
+                    <div style={{ textAlign: 'center' }}>
+                      <div style={{ fontSize: '1.1rem', fontWeight: 900, color: '#FF6600' }}>Live</div>
                       <div style={{ fontSize: '0.68rem', color: 'rgba(80,30,0,0.55)', fontWeight: 600 }}>teaching only</div>
-                    </div>
-                    <div>
-                      <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#FF6600' }}>Real</div>
-                      <div style={{ fontSize: '0.68rem', color: 'rgba(80,30,0,0.55)', fontWeight: 600 }}>verified work</div>
                     </div>
                   </div>
                 </div>
@@ -152,8 +148,8 @@ export default function About() {
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}>
                 <span className="badge-icon b-green">✓</span>
                 <div>
-                  <div className="badge-label">First college partnership</div>
-                  <div className="badge-sub">Starts this autumn term</div>
+                  <div className="badge-label">Leyton Sixth Form</div>
+                  <div className="badge-sub">First college partnership</div>
                 </div>
               </motion.div>
             </div>
@@ -164,8 +160,8 @@ export default function About() {
                 transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}>
                 <span className="badge-icon b-blue">◆</span>
                 <div>
-                  <div className="badge-label">NHS live on platform</div>
-                  <div className="badge-sub">Employer posting briefs now</div>
+                  <div className="badge-label">NHS · Lambeth Council</div>
+                  <div className="badge-sub">Live on platform</div>
                 </div>
               </motion.div>
             </div>
@@ -177,7 +173,7 @@ export default function About() {
                 <span className="badge-icon b-orange">★</span>
                 <div>
                   <div className="badge-label">Onboarding now</div>
-                  <div className="badge-sub">Schools · Employers · Instructors</div>
+                  <div className="badge-sub">Schools · Employers · Providers</div>
                 </div>
               </motion.div>
             </div>
@@ -185,32 +181,27 @@ export default function About() {
         </div>
       </section>
 
-      {/* ─── FOUNDER STORY ─── */}
+      {/* ─── THE STORY ─── */}
       <section className="lsec">
         <div className="section-inner">
           <TiltCard className="g-card story-card"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <span className="sec-tag">THE FOUNDER</span>
+            <span className="sec-tag">THE STORY</span>
             <div className="story-body">
               <p>
-                Alieu Sankoh was born in Sierra Leone and came to the UK aged 12.
-                He grew up in the UK state education system. He was good at school.
-                But when he was 18, he couldn't go to university — the money wasn't there.
+                Alieu Sankoh was born in Sierra Leone and came to the UK aged twelve. He grew up in the UK
+                state education system. At eighteen, he was told he couldn't go to university on financial grounds.
+                He taught himself to build instead.
               </p>
               <p>
-                He watched people with the same ability as him — or less — get opportunities
-                because of who their parents were, which school they went to, or which city
-                they happened to live in. He watched the system filter people out before they
-                had a chance to show what they could do.
-              </p>
-              <p>
-                He built LERN because the gap between what a young person can do and what
-                the system lets them prove they can do is a problem that nobody has properly
-                fixed. Not universities, not job boards, not online course platforms.
+                LERN is the platform he wished he'd had: a way for young people to prove what they can do,
+                regardless of where they started. Because the problem is real. Young people from backgrounds
+                without the right networks have the ability — but no way to show it. A CV doesn't capture it.
+                An interview they never get to doesn't capture it. Employers sift them out before they ever see
+                what they're capable of.
               </p>
               <p className="story-quote">
-                "I built LERN because I needed it to exist when I was 18.
-                I want it to be there for everyone who needs it now."
+                "Talent is everywhere. Opportunity isn't. The gap between them is proof — and that's what LERN exists to close."
               </p>
               <p className="story-attr">— Alieu Sankoh, Founder</p>
             </div>
@@ -218,49 +209,16 @@ export default function About() {
         </div>
       </section>
 
-      {/* ─── WHAT LERN IS ─── */}
+      {/* ─── WHAT WE BELIEVE ─── */}
       <section className="lsec">
         <div className="section-inner">
           <motion.header className="sec-head"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <span className="sec-tag">WHAT LERN IS</span>
-            <h2>Not a course platform.<br />A proof platform.</h2>
-            <p className="sec-sub">
-              There are thousands of places to watch someone explain something.
-              What's missing is a place where young people can learn it live, do it for real,
-              get it verified by a professional, and have employers actually see it.
-              That's what LERN is.
-            </p>
-          </motion.header>
-        </div>
-      </section>
-
-      {/* ─── WHAT THIS MEANS IN PRACTICE ─── */}
-      <section className="lsec">
-        <div className="section-inner">
-          <motion.header className="sec-head"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <span className="sec-tag">WHAT THIS MEANS IN PRACTICE</span>
-            <h2>A school in a deprived area<br />gets the same platform as one in Kensington.</h2>
-            <p className="sec-sub">
-              An 18-year-old in Sunderland gets the same employer connections as one in London.
-              A student without a degree gets the same shot at proving their skills as one with a 2:1.
-              That's the promise. We're building the infrastructure to keep it.
-            </p>
-          </motion.header>
-        </div>
-      </section>
-
-      {/* ─── PRINCIPLES ─── */}
-      <section className="lsec">
-        <div className="section-inner">
-          <motion.header className="sec-head"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <span className="sec-tag">OUR PRINCIPLES</span>
+            <span className="sec-tag">WHAT WE BELIEVE</span>
             <h2>Four things we won't<br />compromise on.</h2>
           </motion.header>
           <div className="approach-items">
-            {PRINCIPLES.map((p, i) => (
+            {BELIEFS.map((p, i) => (
               <TiltCard key={p.n} className="g-card approach-item"
                 custom={i * 0.1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                 <div className="approach-num">{p.n}</div>
@@ -283,14 +241,14 @@ export default function About() {
             <h2>Early. Moving fast.<br />Building for real.</h2>
             <div className="story-body">
               <p>
-                LERN is live. Our first college partnership begins in the autumn term.
-                An NHS employer is posting live roles on the platform.
-                We are onboarding institutions, employers, and instructors now.
+                The platform is live. It's being used by Leyton Sixth Form College. We're working with
+                training providers, Lambeth Council, and St Giles Trust, and we're onboarding our first
+                employers now.
               </p>
               <p>
-                We're a small team, building something ambitious, funded by the conviction
-                that this should exist. If you want to be part of it — as a school, an employer,
-                an instructor, or an investor — we want to hear from you.
+                We're early, and we're building deliberately — with the young people we serve at the centre
+                of every decision. If you want to be part of it — as a school, an employer, a training provider,
+                or an investor — we want to hear from you.
               </p>
             </div>
           </TiltCard>
@@ -306,14 +264,14 @@ export default function About() {
             <span className="sec-tag">GET IN TOUCH</span>
             <h2>Reach us directly.<br />We reply.</h2>
             <p className="cta-sub">
-              Whether you're a school, an employer, an instructor, a journalist, or an investor —
+              Whether you're a school, an employer, a training provider, a journalist, or an investor —
               email Alieu directly. There's no contact form here. Real conversations work better.
             </p>
             <div className="cta-btns">
               <a href="mailto:alieu@joinirl.co.uk" className="btn btn-orange btn-lg">alieu@joinirl.co.uk →</a>
               <Link to="/institutions" className="btn btn-glass btn-lg">Set up your institution</Link>
             </div>
-            <p className="about-legal">IRL Connect Ltd · Registered in England &amp; Wales</p>
+            <p className="about-legal">IRL Connect Ltd · Company No. 17200180</p>
           </TiltCard>
         </div>
       </section>

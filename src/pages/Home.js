@@ -39,55 +39,52 @@ function TiltCard({ children, className, initial, whileInView, viewport, variant
 }
 
 const TICKER = [
-  'Live instructor-led sessions',
   'Verified proof employers trust',
   'Free for students. Always.',
   'Free for schools and colleges',
+  'Live courses from real professionals',
   'Real projects · Real outcomes',
   'Employer discovery built in',
 ]
 
 const MINI_FACES = ['A', 'J', 'M', 'K', 'S']
 
-const PROBLEMS = [
-  'Certificates prove attendance, not ability',
-  'CVs are self-written claims nobody verifies',
-  'Recruiters spend 30 seconds on an application',
-  '98% of applicants never hear back at all',
-  'Work experience depends on who your parents know',
-]
-
 const WHAT_LERN_DOES = [
-  { icon: '◈', title: 'Learn live', body: 'Real professionals teaching in real time. Not a video you watch alone at 2am.' },
-  { icon: '◎', title: 'Build something real', body: 'Every course ends in an actual project, not a quiz.' },
-  { icon: '◆', title: 'Get it verified', body: 'Your work is reviewed by a professional and becomes proof on your profile.' },
-  { icon: '◉', title: 'Get discovered', body: 'Employers search by proven skill and contact you directly.' },
+  { icon: '◈', title: 'Learn live', body: 'Young people take live courses and workshops from real professionals, not pre-recorded videos on a shelf.' },
+  { icon: '◎', title: 'Prove it', body: 'They build a verified profile of real, reviewed work. A portfolio an employer can trust, which a CV can never be.' },
+  { icon: '◆', title: 'Get hired', body: 'Employers browse those profiles, reach out directly, and hire. A real route from the classroom to a job.' },
 ]
 
 const WHO_FOR = [
   {
     tag: 'Schools & colleges', title: 'Institutions',
-    desc: 'Your own private platform, free forever. Run your courses, your way, for your students.',
-    bullets: ['Private branded space', 'Live virtual classrooms', 'Gatsby Benchmark reporting'],
+    desc: 'Give your students verified proof and evidence your careers provision. Free, always.',
+    bullets: ['Private branded space', 'Live virtual classrooms', 'Gatsby-mapped reporting'],
     href: '/institutions', label: 'Set up free',
   },
   {
+    tag: 'Charities & support services', title: 'Organisations',
+    desc: 'Give the young people you support verified proof and a safe route to work. Free for your organisation.',
+    bullets: ['Safe employer contact routed through you', 'Verified skill profiles', 'Progression data for funders'],
+    href: '/organisations', label: 'Learn more',
+  },
+  {
+    tag: 'Get your learners hired', title: 'Training providers',
+    desc: 'You train learners brilliantly. LERN makes sure that training turns into a job.',
+    bullets: ['Verified skill profiles', 'Employers reach out directly', 'Live interview practice'],
+    href: '/training-providers', label: 'Learn more',
+  },
+  {
     tag: 'Hire better', title: 'Employers',
-    desc: 'Hire early-career talent you can actually assess before you interview.',
-    bullets: ['Search by verified skill', 'Set live employer briefs', 'Contact candidates directly'],
+    desc: 'See what a young person can actually do before you ever interview them.',
+    bullets: ['Browse verified profiles', 'Set a live brief', 'Contact candidates directly'],
     href: 'mailto:alieu@joinirl.co.uk', label: 'Talk to us', external: true,
   },
   {
     tag: 'Young people', title: 'Students',
-    desc: 'Learn, build proof, get seen. Free, always.',
-    bullets: ['Live courses', 'Verified profile', 'Real job opportunities'],
-    href: '/students', label: 'Join free',
-  },
-  {
-    tag: 'Teach live', title: 'Instructors',
-    desc: 'Reach real learners, deliver live sessions, and meet the talent before anyone else does.',
-    bullets: ['Teach on your terms', 'Earn from courses', 'Refer talent directly'],
-    href: '/instructors', label: 'Apply to teach',
+    desc: 'Show what you can do. Get found by the people who hire. Free to join.',
+    bullets: ['Learn live', 'Verified profile', 'Employers come to you'],
+    href: 'https://lernapp.uk', label: 'Sign up free', external: true,
   },
 ]
 
@@ -142,26 +139,26 @@ export default function Home() {
           <motion.div className="hero-copy" initial="hidden" animate="visible" variants={fadeUp} custom={0}>
             <span className="eyebrow">
               <span className="pulse-dot" />
-              Free for students · Free for schools · Always
+              Free for schools, colleges and students · Always
             </span>
             <h1>
-              Training and jobs<br />
+              Proof of what<br />
               <em className="h1-em">young people</em><br />
-              can't get elsewhere.
+              can actually do.
             </h1>
             <p className="hero-lead">
-              LERN is where young people learn live from real professionals,
-              build real work that proves what they can do, and get discovered
-              by employers who are actually hiring.
+              Young people build a verified profile of real work. Employers find them
+              and reach out directly. LERN is the bridge between finishing a course
+              and getting hired.
             </p>
             <div className="hero-actions">
-              <Link to="/students" className="btn btn-orange">
-                Get started <span aria-hidden="true">→</span>
-              </Link>
-              <Link to="/institutions" className="btn btn-glass">For institutions</Link>
+              <a href="https://lernapp.uk" target="_blank" rel="noopener noreferrer" className="btn btn-orange">
+                Sign up <span aria-hidden="true">→</span>
+              </a>
+              <Link to="/institutions" className="btn btn-glass">See how it works</Link>
             </div>
             <div className="hero-pills">
-              <div className="stat-pill"><strong>Free</strong><span>for students &amp; schools</span></div>
+              <div className="stat-pill"><strong>Free</strong><span>for schools &amp; students</span></div>
               <div className="stat-pill"><strong>Live</strong><span>real professionals teaching</span></div>
             </div>
           </motion.div>
@@ -233,8 +230,8 @@ export default function Home() {
                 transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}>
                 <span className="badge-icon b-orange">★</span>
                 <div>
-                  <div className="badge-label">Job match unlocked</div>
-                  <div className="badge-sub">Employer contacted you directly</div>
+                  <div className="badge-label">Interview unlocked</div>
+                  <div className="badge-sub">Employer reached out directly</div>
                 </div>
               </motion.div>
             </div>
@@ -259,25 +256,16 @@ export default function Home() {
           <motion.header className="sec-head"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <span className="sec-tag">THE PROBLEM</span>
-            <h2>A million young people in the UK<br />are out of work and education.</h2>
-            <p className="sec-sub">Not because they can't do the job. Because they can't prove they can,<br />and nobody will give them the chance to try.</p>
+            <h2>Young people don't<br />lack advice. They lack proof.</h2>
+            <p className="sec-sub">
+              Schools and colleges are full of careers information, virtual work experience and job listings.
+              None of it survives an application sift. Employers don't want to know what a young person was taught.
+              They want evidence of what that young person can do.
+            </p>
+            <p className="sec-sub">
+              Today, no platform gives a school leaver that evidence. LERN does.
+            </p>
           </motion.header>
-
-          <div className="problem-list">
-            {PROBLEMS.map((p, i) => (
-              <motion.div key={p} className="problem-item g-card"
-                custom={i * 0.08} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                <span className="problem-x">—</span>
-                <p>{p}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.p className="problem-close"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0.4}>
-            Schools and colleges already teach. What they can't give students is real experience,
-            real proof, and a real route to an employer. That's the gap. That's what we built LERN to close.
-          </motion.p>
         </div>
       </section>
 
@@ -287,44 +275,15 @@ export default function Home() {
           <motion.header className="sec-head"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <span className="sec-tag">WHAT LERN DOES</span>
-            <h2>Four things that change<br />everything for a young person.</h2>
+            <h2>Learn live. Prove it.<br />Get hired.</h2>
           </motion.header>
-          <div className="value-grid">
+          <div className="how-grid">
             {WHAT_LERN_DOES.map((c, i) => (
               <TiltCard key={c.title} className="g-card v-card"
-                custom={i * 0.08} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+                custom={i * 0.1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                 <span className="v-icon">{c.icon}</span>
                 <h3>{c.title}</h3>
                 <p>{c.body}</p>
-              </TiltCard>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── WHAT MAKES LERN DIFFERENT ─── */}
-      <section className="lsec diff-sec">
-        <div className="section-inner">
-          <motion.header className="sec-head"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <span className="sec-tag">WHAT MAKES LERN DIFFERENT</span>
-            <h2>Everything that happens<br />after the teaching.</h2>
-            <p className="sec-sub">Anyone can put courses online. Institutions already have courses, and good teachers.<br />What almost none can provide on their own is everything else.</p>
-          </motion.header>
-
-          <div className="diff-grid">
-            {[
-              { title: 'Employer-set live briefs', body: 'A real employer sets a real task. Students complete it live. The employer reviews the work. It isn\'t a simulation — it\'s an audition.' },
-              { title: 'Live interview practice', body: 'Not an AI coach. An actual hiring manager, giving real feedback to a young person who has nobody at home to practise with.' },
-              { title: 'Employer viewing history', body: '"Three employers viewed your project this week." That notification changes how a young person sees themselves.' },
-              { title: 'Application tracking', body: 'Where it went, whether it was opened, and why they weren\'t picked. We fix the silence. 98% of applicants never hear back.' },
-              { title: 'Skills gap alerts', body: '"Employers hiring near you want this skill. Here\'s a live course starting Tuesday." Directly actionable.' },
-              { title: 'Instructor referrals', body: 'The vouching that well-connected students get for free, made available to everyone. An instructor can put a student in front of employers directly.' },
-            ].map((d, i) => (
-              <TiltCard key={d.title} className="g-card diff-card"
-                custom={i * 0.07} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                <h3>{d.title}</h3>
-                <p>{d.body}</p>
               </TiltCard>
             ))}
           </div>
@@ -337,12 +296,12 @@ export default function Home() {
           <motion.header className="sec-head"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <span className="sec-tag">WHO IT'S FOR</span>
-            <h2>Built for everyone<br />the system left out.</h2>
+            <h2>Free for schools, colleges<br />and students. Always.</h2>
           </motion.header>
-          <div className="for-grid">
+          <div className="for-grid for-grid-wrap">
             {WHO_FOR.map((c, i) => (
               <TiltCard key={c.title} className="g-card for-card"
-                custom={i * 0.1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+                custom={i * 0.08} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                 <span className="for-tag">{c.tag}</span>
                 <h3>{c.title}</h3>
                 <p className="for-desc">{c.desc}</p>
@@ -352,12 +311,30 @@ export default function Home() {
                   ))}
                 </ul>
                 {c.external
-                  ? <a href={c.href} className="btn btn-orange btn-sm">{c.label} →</a>
+                  ? <a href={c.href} target={c.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener noreferrer" className="btn btn-orange btn-sm">{c.label} →</a>
                   : <Link to={c.href} className="btn btn-orange btn-sm">{c.label} →</Link>
                 }
               </TiltCard>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ─── SAFEGUARDING ─── */}
+      <section className="lsec">
+        <div className="section-inner">
+          <TiltCard className="g-card story-card"
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <span className="sec-tag">SAFEGUARDING, BUILT IN</span>
+            <div className="story-body">
+              <p>
+                Because our users include under-18s, safety is designed into the platform, not added on.
+                For under-18s, employers never make contact directly — it is routed through the young person's
+                school or college. Sessions are moderated and recorded, instructors are vetted, and our approach
+                is aligned to Keeping Children Safe in Education.
+              </p>
+            </div>
+          </TiltCard>
         </div>
       </section>
 
@@ -367,14 +344,11 @@ export default function Home() {
           <TiltCard className="g-card cta-inner"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="cta-glow" />
-            <span className="sec-tag">WHERE WE ARE</span>
-            <h2>LERN is live<br />and working.</h2>
-            <p className="cta-sub">
-              Our first college partnership begins in the autumn term, with an NHS employer posting
-              live roles on the platform. We're onboarding institutions, employers and instructors now.
-            </p>
+            <span className="sec-tag">GET STARTED</span>
+            <h2>Every school already has courses.<br />What they don't have is proof.</h2>
+            <p className="cta-sub">That's what we built.</p>
             <div className="cta-btns">
-              <Link to="/students" className="btn btn-orange btn-lg">Get started free →</Link>
+              <a href="https://lernapp.uk" target="_blank" rel="noopener noreferrer" className="btn btn-orange btn-lg">Sign up →</a>
               <Link to="/institutions" className="btn btn-glass btn-lg">For institutions</Link>
             </div>
           </TiltCard>

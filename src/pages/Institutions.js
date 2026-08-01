@@ -38,19 +38,12 @@ function TiltCard({ children, className, initial, whileInView, viewport, variant
 }
 
 const WHAT_YOU_GET = [
-  { icon: '◈', title: 'Private branded space', body: 'Your institution\'s own LERN environment. Your name, your branding, your students. Nobody else\'s.' },
-  { icon: '◎', title: 'Live virtual classrooms', body: 'Your teachers deliver sessions directly through LERN. Students join from anywhere. No third-party tools needed.' },
-  { icon: '◆', title: 'Real employer connection', body: 'Employers post live briefs for your students to complete. They review the work and contact the best candidates directly.' },
-  { icon: '◉', title: 'Gatsby Benchmark reporting', body: 'Built-in tracking and reporting for all 8 Gatsby Benchmarks. Everything you need for Ofsted, in one place.' },
-  { icon: '◈', title: 'Student verified profiles', body: 'Every student builds a LERN profile of verified work and skills. A proof record they carry with them after they leave.' },
-  { icon: '◎', title: 'Zero cost. Permanently.', body: 'Free for every school, college, and sixth form. No trial period, no hidden tier, no catch. That\'s the model.' },
-]
-
-const HOW_IT_WORKS = [
-  { n: '01', title: 'Sign up your institution', body: 'Takes five minutes. We set up your private space, branded to your school or college.' },
-  { n: '02', title: 'Your teachers start delivering', body: 'Careers, enrichment, employability, or curriculum — any subject, live through LERN.' },
-  { n: '03', title: 'Students build real proof', body: 'Every session ends with real work that goes onto a verified student profile.' },
-  { n: '04', title: 'Employers discover your students', body: 'Hiring companies post live briefs and review student work directly. Your students get seen.' },
+  { icon: '◈', title: 'Verified skill profiles', body: 'Students prove real work, not just attendance. A professional reviews and verifies every piece of project work on their profile.' },
+  { icon: '◎', title: 'Employers reach out', body: 'Your students get found by employers who are actively hiring. For under-18s, contact is routed safely through you — never direct to a student.' },
+  { icon: '◆', title: 'Live interview practice', body: 'With real hiring managers, not an AI coach. The kind of practice students without well-connected families rarely get.' },
+  { icon: '◉', title: 'Gatsby-mapped reporting', body: 'Evidence your careers provision against the benchmarks you\'re measured on. Ready for your careers lead to use, ready for Ofsted.' },
+  { icon: '◈', title: 'Live courses and workshops', body: 'Plus a private space for your school. Branded to you, controlled by you, accessible from anywhere.' },
+  { icon: '◎', title: 'Application tracking and feedback', body: 'So students learn and improve. They see where their application went and why they weren\'t picked. We fix the silence.' },
 ]
 
 const MINI_FACES = ['J', 'A', 'M', 'S', 'K']
@@ -93,7 +86,6 @@ export default function Institutions() {
       <div className="blob blob-b" />
       <div className="blob blob-c" />
 
-      {/* ─── HERO ─── */}
       <section className="page-hero">
         <div className="sp sp-a" style={sp(-55, -38)} />
         <div className="sp sp-b" style={sp(-32, -22)} />
@@ -108,14 +100,13 @@ export default function Institutions() {
               Schools · Colleges · Sixth forms
             </span>
             <h1>
-              Free for your institution.<br />
-              <em className="h1-em">Free for your students.</em><br />
-              Permanently.
+              Free for your school.<br />
+              Free for your students.<br />
+              <em className="h1-em">Always.</em>
             </h1>
             <p className="hero-lead">
-              LERN gives schools, colleges, and sixth forms a private platform to run live
-              career sessions, connect students with real employers, and track every Gatsby
-              Benchmark — at no cost, forever.
+              Give your students verified proof of what they can do, and evidence your
+              careers provision at the same time. No procurement, no contract, no cost.
             </p>
             <div className="hero-actions">
               <a href="mailto:alieu@joinirl.co.uk" className="btn btn-orange">
@@ -134,7 +125,7 @@ export default function Institutions() {
                   <span className="live-chip"><span className="live-ring" />LIVE</span>
                   <span className="mc-time">Careers Week</span>
                 </div>
-                <p className="mc-course">Understanding the World of Work<br />Barchester Academy</p>
+                <p className="mc-course">Understanding the World of Work<br />Leyton Sixth Form College</p>
                 <div className="mc-instructor">
                   <div className="mc-ava">G</div>
                   <div className="mc-ava-info">
@@ -147,9 +138,7 @@ export default function Institutions() {
                   <div className="mc-prog-bar">
                     <div className="mc-prog-fill" style={{ width: '68%' }} />
                   </div>
-                  <div className="mc-prog-meta">
-                    <span>68% complete</span><span>32% left</span>
-                  </div>
+                  <div className="mc-prog-meta"><span>68% complete</span><span>32% left</span></div>
                 </div>
                 <div className="mc-footer">
                   <div className="mc-faces">
@@ -163,65 +152,45 @@ export default function Institutions() {
             </div>
 
             <div className="tilt-wrap tilt-b1" style={b1Tilt}>
-              <motion.div className="g-badge"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}>
+              <motion.div className="g-badge" animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}>
                 <span className="badge-icon b-green">✓</span>
-                <div>
-                  <div className="badge-label">Gatsby Benchmark met</div>
-                  <div className="badge-sub">Employer encounters · logged</div>
-                </div>
+                <div><div className="badge-label">Gatsby Benchmark met</div><div className="badge-sub">Employer encounters · logged</div></div>
               </motion.div>
             </div>
 
             <div className="tilt-wrap tilt-b2" style={b2Tilt}>
-              <motion.div className="g-badge"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}>
+              <motion.div className="g-badge" animate={{ y: [0, 10, 0] }} transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}>
                 <span className="badge-icon b-blue">◆</span>
-                <div>
-                  <div className="badge-label">3 live employer briefs active</div>
-                  <div className="badge-sub">NHS · Lloyds · BAE Systems</div>
-                </div>
+                <div><div className="badge-label">Employer reached out</div><div className="badge-sub">Contact routed through you</div></div>
               </motion.div>
             </div>
 
             <div className="tilt-wrap tilt-b3" style={b3Tilt}>
-              <motion.div className="g-badge"
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}>
+              <motion.div className="g-badge" animate={{ y: [0, -8, 0] }} transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}>
                 <span className="badge-icon b-orange">★</span>
-                <div>
-                  <div className="badge-label">48 students verified this term</div>
-                  <div className="badge-sub">Free · always</div>
-                </div>
+                <div><div className="badge-label">48 students verified this term</div><div className="badge-sub">Free · always</div></div>
               </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── WHY FREE ─── */}
       <section className="lsec">
         <div className="section-inner">
-          <motion.header className="sec-head"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <span className="sec-tag">WHY FREE</span>
-            <h2>The students who need this most<br />are in schools with the least budget.</h2>
+          <motion.header className="sec-head" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <span className="sec-tag">THE PROBLEM WE SOLVE</span>
+            <h2>Your students leave with qualifications<br />and a CV. That's not enough.</h2>
             <p className="sec-sub">
-              We built LERN to close a gap that money shouldn't determine.
-              A school in a deprived area deserves the same employer connections as one in a wealthy suburb.
-              Charging institutions would defeat the point.
+              Employers sift on evidence — real work, reviewed by someone credible — and that's the one thing
+              a school leaver can't usually show. LERN gives them it.
             </p>
           </motion.header>
         </div>
       </section>
 
-      {/* ─── WHAT YOU GET ─── */}
       <section className="lsec">
         <div className="section-inner">
-          <motion.header className="sec-head"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+          <motion.header className="sec-head" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <span className="sec-tag">WHAT YOU GET</span>
             <h2>Everything your careers programme<br />needs. Nothing it doesn't.</h2>
           </motion.header>
@@ -238,50 +207,27 @@ export default function Institutions() {
         </div>
       </section>
 
-      {/* ─── HOW IT WORKS ─── */}
       <section className="lsec">
         <div className="section-inner">
-          <motion.header className="sec-head"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <span className="sec-tag">HOW IT WORKS</span>
-            <h2>Up and running<br />in a week.</h2>
-          </motion.header>
-          <div className="how-grid">
-            {HOW_IT_WORKS.map((s, i) => (
-              <TiltCard key={s.n} className="g-card how-card"
-                custom={i * 0.1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                <div className="how-num">{s.n}</div>
-                <h3>{s.title}</h3>
-                <p>{s.body}</p>
-              </TiltCard>
-            ))}
-          </div>
+          <TiltCard className="g-card story-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <span className="sec-tag">SAFEGUARDING</span>
+            <div className="story-body">
+              <p>Aligned to Keeping Children Safe in Education. Under-18s access LERN only through your school. Employer contact is routed through you, never direct to a student. Sessions are moderated and recorded, and instructors working with under-18s are vetted.</p>
+              <p>A full written safeguarding position is available on request.</p>
+            </div>
+          </TiltCard>
         </div>
       </section>
 
-      {/* ─── THE GATSBY BENCHMARKS ─── */}
       <section className="lsec">
         <div className="section-inner">
-          <motion.header className="sec-head"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+          <motion.header className="sec-head" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <span className="sec-tag">GATSBY BENCHMARKS</span>
             <h2>Built-in evidence<br />for every inspection.</h2>
-            <p className="sec-sub">
-              LERN tracks and logs activity against all 8 Gatsby Benchmarks automatically.
-              Employer encounters, live employer briefs, workplace experiences — all recorded and reportable.
-            </p>
+            <p className="sec-sub">LERN tracks and logs activity against all 8 Gatsby Benchmarks automatically. Employer encounters, live employer briefs, workplace experiences — all recorded and reportable.</p>
           </motion.header>
           <div className="gatsby-grid">
-            {[
-              'Stable careers programme',
-              'Learning from career & labour market information',
-              'Addressing the needs of each student',
-              'Linking curriculum learning to careers',
-              'Encounters with employers and employees',
-              'Experience of workplaces',
-              'Encounters with further & higher education',
-              'Personal guidance',
-            ].map((bm, i) => (
+            {['Stable careers programme','Learning from career & labour market information','Addressing the needs of each student','Linking curriculum learning to careers','Encounters with employers and employees','Experience of workplaces','Encounters with further & higher education','Personal guidance'].map((bm, i) => (
               <TiltCard key={bm} className="g-card diff-card gatsby-card"
                 custom={i * 0.05} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                 <span className="gatsby-num">{String(i + 1).padStart(2, '0')}</span>
@@ -292,18 +238,13 @@ export default function Institutions() {
         </div>
       </section>
 
-      {/* ─── CTA ─── */}
       <section className="lsec cta-sec">
         <div className="section-inner">
-          <TiltCard className="g-card cta-inner"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+          <TiltCard className="g-card cta-inner" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="cta-glow" />
             <span className="sec-tag">GET SET UP</span>
             <h2>Ready to get started?<br />It takes five minutes.</h2>
-            <p className="cta-sub">
-              Email us and we'll set up your institution's private LERN space. No procurement,
-              no contract, no cost. Just a platform your students can use from day one.
-            </p>
+            <p className="cta-sub">Email us and we'll set up your institution's private LERN space. No procurement, no contract, no cost. Just a platform your students can use from day one.</p>
             <div className="cta-btns">
               <a href="mailto:alieu@joinirl.co.uk" className="btn btn-orange btn-lg">Email us to get started →</a>
               <Link to="/employers" className="btn btn-glass btn-lg">Are you an employer?</Link>

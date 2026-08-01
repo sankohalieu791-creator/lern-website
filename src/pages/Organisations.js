@@ -37,17 +37,17 @@ function TiltCard({ children, className, initial, whileInView, viewport, variant
   )
 }
 
-const WHAT_YOU_CAN_DO = [
-  { icon: '◈', title: 'Learn live', body: 'Real courses and workshops from people who do the job. Not pre-recorded videos. Not a PDF you skim. Live, with questions, feedback, and real interaction.' },
-  { icon: '◎', title: 'Build a verified profile', body: 'Proof of what you can actually do. A professional reviews your project work and verifies it on your LERN profile. That mark means something.' },
-  { icon: '◆', title: 'Get interview practice', body: 'With real hiring managers. Not an AI. Not a friend pretending. The kind of practice most people only get if they know someone.' },
-  { icon: '◉', title: 'Get found by employers', body: 'Employers browse your profile and reach out. If you\'re under 18, that goes safely through your school or college. You stay in control.' },
-  { icon: '◈', title: 'Track your applications', body: 'See where they went and get feedback, so you keep improving. We fix the silence that stops 98% of applicants from knowing what to do next.' },
+const WHAT_YOU_GET = [
+  { icon: '◈', title: 'Verified skill profiles', body: 'Your young people build a verifiable record of real, reviewed work. Not a certificate — proof that an employer can trust and a young person can be proud of.' },
+  { icon: '◎', title: 'Safe employer contact — routed through you', body: 'Employers can reach the young people you support, but contact is never direct. It comes through your organisation first. You stay in control.' },
+  { icon: '◆', title: 'Live courses and workshops', body: 'Delivered by real professionals. Your young people attend live, ask questions, and build actual work — not watch videos alone.' },
+  { icon: '◉', title: 'Progression data', body: 'Evidence of outcomes for your reporting and funders. Who attended, what they built, whether an employer made contact. All tracked.' },
+  { icon: '◈', title: 'A private, branded space', body: 'Your own area within LERN. Your cohort, your control, your branding. Separate from the general platform.' },
 ]
 
-const MINI_FACES = ['A', 'J', 'M', 'K', 'S']
+const MINI_FACES = ['J', 'A', 'M', 'T', 'K']
 
-export default function Students() {
+export default function Organisations() {
   const heroRef = useRef(null)
   const [mouse, setMouse] = useState({ x: 0, y: 0 })
 
@@ -96,23 +96,21 @@ export default function Students() {
           <motion.div className="page-hero-text" initial="hidden" animate="visible" variants={fadeUp} custom={0}>
             <span className="eyebrow">
               <span className="pulse-dot" />
-              Free to join · Always free
+              Charities · Support services · Community groups
             </span>
             <h1>
-              Show what you can do.<br />
-              <em className="h1-em">Get found</em> by<br />
-              the people who hire.
+              Give the young people<br />
+              you support verified proof<br />
+              <em className="h1-em">and a safe route to work.</em>
             </h1>
             <p className="hero-lead">
-              You don't need the right contacts or a perfect CV. On LERN, you learn live
-              from real professionals, build a profile of real work that gets verified,
-              and employers come to you.
+              Free for your organisation and the young people you support.
             </p>
             <div className="hero-actions">
-              <a href="https://lernapp.uk" target="_blank" rel="noopener noreferrer" className="btn btn-orange">
-                Sign up free →
+              <a href="mailto:alieu@joinirl.co.uk" className="btn btn-orange">
+                Get in touch →
               </a>
-              <Link to="/institutions" className="btn btn-glass">For your school</Link>
+              <Link to="/students" className="btn btn-glass">See the student view</Link>
             </div>
           </motion.div>
 
@@ -123,29 +121,29 @@ export default function Students() {
                 transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}>
                 <div className="mc-bar">
                   <span className="live-chip"><span className="live-ring" />LIVE</span>
-                  <span className="mc-time">22 mins remaining</span>
+                  <span className="mc-time">St Giles Trust</span>
                 </div>
-                <p className="mc-course">Design for Impact<br />UX &amp; Product Thinking</p>
+                <p className="mc-course">Employability Skills<br />Building Your Work Profile</p>
                 <div className="mc-instructor">
-                  <div className="mc-ava">A</div>
+                  <div className="mc-ava">S</div>
                   <div className="mc-ava-info">
-                    <div className="mc-iname">Alieu S.</div>
-                    <div className="mc-irole">Product Designer</div>
+                    <div className="mc-iname">Sarah K.</div>
+                    <div className="mc-irole">Employment Coach</div>
                   </div>
-                  <span className="mc-viewers">189 live</span>
+                  <span className="mc-viewers">14 learners</span>
                 </div>
                 <div className="mc-prog">
                   <div className="mc-prog-bar">
-                    <div className="mc-prog-fill" style={{ width: '62%' }} />
+                    <div className="mc-prog-fill" style={{ width: '74%' }} />
                   </div>
-                  <div className="mc-prog-meta"><span>62% complete</span><span>38% left</span></div>
+                  <div className="mc-prog-meta"><span>74% complete</span><span>26% left</span></div>
                 </div>
                 <div className="mc-footer">
                   <div className="mc-faces">
                     {MINI_FACES.map((l, i) => (
                       <div key={i} className="mc-face" style={{ zIndex: 5 - i }}>{l}</div>
                     ))}
-                    <span className="mc-more">+184 learners</span>
+                    <span className="mc-more">+9 learners</span>
                   </div>
                 </div>
               </motion.div>
@@ -154,21 +152,21 @@ export default function Students() {
             <div className="tilt-wrap tilt-b1" style={b1Tilt}>
               <motion.div className="g-badge" animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}>
                 <span className="badge-icon b-green">✓</span>
-                <div><div className="badge-label">Skill verified</div><div className="badge-sub">UX Research · Project reviewed</div></div>
+                <div><div className="badge-label">Profile verified</div><div className="badge-sub">Project reviewed by professional</div></div>
               </motion.div>
             </div>
 
             <div className="tilt-wrap tilt-b2" style={b2Tilt}>
               <motion.div className="g-badge" animate={{ y: [0, 10, 0] }} transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}>
-                <span className="badge-icon b-blue">👁</span>
-                <div><div className="badge-label">NHS Digital viewed your work</div><div className="badge-sub">3 employers this week</div></div>
+                <span className="badge-icon b-blue">◆</span>
+                <div><div className="badge-label">Employer contacted</div><div className="badge-sub">Routed through your organisation</div></div>
               </motion.div>
             </div>
 
             <div className="tilt-wrap tilt-b3" style={b3Tilt}>
               <motion.div className="g-badge" animate={{ y: [0, -8, 0] }} transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}>
                 <span className="badge-icon b-orange">★</span>
-                <div><div className="badge-label">Interview unlocked</div><div className="badge-sub">Employer reached out directly</div></div>
+                <div><div className="badge-label">Free for your organisation</div><div className="badge-sub">Always</div></div>
               </motion.div>
             </div>
           </div>
@@ -178,11 +176,25 @@ export default function Students() {
       <section className="lsec">
         <div className="section-inner">
           <motion.header className="sec-head" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <span className="sec-tag">WHAT YOU CAN DO</span>
-            <h2>Your work is what gets you hired.<br />LERN makes it visible.</h2>
+            <span className="sec-tag">THE PROBLEM WE SOLVE</span>
+            <h2>The hardest part isn't building their skills.<br />It's getting those skills recognised.</h2>
+            <p className="sec-sub">
+              If you work with young people — especially those the formal system overlooks — you know that
+              the barrier isn't ability. It's proof. LERN gives your young people a verified profile of real work,
+              so they can show what they can do rather than lead with what they lack.
+            </p>
+          </motion.header>
+        </div>
+      </section>
+
+      <section className="lsec">
+        <div className="section-inner">
+          <motion.header className="sec-head" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <span className="sec-tag">WHAT YOU GET</span>
+            <h2>Everything your young people need.<br />Nothing to buy.</h2>
           </motion.header>
           <div className="value-grid value-grid-3">
-            {WHAT_YOU_CAN_DO.map((c, i) => (
+            {WHAT_YOU_GET.map((c, i) => (
               <TiltCard key={c.title} className="g-card v-card"
                 custom={i * 0.07} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                 <span className="v-icon">{c.icon}</span>
@@ -197,15 +209,31 @@ export default function Students() {
       <section className="lsec">
         <div className="section-inner">
           <TiltCard className="g-card story-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <span className="sec-tag">FREE. ALWAYS.</span>
+            <span className="sec-tag">WHY IT'S FREE</span>
             <div className="story-body">
               <p>
-                Everything on LERN that a young person needs — every live course, every verified profile,
-                every employer connection, every interview practice session — is free. Not free for 30 days.
-                Not free with a catch. Free because that's the only way this works for the people it was built for.
+                You bring young people onto the platform. That's the value. We're funded by the employers
+                who hire them, never by the organisations supporting them. There's nothing to procure,
+                nothing to negotiate, and no catch.
               </p>
-              <p className="story-quote">
-                "You don't need the right contacts. You just need somewhere to show what you can do."
+            </div>
+          </TiltCard>
+        </div>
+      </section>
+
+      <section className="lsec">
+        <div className="section-inner">
+          <TiltCard className="g-card story-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <span className="sec-tag">WHO WE WORK WITH</span>
+            <div className="story-body">
+              <p>
+                We're already working with St Giles Trust and Lambeth Council. We work with any organisation
+                supporting young people — particularly those the formal education and employment systems
+                have let down.
+              </p>
+              <p>
+                If your young people face barriers to employment that have nothing to do with their ability,
+                LERN was built for them.
               </p>
             </div>
           </TiltCard>
@@ -217,14 +245,14 @@ export default function Students() {
           <TiltCard className="g-card cta-inner" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="cta-glow" />
             <span className="sec-tag">GET STARTED</span>
-            <h2>Your profile is waiting.<br />Start building it today.</h2>
+            <h2>Let's talk about<br />your cohort.</h2>
             <p className="cta-sub">
-              Sign up free. Attend your first live session. Build something real.
-              Let employers find you.
+              Email us and we'll get your organisation set up. No procurement, no cost, no commitment.
+              Just a platform your young people can use from day one.
             </p>
             <div className="cta-btns">
-              <a href="https://lernapp.uk" target="_blank" rel="noopener noreferrer" className="btn btn-orange btn-lg">Sign up free →</a>
-              <Link to="/institutions" className="btn btn-glass btn-lg">For your school</Link>
+              <a href="mailto:alieu@joinirl.co.uk" className="btn btn-orange btn-lg">Email us to get started →</a>
+              <Link to="/employers" className="btn btn-glass btn-lg">For employers</Link>
             </div>
           </TiltCard>
         </div>

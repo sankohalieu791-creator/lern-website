@@ -16,12 +16,12 @@ export default function Navbar() {
         <div className={`nav-links ${open ? 'nav-open' : ''}`}>
           <Link to="/institutions" className="nav-link" onClick={() => setOpen(false)}>Institutions</Link>
           <Link to="/employers" className="nav-link" onClick={() => setOpen(false)}>Employers</Link>
-          <Link to="/students" className="nav-link" onClick={() => setOpen(false)}>Students</Link>
-          <Link to="/instructors" className="nav-link" onClick={() => setOpen(false)}>Instructors</Link>
+          <Link to="/training-providers" className="nav-link" onClick={() => setOpen(false)}>Training providers</Link>
+          <Link to="/organisations" className="nav-link" onClick={() => setOpen(false)}>Organisations</Link>
           <Link to="/about" className="nav-link" onClick={() => setOpen(false)}>About</Link>
         </div>
 
-        <Link to="/students" className="btn-secondary" onClick={() => setOpen(false)}>Get started</Link>
+        <a href="https://lernapp.uk" target="_blank" rel="noopener noreferrer" className="btn-secondary" onClick={() => setOpen(false)}>Sign up</a>
 
         <button className="nav-burger" aria-label="Menu" onClick={() => setOpen(o => !o)}>
           <span /><span /><span />
@@ -32,10 +32,11 @@ export default function Navbar() {
         <div className="nav-mobile">
           <Link to="/institutions" className="nav-link" onClick={() => setOpen(false)}>Institutions</Link>
           <Link to="/employers" className="nav-link" onClick={() => setOpen(false)}>Employers</Link>
+          <Link to="/training-providers" className="nav-link" onClick={() => setOpen(false)}>Training providers</Link>
+          <Link to="/organisations" className="nav-link" onClick={() => setOpen(false)}>Organisations</Link>
           <Link to="/students" className="nav-link" onClick={() => setOpen(false)}>Students</Link>
-          <Link to="/instructors" className="nav-link" onClick={() => setOpen(false)}>Instructors</Link>
           <Link to="/about" className="nav-link" onClick={() => setOpen(false)}>About</Link>
-          <Link to="/students" className="btn-secondary" onClick={() => setOpen(false)}>Get started</Link>
+          <a href="https://lernapp.uk" target="_blank" rel="noopener noreferrer" className="btn-secondary" onClick={() => setOpen(false)}>Sign up</a>
         </div>
       )}
     </nav>
