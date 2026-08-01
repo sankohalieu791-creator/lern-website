@@ -969,6 +969,8 @@
   .tilt-b1, .tilt-b2, .tilt-b3 { display: none; }
   .main-card   { width: 260px; }
   .hero-visual { height: 320px; }
+  /* Hide spheres on mobile — parallax doesn't work on touch and they overlap content */
+  .sp { display: none; }
 }
 
 @media (max-width: 520px) {
