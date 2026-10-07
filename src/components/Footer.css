@@ -1,77 +1,67 @@
-.footer {
-  background: #050505;
-  border-top: 1px solid rgba(255, 102, 0, 0.12);
-  padding: 4rem 2rem 2rem;
-  margin-top: 0;
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding-block: 56px 32px;
 }
 
-.footer-container {
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.footer-content {
+.footer-top {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 3rem;
-  margin-bottom: 3rem;
+  grid-template-columns: 1.4fr repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 44px;
 }
 
-.footer-section h3 {
-  font-size: 1.25rem;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.02em;
-  color: #FF6600;
+@media (max-width: 720px) {
+  .footer-top { grid-template-columns: 1fr 1fr; }
 }
 
-.footer-section h4 {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+@media (max-width: 480px) {
+  .footer-top { grid-template-columns: 1fr; }
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-top: 12px;
+  max-width: 30ch;
+  line-height: 1.55;
+}
+
+.footer-logo svg {
+  height: 18px;
+  width: auto;
+}
+
+.footer-logo {
+  color: var(--ink);
+}
+
+.footer-col h4 {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-faint);
   text-transform: uppercase;
-  color: #555;
-  margin-bottom: 1rem;
+  letter-spacing: .04em;
+  margin-bottom: 14px;
 }
 
-.footer-section p {
-  color: #555;
-  font-size: 0.875rem;
-}
-
-.footer-section a {
+.footer-col a {
   display: block;
-  color: #666;
-  margin: 0.5rem 0;
-  transition: color 0.15s;
-  font-size: 0.875rem;
+  font-size: 14px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  margin-bottom: 10px;
 }
 
-.footer-section a:hover {
-  color: #FF6600;
-}
+.footer-col a:hover { color: var(--ink); }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding-top: 2rem;
-  text-align: center;
-  color: #444;
-  font-size: 0.82rem;
-  letter-spacing: 0.02em;
-}
-
-.footer-legal {
-  margin-top: 0.6rem;
-}
-
-.footer-legal a {
-  color: #555;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  font-size: 0.82rem;
-  transition: color 0.15s;
-}
-
-.footer-legal a:hover {
-  color: #FF6600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  font-size: 12.5px;
+  color: var(--ink-faint);
 }

@@ -1,25 +1,17 @@
 {
   "short_name": "LERN",
-  "name": "LERN — Free live learning for everyone",
+  "name": "LERN — Verified proof of what a young person can do",
+  "description": "LERN helps young people turn real work into trusted, verified proof — so they get seen and hired safely through their school, college, or training provider.",
   "icons": [
     {
       "src": "logo.svg",
       "sizes": "any",
-      "type": "image/svg+xml"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#050505",
-  "background_color": "#050505"
+  "theme_color": "#FFFDF9",
+  "background_color": "#FFFDF9"
 }

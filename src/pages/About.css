@@ -1,11 +1,198 @@
-/* ══════════════════════════════════════
-   ABOUT — page-specific overrides only.
-   Layout and shared glass come from Page.css + Home.css
-══════════════════════════════════════ */
-.about {
-  min-height: 100vh;
-  color: #1a0a00;
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+/* ── About page ── */
+
+/* ── What LERN is ── */
+.about-intro .story-card {
+  max-width: 72ch;
+}
+
+/* ── Founder section ── */
+.about-founder-section {
+  background: var(--tint-band);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.about-founder {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 64px;
+  align-items: start;
+}
+
+@media (max-width: 880px) {
+  .about-founder {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.about-founder-text h2 {
+  font-size: 34px;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+}
+
+.about-founder-text p {
+  font-size: 17px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.about-founder-text p + p { margin-top: 18px; }
+
+/* ── Founder card (sticky sidebar) ── */
+.about-founder-aside {
+  position: sticky;
+  top: 96px;
+}
+
+.about-founder-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.about-founder-photo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 12%;
+  border: 3px solid var(--surface);
+  outline: 2px solid var(--border);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.about-founder-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.about-founder-role {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: .02em;
+  margin-bottom: 4px;
+}
+
+.about-founder-note {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+/* ── Team section ── */
+.about-team-section {
+  padding-top: 0;
+}
+
+.about-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 860px) {
+  .about-team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+  .about-team-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Team cards ── */
+.about-team-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-team-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.team-card-top {
+  height: 200px;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.team-card-top--photo .team-card-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.team-card-top--orange {
+  background: linear-gradient(145deg, #FDDCCA 0%, #F9AA75 100%);
+}
+
+.team-card-top--teal {
+  background: linear-gradient(145deg, #C8DCF2 0%, #84AED8 100%);
+}
+
+.team-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.55);
+  letter-spacing: 0.03em;
+}
+
+.team-card-body {
+  padding: 20px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.team-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.team-role {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+
+.team-bio {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
 }

@@ -1,0 +1,24 @@
+.sg-commitment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 720px) {
+  .sg-commitment-grid { grid-template-columns: 1fr; }
+}
+
+.sg-commitment {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sg-commitment h3 { font-size: 17px; }
+
+.sg-commitment p {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}

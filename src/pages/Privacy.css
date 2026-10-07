@@ -120,6 +120,41 @@ bdt {
   display: none;
 }
 
+.privacy-wrap h1 {
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #0d0d1f;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 0.5rem;
+}
+
+.privacy-wrap h2 {
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0d0d1f;
+  margin: 2rem 0 0.75rem;
+  border-bottom: 2px solid rgba(255, 102, 0, 0.18);
+  padding-bottom: 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.privacy-meta {
+  font-size: 0.82rem;
+  color: #999;
+  margin-bottom: 1.75rem;
+}
+
+.privacy-footer-line {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.82rem;
+  color: #999;
+}
+
 .privacy-back {
   display: inline-flex;
   align-items: center;

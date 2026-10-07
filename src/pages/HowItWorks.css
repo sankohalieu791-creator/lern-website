@@ -1,0 +1,294 @@
+/* ── How It Works page ── */
+
+.hiw-hero {
+  border-bottom: 1px solid var(--border);
+}
+
+.hiw-prose p {
+  font-size: 17px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  max-width: 68ch;
+}
+
+.hiw-prose p + p { margin-top: 16px; }
+
+.hiw-prose h2 {
+  font-size: 28px;
+  letter-spacing: -0.015em;
+  margin-bottom: 20px;
+}
+
+/* ── Problem band ── */
+.hiw-problem {
+  background: var(--tint-band);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Loop / steps ── */
+.hiw-loop-section {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.hiw-loop-title {
+  font-size: 28px;
+  letter-spacing: -0.015em;
+  margin-bottom: 10px;
+}
+
+.hiw-loop-intro {
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin-bottom: 40px;
+}
+
+.hiw-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.hiw-step {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  align-items: stretch;
+  border-bottom: 1px solid var(--border);
+}
+
+.hiw-step:last-child { border-bottom: none; }
+
+.hiw-step-num {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--tint-band);
+  border-right: 1px solid var(--border);
+  letter-spacing: -0.02em;
+}
+
+.hiw-step-body {
+  padding: 22px 28px;
+}
+
+.hiw-step-body h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+
+.hiw-step-body p {
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ── Audience features ── */
+.hiw-features-title {
+  font-size: 28px;
+  letter-spacing: -0.015em;
+  margin-bottom: 40px;
+}
+
+.hiw-audience-block {
+  padding-block: 36px;
+  border-top: 1px solid var(--border);
+}
+
+.hiw-audience-block:last-of-type {
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+}
+
+.hiw-audience-head {
+  margin-bottom: 20px;
+}
+
+.hiw-audience-head h3 {
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+
+.hiw-audience-sub {
+  font-size: 13px;
+  color: var(--ink-faint);
+  margin-top: 4px;
+}
+
+.hiw-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hiw-feature-list li {
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  padding: 12px 0 12px 22px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.hiw-feature-list li:last-child { border-bottom: none; }
+
+.hiw-feature-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 19px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.hiw-learn-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* ── Profile / timeline ── */
+.hiw-profile-section {
+  background: var(--tint-band);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.hiw-profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .hiw-profile-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+.hiw-profile-copy h2 {
+  font-size: 28px;
+  letter-spacing: -0.015em;
+  margin-bottom: 18px;
+}
+
+.hiw-profile-copy p {
+  font-size: 16px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.hiw-profile-copy p + p { margin-top: 14px; }
+
+.hiw-profile-close {
+  font-style: italic;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  margin-top: 20px !important;
+}
+
+.hiw-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.hiw-timeline-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hiw-timeline-row:last-child { border-bottom: none; }
+
+.hiw-timeline-when {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.hiw-timeline-what {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* ── Who it's for ── */
+.hiw-for-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-top: 28px;
+}
+
+@media (max-width: 700px) {
+  .hiw-for-grid { grid-template-columns: 1fr; }
+}
+
+.hiw-for-item {
+  padding: 22px 24px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.hiw-for-item:nth-child(even) { border-right: none; }
+.hiw-for-item:nth-last-child(-n+2) { border-bottom: none; }
+
+@media (max-width: 700px) {
+  .hiw-for-item { border-right: none; }
+  .hiw-for-item:last-child { border-bottom: none; }
+  .hiw-for-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+}
+
+.hiw-for-item strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.hiw-for-item p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* ── Not section ── */
+.hiw-not-section {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.hiw-section h2 {
+  font-size: 28px;
+  letter-spacing: -0.015em;
+  margin-bottom: 24px;
+}

@@ -1,255 +1,166 @@
-import React, { useRef, useState, useCallback } from 'react'
-import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import './Page.css'
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 36 },
-  visible: (d = 0) => ({
-    opacity: 1, y: 0,
-    transition: { duration: 0.65, delay: d, ease: [0.16, 1, 0.3, 1] },
-  }),
-}
-
-function TiltCard({ children, className, initial, whileInView, viewport, variants, custom, ...rest }) {
-  const ref = useRef(null)
-  const [t, setT] = useState({ x: 0, y: 0, on: false })
-  const onMove = useCallback((e) => {
-    const r = ref.current?.getBoundingClientRect()
-    if (!r) return
-    setT({ x: (e.clientX - r.left) / r.width - 0.5, y: (e.clientY - r.top) / r.height - 0.5, on: true })
-  }, [])
-  const onLeave = useCallback(() => setT({ x: 0, y: 0, on: false }), [])
-  return (
-    <motion.div
-      ref={ref} className={className} initial={initial} whileInView={whileInView}
-      viewport={viewport} variants={variants} custom={custom}
-      onMouseMove={onMove} onMouseLeave={onLeave}
-      style={{
-        transform: `perspective(800px) rotateX(${t.y * -6}deg) rotateY(${t.x * 6}deg) ${t.on ? 'scale(1.02)' : 'scale(1)'}`,
-        transition: 'transform 0.18s ease-out',
-        willChange: 'transform',
-      }}
-      {...rest}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
-const WHAT_YOU_GET = [
-  { icon: '◈', title: 'Verified skill profiles', body: 'Students prove real work, not just attendance. A professional reviews and verifies every piece of project work on their profile.' },
-  { icon: '◎', title: 'Employers reach out', body: 'Your students get found by employers who are actively hiring. For under-18s, contact is routed safely through you — never direct to a student.' },
-  { icon: '◆', title: 'Live interview practice', body: 'With real hiring managers, not an AI coach. The kind of practice students without well-connected families rarely get.' },
-  { icon: '◉', title: 'Gatsby-mapped reporting', body: 'Evidence your careers provision against the benchmarks you\'re measured on. Ready for your careers lead to use, ready for Ofsted.' },
-  { icon: '◈', title: 'Live courses and workshops', body: 'Plus a private space for your school. Branded to you, controlled by you, accessible from anywhere.' },
-  { icon: '◎', title: 'Application tracking and feedback', body: 'So students learn and improve. They see where their application went and why they weren\'t picked. We fix the silence.' },
+const FEATURES = [
+  {
+    name: 'Feed',
+    icon: <><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></>,
+    body: 'A school-wide feed of verified student wins — placements secured, workshops attended, work recognised. Nothing shows until a tutor has reviewed and approved it. Students build a real record; the school sees it all.',
+  },
+  {
+    name: 'Review',
+    icon: <><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></>,
+    body: 'Every submission is checked against criteria you set before it counts as verified. If something is flagged by a student or staff member, it disappears instantly and lands in your review queue. Nothing slips through unnoticed.',
+  },
+  {
+    name: 'Work Experience',
+    icon: <><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></>,
+    body: "Track every student's placement — where they are, whether they've arrived each day, what the employer said at sign-off. No more chasing teachers for updates or reconstructing records after the fact.",
+  },
+  {
+    name: 'Briefs & Workshops',
+    icon: <><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></>,
+    body: "Set a real project brief with clear criteria and assign it to a year group, a class, or the whole school. Run live workshops students join directly from their dashboard — attendance is logged automatically.",
+  },
+  {
+    name: 'Students',
+    icon: <><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></>,
+    body: "One view per student: every piece of verified work, every placement, every workshop attended, every application made. The careers lead, the tutor, and the safeguarding lead all see the same record.",
+  },
+  {
+    name: 'Guest invite',
+    icon: <><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></>,
+    body: "When an employer wants to see a specific student's work, you invite them to that one profile — no account, no access to anyone else, no way to contact the student directly. You stay in control.",
+  },
+  {
+    name: 'Job tracking',
+    icon: <><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></>,
+    body: "Follow every student from first interest through to application, interview, and hired — all logged in one place. When Ofsted or a governor asks about destinations data, you have it.",
+  },
+  {
+    name: 'Dashboard',
+    icon: <><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></>,
+    body: 'What needs review, what is overdue, which students have not logged anything this term — your safeguarding lead and careers lead see it at a glance. Every action is timestamped and kept.',
+  },
 ]
 
-const MINI_FACES = ['J', 'A', 'M', 'S', 'K']
-
 export default function Institutions() {
-  const heroRef = useRef(null)
-  const [mouse, setMouse] = useState({ x: 0, y: 0 })
-
-  const onHeroMove = useCallback((e) => {
-    const r = heroRef.current?.getBoundingClientRect()
-    if (!r) return
-    setMouse({ x: (e.clientX - r.left) / r.width - 0.5, y: (e.clientY - r.top) / r.height - 0.5 })
-  }, [])
-  const onHeroLeave = useCallback(() => setMouse({ x: 0, y: 0 }), [])
-
-  const sp = (dx, dy) => ({
-    transform: `translate(${mouse.x * dx}px, ${mouse.y * dy}px)`,
-    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
-  })
-  const mainTilt = {
-    transform: `rotateX(${8 + mouse.y * -12}deg) rotateY(${-12 + mouse.x * 16}deg)`,
-    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
-  }
-  const b1Tilt = {
-    transform: `rotateX(${-7 + mouse.y * 6}deg) rotateY(${18 + mouse.x * -9}deg) rotateZ(-3deg)`,
-    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
-  }
-  const b2Tilt = {
-    transform: `rotateX(${10 + mouse.y * 5}deg) rotateY(${-7 + mouse.x * 7}deg) rotateZ(2.5deg)`,
-    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
-  }
-  const b3Tilt = {
-    transform: `rotateX(${-5 + mouse.y * 4}deg) rotateY(${-14 + mouse.x * -7}deg) rotateZ(1.5deg)`,
-    transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)',
-  }
-
   return (
-    <main className="page">
-      <div className="blob blob-a" />
-      <div className="blob blob-b" />
-      <div className="blob blob-c" />
+    <main className="lpage">
+      <section className="lpage-hero">
+        <div className="wrap">
+          <p className="eyebrow-plain">Schools · Colleges · Sixth forms</p>
+          <h1>One platform for the whole school.</h1>
+          <p className="hero-sub">
+            Verified student work, attendance, and Work Experience — logged, reviewed,
+            and safely shared, without the admin overhead.
+          </p>
+          <div className="hero-actions">
+            <a href="mailto:alieu@joinirl.co.uk" className="btn btn-primary-lg">Set up your school or college</a>
+            <Link to="/pricing" className="link-accent">See pricing</Link>
+          </div>
+        </div>
+      </section>
 
-      <section className="page-hero">
-        <div className="sp sp-a" style={sp(-55, -38)} />
-        <div className="sp sp-b" style={sp(-32, -22)} />
-        <div className="sp sp-e" style={sp(-18, -14)} />
-        <div className="sp sp-c" style={{ transform: `translate(${mouse.x * 42}px, ${mouse.y * 28}px)`, transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)', zIndex: 10 }} />
-        <div className="sp sp-d" style={{ transform: `translate(${mouse.x * 62}px, ${mouse.y * 44}px)`, transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1)', zIndex: 10 }} />
-
-        <div className="page-hero-split">
-          <motion.div className="page-hero-text" initial="hidden" animate="visible" variants={fadeUp} custom={0}>
-            <span className="eyebrow">
-              <span className="pulse-dot" />
-              Schools · Colleges · Sixth forms
-            </span>
-            <h1>
-              Free for your school.<br />
-              Free for your students.<br />
-              <em className="h1-em">Always.</em>
-            </h1>
-            <p className="hero-lead">
-              Give your students verified proof of what they can do, and evidence your
-              careers provision at the same time. No procurement, no contract, no cost.
+      <section className="lsection">
+        <div className="wrap">
+          <div className="story-card">
+            <p>
+              Most schools manage Work Experience through spreadsheets, email chains and
+              paper forms. Student portfolios — if they exist at all — live in scattered
+              folders with no standard format. Employers are contacted ad hoc by individual
+              teachers, with no shared record of what was agreed or what happened.
+              Safeguarding checks happen offline, if they happen at all.
             </p>
-            <div className="hero-actions">
-              <a href="mailto:alieu@joinirl.co.uk" className="btn btn-orange">
-                Set up your institution →
-              </a>
-              <Link to="/students" className="btn btn-glass">See the student view</Link>
-            </div>
-          </motion.div>
+            <p>
+              LERN replaces all of that. One platform the whole school uses — for verified
+              student work, placement tracking, employer relationships, and careers
+              activity — with safeguarding built into how every feature works, not added
+              as an afterthought.
+            </p>
+            <p className="story-quote">
+              Students join free. Every member of staff gets a seat. You pay one flat
+              annual fee based on the size of your school.
+            </p>
+          </div>
+        </div>
+      </section>
 
-          <div className="page-hero-visual" ref={heroRef} onMouseMove={onHeroMove} onMouseLeave={onHeroLeave}>
-            <div className="tilt-wrap" style={mainTilt}>
-              <motion.div className="g-card main-card"
-                animate={{ y: [0, -18, 0] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}>
-                <div className="mc-bar">
-                  <span className="live-chip"><span className="live-ring" />LIVE</span>
-                  <span className="mc-time">Careers Week</span>
-                </div>
-                <p className="mc-course">Understanding the World of Work<br />Leyton Sixth Form College</p>
-                <div className="mc-instructor">
-                  <div className="mc-ava">G</div>
-                  <div className="mc-ava-info">
-                    <div className="mc-iname">Ms. Green</div>
-                    <div className="mc-irole">Head of Careers</div>
-                  </div>
-                  <span className="mc-viewers">31 students</span>
-                </div>
-                <div className="mc-prog">
-                  <div className="mc-prog-bar">
-                    <div className="mc-prog-fill" style={{ width: '68%' }} />
-                  </div>
-                  <div className="mc-prog-meta"><span>68% complete</span><span>32% left</span></div>
-                </div>
-                <div className="mc-footer">
-                  <div className="mc-faces">
-                    {MINI_FACES.map((l, i) => (
-                      <div key={i} className="mc-face" style={{ zIndex: 5 - i }}>{l}</div>
-                    ))}
-                    <span className="mc-more">+26 students</span>
-                  </div>
-                </div>
-              </motion.div>
+      <section className="lsection lsection-steps">
+        <div className="wrap">
+          <h2 className="section-h">How it fits your school</h2>
+          <div className="how-steps">
+            <div className="how-step">
+              <span className="how-step-n">1</span>
+              <div>
+                <strong>You set up your school's space.</strong>
+                <p>We configure your institution, import your student roster, and brief your staff. Most schools are live within a week.</p>
+              </div>
             </div>
-
-            <div className="tilt-wrap tilt-b1" style={b1Tilt}>
-              <motion.div className="g-badge" animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}>
-                <span className="badge-icon b-green">✓</span>
-                <div><div className="badge-label">Gatsby Benchmark met</div><div className="badge-sub">Employer encounters · logged</div></div>
-              </motion.div>
+            <div className="how-step">
+              <span className="how-step-n">2</span>
+              <div>
+                <strong>Students join free and start logging work.</strong>
+                <p>Each submission goes to a tutor's review queue before it becomes verified. Nothing is public until a member of staff has checked it.</p>
+              </div>
             </div>
-
-            <div className="tilt-wrap tilt-b2" style={b2Tilt}>
-              <motion.div className="g-badge" animate={{ y: [0, 10, 0] }} transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}>
-                <span className="badge-icon b-blue">◆</span>
-                <div><div className="badge-label">Employer reached out</div><div className="badge-sub">Contact routed through you</div></div>
-              </motion.div>
+            <div className="how-step">
+              <span className="how-step-n">3</span>
+              <div>
+                <strong>Employers are invited through the school, never around it.</strong>
+                <p>When a student is ready to share their profile, you send the invite. The employer sees one profile. They have no way to contact the student directly.</p>
+              </div>
             </div>
-
-            <div className="tilt-wrap tilt-b3" style={b3Tilt}>
-              <motion.div className="g-badge" animate={{ y: [0, -8, 0] }} transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}>
-                <span className="badge-icon b-orange">★</span>
-                <div><div className="badge-label">48 students verified this term</div><div className="badge-sub">Free · always</div></div>
-              </motion.div>
+            <div className="how-step">
+              <span className="how-step-n">4</span>
+              <div>
+                <strong>Your safeguarding lead has a complete log.</strong>
+                <p>Every review, every flag, every employer interaction — timestamped and visible to whoever needs to see it, for as long as you need to keep it.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="lsec">
-        <div className="section-inner">
-          <motion.header className="sec-head" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <span className="sec-tag">THE PROBLEM WE SOLVE</span>
-            <h2>Your students leave with qualifications<br />and a CV. That's not enough.</h2>
-            <p className="sec-sub">
-              Employers sift on evidence — real work, reviewed by someone credible — and that's the one thing
-              a school leaver can't usually show. LERN gives them it.
-            </p>
-          </motion.header>
-        </div>
-      </section>
-
-      <section className="lsec">
-        <div className="section-inner">
-          <motion.header className="sec-head" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <span className="sec-tag">WHAT YOU GET</span>
-            <h2>Everything your careers programme<br />needs. Nothing it doesn't.</h2>
-          </motion.header>
-          <div className="value-grid value-grid-3">
-            {WHAT_YOU_GET.map((c, i) => (
-              <TiltCard key={c.title} className="g-card v-card"
-                custom={i * 0.07} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                <span className="v-icon">{c.icon}</span>
-                <h3>{c.title}</h3>
-                <p>{c.body}</p>
-              </TiltCard>
+      <section className="lsection">
+        <div className="wrap">
+          <div className="section-head">
+            <h2 className="section-h">What's included</h2>
+          </div>
+          <div className="features-grid">
+            {FEATURES.map((f) => (
+              <article key={f.name} className="feature-card lcard">
+                <div className="feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    {f.icon}
+                  </svg>
+                </div>
+                <h3>{f.name}</h3>
+                <p>{f.body}</p>
+              </article>
             ))}
           </div>
+
+          <p className="inline-note">
+            Safeguarding is the architecture, not a setting. Under-18s are never publicly
+            searchable, there is no direct employer contact, and every piece of work is
+            checked by a person before it counts. The dashboard logs everything so your
+            designated safeguarding lead is never working from memory.
+          </p>
         </div>
       </section>
 
-      <section className="lsec">
-        <div className="section-inner">
-          <TiltCard className="g-card story-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <span className="sec-tag">SAFEGUARDING</span>
-            <div className="story-body">
-              <p>Aligned to Keeping Children Safe in Education. Under-18s access LERN only through your school. Employer contact is routed through you, never direct to a student. Sessions are moderated and recorded, and instructors working with under-18s are vetted.</p>
-              <p>A full written safeguarding position is available on request.</p>
-            </div>
-          </TiltCard>
-        </div>
-      </section>
-
-      <section className="lsec">
-        <div className="section-inner">
-          <motion.header className="sec-head" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <span className="sec-tag">GATSBY BENCHMARKS</span>
-            <h2>Built-in evidence<br />for every inspection.</h2>
-            <p className="sec-sub">LERN tracks and logs activity against all 8 Gatsby Benchmarks automatically. Employer encounters, live employer briefs, workplace experiences — all recorded and reportable.</p>
-          </motion.header>
-          <div className="gatsby-grid">
-            {['Stable careers programme','Learning from career & labour market information','Addressing the needs of each student','Linking curriculum learning to careers','Encounters with employers and employees','Experience of workplaces','Encounters with further & higher education','Personal guidance'].map((bm, i) => (
-              <TiltCard key={bm} className="g-card diff-card gatsby-card"
-                custom={i * 0.05} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                <span className="gatsby-num">{String(i + 1).padStart(2, '0')}</span>
-                <p>{bm}</p>
-              </TiltCard>
-            ))}
+      <section className="page-cta">
+        <div className="wrap">
+          <h2>Set up your school or college.</h2>
+          <p>
+            Email us and we'll have your institution's private LERN space ready. Students
+            join free. You pay a simple flat annual fee based on size — from £2,000/year.
+          </p>
+          <div className="cta-actions">
+            <a href="mailto:alieu@joinirl.co.uk" className="btn btn-primary-lg">Get in touch</a>
+            <Link to="/pricing" className="link-accent">See pricing</Link>
           </div>
-        </div>
-      </section>
-
-      <section className="lsec cta-sec">
-        <div className="section-inner">
-          <TiltCard className="g-card cta-inner" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <div className="cta-glow" />
-            <span className="sec-tag">GET SET UP</span>
-            <h2>Ready to get started?<br />It takes five minutes.</h2>
-            <p className="cta-sub">Email us and we'll set up your institution's private LERN space. No procurement, no contract, no cost. Just a platform your students can use from day one.</p>
-            <div className="cta-btns">
-              <a href="mailto:alieu@joinirl.co.uk" className="btn btn-orange btn-lg">Email us to get started →</a>
-              <Link to="/employers" className="btn btn-glass btn-lg">Are you an employer?</Link>
-            </div>
-          </TiltCard>
         </div>
       </section>
     </main>
