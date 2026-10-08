@@ -1,7 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import PlatformDemo from '../components/PlatformDemo'
-import { HOME_BEATS, INSTITUTION_NAV } from '../components/demoScripts'
+import RealDemoPlayer from '../components/RealDemoPlayer'
 import './Home.css'
 
 /* ── MacBook Neo–style step cards ── */
@@ -116,7 +115,7 @@ export default function Home() {
             </a>
           </div>
           <div className="hp-hero-preview">
-            <PlatformDemo beats={HOME_BEATS} navItems={INSTITUTION_NAV} />
+            <RealDemoPlayer src="/demo/institution-demo.mp4" title="Where the future starts." />
           </div>
         </div>
       </section>

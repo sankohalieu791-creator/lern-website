@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
-import PlatformDemo from '../components/PlatformDemo'
-import { EMPLOYER_BEATS, EMPLOYER_NAV } from '../components/demoScripts'
+import RealDemoPlayer from '../components/RealDemoPlayer'
 import './Page.css'
 
 const FEATURES = [
@@ -53,7 +52,7 @@ export default function Employers() {
             <Link to="/pricing" className="link-accent">See pricing</Link>
           </div>
           <div style={{ marginTop: 56 }}>
-            <PlatformDemo beats={EMPLOYER_BEATS} navItems={EMPLOYER_NAV} />
+            <RealDemoPlayer src="/demo/employer-demo.mp4" title="Built for employers." />
           </div>
         </div>
       </section>

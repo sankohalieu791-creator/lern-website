@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
-import PlatformDemo from '../components/PlatformDemo'
-import { INSTITUTION_BEATS, INSTITUTION_NAV } from '../components/demoScripts'
+import RealDemoPlayer from '../components/RealDemoPlayer'
 import './Page.css'
 
 const FEATURES = [
@@ -62,7 +61,7 @@ export default function Institutions() {
             <Link to="/pricing" className="link-accent">See pricing</Link>
           </div>
           <div style={{ marginTop: 56 }}>
-            <PlatformDemo beats={INSTITUTION_BEATS} navItems={INSTITUTION_NAV} />
+            <RealDemoPlayer src="/demo/institution-demo.mp4" title="Built for institutions." />
           </div>
         </div>
       </section>

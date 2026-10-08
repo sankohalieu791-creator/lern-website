@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
-import PlatformDemo from '../components/PlatformDemo'
-import { PROVIDER_BEATS, PROVIDER_NAV } from '../components/demoScripts'
+import RealDemoPlayer from '../components/RealDemoPlayer'
 import './Page.css'
 
 const FEATURES = [
@@ -62,7 +61,7 @@ export default function TrainingProviders() {
             <Link to="/pricing" className="link-accent">See pricing</Link>
           </div>
           <div style={{ marginTop: 56 }}>
-            <PlatformDemo beats={PROVIDER_BEATS} navItems={PROVIDER_NAV} />
+            <RealDemoPlayer src="/demo/provider-demo.mp4" title="Built for training providers." />
           </div>
         </div>
       </section>

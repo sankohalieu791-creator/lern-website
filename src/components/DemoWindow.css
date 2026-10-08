@@ -1,0 +1,29 @@
+/* ── Browser-chrome frame around the real-footage demo player ── */
+
+.ap-wrap { display: flex; justify-content: center; width: 100%; }
+
+.ap-window {
+  position: relative;
+  width: min(780px, 92vw);
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, .08);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .16), 0 4px 14px rgba(0, 0, 0, .08);
+}
+
+.ap-chrome { height: 34px; display: flex; align-items: center; gap: 6px; padding: 0 14px; background: #F4F1EA; border-bottom: 1px solid #ECE8E0; }
+.ap-dot { width: 9px; height: 9px; border-radius: 999px; background: #D8D3C8; }
+.ap-url { margin-left: 14px; font-size: 11.5px; color: #8A8373; background: #fff; border: 1px solid #ECE8E0; border-radius: 999px; padding: 2px 12px; }
+
+.ap-body { position: relative; height: min(480px, 64vw); background: #0c0c0c; }
+
+.ap-video { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+
+/* ── Closing title card, overlaid on top of the window ── */
+.pd-title-overlay {
+  position: absolute; inset: 0; z-index: 10;
+  background: linear-gradient(135deg, #1c1e22 0%, #121212 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+}
+.pd-title-sub { font-size: 15px; color: #B4AB9C; letter-spacing: .02em; }
