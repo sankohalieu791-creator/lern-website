@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { to: '/training-providers', label: 'Providers' },
   { to: '/employers', label: 'Employers' },
   { to: '/pricing', label: 'Pricing' },
+  { to: '/help-desk', label: 'Help Desk' },
   { to: '/about', label: 'About' },
   { to: '/how-it-works', label: 'How it works' },
 ]

@@ -11,6 +11,7 @@ import Employers from './pages/Employers'
 import Pricing from './pages/Pricing'
 import About from './pages/About'
 import HowItWorks from './pages/HowItWorks'
+import HelpDeskPage from './pages/HelpDesk'
 import Safeguarding from './pages/Safeguarding'
 import Privacy from './pages/Privacy'
 import Cookies from './pages/Cookies'
@@ -57,6 +58,7 @@ export default function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/about" element={<About />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
+        <Route path="/help-desk" element={<HelpDeskPage />} />
         <Route path="/safeguarding" element={<Safeguarding />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/cookies" element={<Cookies />} />
