@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import PlatformDemo from '../components/PlatformDemo'
+import { EMPLOYER_BEATS, EMPLOYER_NAV } from '../components/demoScripts'
 import './Page.css'
 
 const FEATURES = [
@@ -49,6 +51,9 @@ export default function Employers() {
           <div className="hero-actions">
             <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Start hiring safely</a>
             <Link to="/pricing" className="link-accent">See pricing</Link>
+          </div>
+          <div style={{ marginTop: 56 }}>
+            <PlatformDemo beats={EMPLOYER_BEATS} navItems={EMPLOYER_NAV} />
           </div>
         </div>
       </section>

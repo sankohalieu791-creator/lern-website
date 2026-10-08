@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import PlatformDemo from '../components/PlatformDemo'
+import { PROVIDER_BEATS, PROVIDER_NAV } from '../components/demoScripts'
 import './Page.css'
 
 const FEATURES = [
@@ -58,6 +60,9 @@ export default function TrainingProviders() {
           <div className="hero-actions">
             <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Set up your organisation</a>
             <Link to="/pricing" className="link-accent">See pricing</Link>
+          </div>
+          <div style={{ marginTop: 56 }}>
+            <PlatformDemo beats={PROVIDER_BEATS} navItems={PROVIDER_NAV} />
           </div>
         </div>
       </section>
