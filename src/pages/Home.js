@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import MacBookHero from '../components/MacBookHero'
+import AppPreview from '../components/AppPreview'
 import './Home.css'
 
 /* ── iPhone 15 Pro mockup — ported from 21st.dev ── */
@@ -252,7 +252,27 @@ export default function Home() {
     <main className="home-page">
 
       {/* ── HERO ── */}
-      <MacBookHero />
+      <section className="hp-hero">
+        <div className="wrap hp-hero-inner">
+          <p className="hp-eyebrow">Verified · Trusted · Safe</p>
+          <h1 className="hp-h1">Work that follows you.</h1>
+          <p className="hp-sub">
+            LERN connects schools, colleges, training providers and employers
+            around real work — properly checked and safely shared.
+          </p>
+          <div className="hp-btns">
+            <a href="https://getlern.com" target="_blank" rel="noopener noreferrer" className="btn-glass btn-glass-lg">
+              Get started — it's free
+            </a>
+            <a href="https://getlern.com" target="_blank" rel="noopener noreferrer" className="btn-glass btn-glass-lg">
+              See how it works
+            </a>
+          </div>
+          <div className="hp-hero-preview">
+            <AppPreview />
+          </div>
+        </div>
+      </section>
 
       {/* ── STEP CARDS ── */}
       <section className="hp-steps lsection">
