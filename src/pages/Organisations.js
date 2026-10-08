@@ -107,7 +107,7 @@ export default function Organisations() {
               Free for your organisation and the young people you support.
             </p>
             <div className="hero-actions">
-              <a href="mailto:alieu@joinirl.co.uk" className="btn btn-orange">
+              <a href="mailto:hello@lernapp.uk" className="btn btn-orange">
                 Get in touch →
               </a>
               <Link to="/students" className="btn btn-glass">See the student view</Link>
@@ -251,7 +251,7 @@ export default function Organisations() {
               Just a platform your young people can use from day one.
             </p>
             <div className="cta-btns">
-              <a href="mailto:alieu@joinirl.co.uk" className="btn btn-orange btn-lg">Email us to get started →</a>
+              <a href="mailto:hello@lernapp.uk" className="btn btn-orange btn-lg">Email us to get started →</a>
               <Link to="/employers" className="btn btn-glass btn-lg">For employers</Link>
             </div>
           </TiltCard>

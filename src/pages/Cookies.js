@@ -158,11 +158,11 @@ export default function Cookies() {
           <h2>Questions?</h2>
           <p>
             If you have any questions about our use of cookies, email us at{' '}
-            <a href="mailto:alieu@joinirl.co.uk">alieu@joinirl.co.uk</a>.
+            <a href="mailto:hello@lernapp.uk">hello@lernapp.uk</a>.
           </p>
 
           <p className="legal-footer">
-            IRL Connect Ltd (trading as LERN) · <a href="mailto:alieu@joinirl.co.uk">alieu@joinirl.co.uk</a> · lernapp.uk
+            IRL Connect Ltd (trading as LERN) · <a href="mailto:hello@lernapp.uk">hello@lernapp.uk</a> · lernapp.uk
           </p>
         </div>
       </div>

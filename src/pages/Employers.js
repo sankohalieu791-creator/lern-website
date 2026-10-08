@@ -47,7 +47,7 @@ export default function Employers() {
             contacted directly — everything routes through their school first.
           </p>
           <div className="hero-actions">
-            <a href="mailto:alieu@joinirl.co.uk" className="btn btn-primary-lg">Start hiring safely</a>
+            <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Start hiring safely</a>
             <Link to="/pricing" className="link-accent">See pricing</Link>
           </div>
         </div>
@@ -156,7 +156,7 @@ export default function Employers() {
             while we onboard you.
           </p>
           <div className="cta-actions">
-            <a href="mailto:alieu@joinirl.co.uk" className="btn btn-primary-lg">Get in touch</a>
+            <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Get in touch</a>
             <Link to="/pricing" className="link-accent">See pricing</Link>
           </div>
         </div>

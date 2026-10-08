@@ -299,7 +299,7 @@ export default function Home() {
               with the school as the gateway throughout.
             </p>
             <div className="hp-btns">
-              <a href="mailto:alieu@joinirl.co.uk" className="btn btn-primary">Get in touch</a>
+              <a href="mailto:hello@lernapp.uk" className="btn btn-primary">Get in touch</a>
               <Link to="/pricing" className="link-plain">See pricing →</Link>
             </div>
           </div>
@@ -345,7 +345,7 @@ export default function Home() {
           <h2 className="hp-cta-h2">Ready to get started?</h2>
           <p className="hp-cta-sub">Join schools, colleges, training providers and employers already on LERN.</p>
           <div className="hp-btns" style={{ justifyContent: 'center' }}>
-            <a href="mailto:alieu@joinirl.co.uk" className="btn btn-primary-lg">Get in touch</a>
+            <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Get in touch</a>
             <Link to="/pricing" className="link-plain">See pricing →</Link>
           </div>
         </div>

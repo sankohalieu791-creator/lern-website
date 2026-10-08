@@ -23,7 +23,7 @@ export default function Privacy() {
             LERN is operated by IRL Connect Ltd, a company registered in England and Wales
             (Company No. 17200180), registered office 93a Cobbold Road, London NW10 9SU.
             You can contact us at{' '}
-            <a href="mailto:alieu@joinirl.co.uk">alieu@joinirl.co.uk</a>.
+            <a href="mailto:hello@lernapp.uk">hello@lernapp.uk</a>.
           </p>
 
           <h2>When your school or organisation is in control</h2>
@@ -91,7 +91,7 @@ export default function Privacy() {
           <p>
             You have the right to access your data, correct it, delete it, restrict or object
             to how we use it, and to withdraw consent at any time. To exercise any of these,
-            contact <a href="mailto:alieu@joinirl.co.uk">alieu@joinirl.co.uk</a>. You also
+            contact <a href="mailto:hello@lernapp.uk">hello@lernapp.uk</a>. You also
             have the right to complain to the Information Commissioner's Office (
             <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer">ico.org.uk</a>).
           </p>
@@ -103,7 +103,7 @@ export default function Privacy() {
           </p>
 
           <p className="legal-footer">
-            IRL Connect Ltd (trading as LERN) · <a href="mailto:alieu@joinirl.co.uk">alieu@joinirl.co.uk</a> · lernapp.uk
+            IRL Connect Ltd (trading as LERN) · <a href="mailto:hello@lernapp.uk">hello@lernapp.uk</a> · lernapp.uk
           </p>
         </div>
       </div>

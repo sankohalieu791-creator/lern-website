@@ -238,7 +238,7 @@ export default function HowItWorks() {
           <h2>Ready to get started?</h2>
           <p>Email us and we'll get you set up.</p>
           <div className="cta-actions">
-            <a href="mailto:alieu@joinirl.co.uk" className="btn btn-primary-lg">Get in touch</a>
+            <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Get in touch</a>
             <Link to="/pricing" className="link-accent">See pricing</Link>
           </div>
         </div>

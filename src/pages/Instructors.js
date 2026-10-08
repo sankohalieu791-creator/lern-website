@@ -115,7 +115,7 @@ export default function Instructors() {
               and earn from every course you run.
             </p>
             <div className="hero-actions">
-              <a href="mailto:alieu@joinirl.co.uk" className="btn btn-orange">
+              <a href="mailto:hello@lernapp.uk" className="btn btn-orange">
                 Apply to teach →
               </a>
               <Link to="/students" className="btn btn-glass">See the student view</Link>
@@ -286,7 +286,7 @@ export default function Instructors() {
               We're selective — quality of instruction is what makes LERN work.
             </p>
             <div className="cta-btns">
-              <a href="mailto:alieu@joinirl.co.uk" className="btn btn-orange btn-lg">Apply to teach →</a>
+              <a href="mailto:hello@lernapp.uk" className="btn btn-orange btn-lg">Apply to teach →</a>
               <Link to="/about" className="btn btn-glass btn-lg">About LERN</Link>
             </div>
           </TiltCard>

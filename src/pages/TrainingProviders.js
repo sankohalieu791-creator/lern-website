@@ -56,7 +56,7 @@ export default function TrainingProviders() {
             from work you're already recording, ready to export when a funder needs it.
           </p>
           <div className="hero-actions">
-            <a href="mailto:alieu@joinirl.co.uk" className="btn btn-primary-lg">Set up your organisation</a>
+            <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Set up your organisation</a>
             <Link to="/pricing" className="link-accent">See pricing</Link>
           </div>
         </div>
@@ -164,7 +164,7 @@ export default function TrainingProviders() {
             per year, with flat-rate bands above 100 learners.
           </p>
           <div className="cta-actions">
-            <a href="mailto:alieu@joinirl.co.uk" className="btn btn-primary-lg">Get in touch</a>
+            <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Get in touch</a>
             <Link to="/pricing" className="link-accent">See pricing</Link>
           </div>
         </div>

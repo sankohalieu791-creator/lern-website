@@ -35,7 +35,7 @@ export default function Footer() {
             <h4>Company</h4>
             <Link to="/about">About</Link>
             <Link to="/safeguarding">Safeguarding</Link>
-            <a href="mailto:alieu@joinirl.co.uk">Contact</a>
+            <a href="mailto:hello@lernapp.uk">Contact</a>
           </div>
 
           <div className="footer-col">
@@ -48,7 +48,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <span>IRL Connect Ltd, Company No. 17200180, trading as LERN</span>
-          <span>alieu@joinirl.co.uk</span>
+          <span>hello@lernapp.uk</span>
         </div>
       </div>
     </footer>

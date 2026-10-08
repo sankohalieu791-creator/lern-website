@@ -99,7 +99,7 @@ export default function Pricing() {
               </ul>
             </div>
             <div className="pc-footer">
-              <a href="mailto:alieu@joinirl.co.uk" className="pc-btn">Set up your school</a>
+              <a href="mailto:hello@lernapp.uk" className="pc-btn">Set up your school</a>
               <p className="pc-billing">Annual contract · VAT not included</p>
             </div>
           </div>
@@ -146,7 +146,7 @@ export default function Pricing() {
               </ul>
             </div>
             <div className="pc-footer">
-              <a href="mailto:alieu@joinirl.co.uk" className="pc-btn">Set up your organisation</a>
+              <a href="mailto:hello@lernapp.uk" className="pc-btn">Set up your organisation</a>
               <p className="pc-billing">Annual contract · VAT not included</p>
             </div>
           </div>
@@ -192,7 +192,7 @@ export default function Pricing() {
               </ul>
             </div>
             <div className="pc-footer">
-              <a href="mailto:alieu@joinirl.co.uk" className="pc-btn">Start hiring safely</a>
+              <a href="mailto:hello@lernapp.uk" className="pc-btn">Start hiring safely</a>
               <p className="pc-billing">Monthly · Cancel any time · VAT not included</p>
             </div>
           </div>
@@ -201,7 +201,7 @@ export default function Pricing() {
 
         <p className="pricing-note">
           Students always join free.{' '}
-          <a href="mailto:alieu@joinirl.co.uk">Email us</a>{' '}
+          <a href="mailto:hello@lernapp.uk">Email us</a>{' '}
           if you're not sure which plan fits your organisation.
         </p>
       </div>

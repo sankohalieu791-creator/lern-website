@@ -26,7 +26,7 @@ export default function About() {
           <p className="eyebrow-plain">About LERN</p>
           <h1>We built the door we were never given.</h1>
           <div className="hero-actions">
-            <a href="mailto:alieu@joinirl.co.uk" className="btn btn-primary-lg">Get in touch</a>
+            <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Get in touch</a>
             <Link to="/institutions" className="link-accent">For institutions</Link>
           </div>
         </div>
@@ -99,8 +99,8 @@ export default function About() {
                 <p className="about-founder-note">
                   Aged 19. Building the platform he wishes had existed when he needed it.
                 </p>
-                <a href="mailto:alieu@joinirl.co.uk" className="link-accent" style={{ fontSize: '14px' }}>
-                  alieu@joinirl.co.uk
+                <a href="mailto:hello@lernapp.uk" className="link-accent" style={{ fontSize: '14px' }}>
+                  hello@lernapp.uk
                 </a>
               </div>
             </div>
@@ -184,7 +184,7 @@ export default function About() {
             email us directly.
           </p>
           <div className="cta-actions">
-            <a href="mailto:alieu@joinirl.co.uk" className="btn btn-primary-lg">alieu@joinirl.co.uk</a>
+            <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">hello@lernapp.uk</a>
             <Link to="/institutions" className="link-accent">For institutions</Link>
           </div>
           <p style={{ marginTop: '20px', fontSize: '13px', color: 'var(--ink-faint)' }}>

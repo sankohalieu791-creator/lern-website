@@ -56,7 +56,7 @@ export default function Institutions() {
             and safely shared, without the admin overhead.
           </p>
           <div className="hero-actions">
-            <a href="mailto:alieu@joinirl.co.uk" className="btn btn-primary-lg">Set up your school or college</a>
+            <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Set up your school or college</a>
             <Link to="/pricing" className="link-accent">See pricing</Link>
           </div>
         </div>
@@ -158,7 +158,7 @@ export default function Institutions() {
             join free. You pay a simple flat annual fee based on size — from £2,000/year.
           </p>
           <div className="cta-actions">
-            <a href="mailto:alieu@joinirl.co.uk" className="btn btn-primary-lg">Get in touch</a>
+            <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Get in touch</a>
             <Link to="/pricing" className="link-accent">See pricing</Link>
           </div>
         </div>

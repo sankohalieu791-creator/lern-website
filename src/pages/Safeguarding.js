@@ -29,7 +29,7 @@ export default function Safeguarding() {
             of every decision we make — not an afterthought bolted on at the end.
           </p>
           <div className="hero-actions">
-            <a href="mailto:alieu@joinirl.co.uk" className="btn btn-primary-lg">Speak to us about safeguarding</a>
+            <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Speak to us about safeguarding</a>
           </div>
         </div>
       </section>
@@ -68,11 +68,11 @@ export default function Safeguarding() {
             </div>
             <p style={{ marginTop: '28px', fontSize: '15px', color: 'var(--ink-soft)', lineHeight: '1.6' }}>
               Have a safeguarding concern?{' '}
-              <a href="mailto:alieu@joinirl.co.uk" className="link-accent">Contact us</a>
+              <a href="mailto:hello@lernapp.uk" className="link-accent">Contact us</a>
             </p>
             <p style={{ marginTop: '12px', fontSize: '15px', color: 'var(--ink-soft)', lineHeight: '1.6' }}>
               For the full detail, read our{' '}
-              <a href="mailto:alieu@joinirl.co.uk?subject=Safeguarding+Position+Request" className="link-accent">Safeguarding Position</a>
+              <a href="mailto:hello@lernapp.uk?subject=Safeguarding+Position+Request" className="link-accent">Safeguarding Position</a>
               {' '}and{' '}
               <Link to="/privacy" className="link-accent">Data Protection Policy</Link>.
             </p>
@@ -88,7 +88,7 @@ export default function Safeguarding() {
             joins. We take these conversations seriously and take as long as you need.
           </p>
           <div className="cta-actions">
-            <a href="mailto:alieu@joinirl.co.uk" className="btn btn-primary-lg">alieu@joinirl.co.uk</a>
+            <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">hello@lernapp.uk</a>
             <Link to="/schools" className="link-accent">For schools and colleges</Link>
           </div>
         </div>

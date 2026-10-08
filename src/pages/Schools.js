@@ -24,7 +24,7 @@ export default function Schools() {
             LERN turns it into verified, lasting proof, with no extra marking for your staff.
           </p>
           <div className="hero-actions">
-            <a href="mailto:alieu@joinirl.co.uk" className="btn btn-primary-lg">Talk to us</a>
+            <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Talk to us</a>
             <Link to="/employers" className="link-accent">For employers</Link>
           </div>
         </div>
@@ -62,7 +62,7 @@ export default function Schools() {
             free. You pay a simple flat fee based on size, with no per-student cost.
           </p>
           <div className="cta-actions">
-            <a href="mailto:alieu@joinirl.co.uk" className="btn btn-primary-lg">Talk to us</a>
+            <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Talk to us</a>
             <Link to="/employers" className="link-accent">For employers</Link>
           </div>
         </div>

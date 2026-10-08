@@ -15,7 +15,7 @@ export default function Terms() {
           <p className="legal-notice">
             These Terms of Service are being drafted with legal advice and will be published
             before LERN enters open availability. If you have any questions in the meantime,
-            contact <a href="mailto:alieu@joinirl.co.uk">alieu@joinirl.co.uk</a>.
+            contact <a href="mailto:hello@lernapp.uk">hello@lernapp.uk</a>.
           </p>
 
           <h2>1. About these terms</h2>
@@ -55,7 +55,7 @@ export default function Terms() {
           <p>[To be completed — will cover: how we notify you of changes, what constitutes acceptance of new terms.]</p>
 
           <p className="legal-footer">
-            IRL Connect Ltd (trading as LERN) · <a href="mailto:alieu@joinirl.co.uk">alieu@joinirl.co.uk</a> · lernapp.uk
+            IRL Connect Ltd (trading as LERN) · <a href="mailto:hello@lernapp.uk">hello@lernapp.uk</a> · lernapp.uk
           </p>
         </div>
       </div>
