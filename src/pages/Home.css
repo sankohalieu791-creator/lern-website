@@ -2,13 +2,39 @@
    Home — brand background with glass step cards
    ═══════════════════════════════════════════════ */
 
-/* bg.png shows through from App.css — no background override needed here */
-
-/* ── Hero ── */
+/* ── Hero — the one deliberate spot of color on an otherwise neutral site ── */
 .hp-hero {
   padding-top: 160px;
   padding-bottom: 120px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hp-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 900px 520px at 50% -8%, rgba(212, 85, 26, 0.14), transparent 65%),
+    radial-gradient(ellipse 700px 460px at 88% 18%, rgba(132, 174, 216, 0.14), transparent 60%),
+    var(--paper);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .hp-hero::before {
+    background:
+      radial-gradient(ellipse 900px 520px at 50% -8%, rgba(236, 122, 61, 0.16), transparent 65%),
+      radial-gradient(ellipse 700px 460px at 88% 18%, rgba(132, 174, 216, 0.1), transparent 60%),
+      var(--paper);
+  }
+}
+:root[data-theme="dark"] .hp-hero::before {
+  background:
+    radial-gradient(ellipse 900px 520px at 50% -8%, rgba(236, 122, 61, 0.16), transparent 65%),
+    radial-gradient(ellipse 700px 460px at 88% 18%, rgba(132, 174, 216, 0.1), transparent 60%),
+    var(--paper);
 }
 
 .hp-hero-inner {
@@ -104,11 +130,11 @@
   .hp-steps-grid { grid-template-columns: 1fr; }
 }
 
-/* Individual step card — glass on warm brand background */
+/* Individual step card — crisp flat surface, not glass */
 .step-card {
-  background: rgba(255, 255, 255, 0.58);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
   padding: 32px;
   display: flex;
   flex-direction: column;
@@ -120,9 +146,7 @@
   transform: translateY(28px);
   transition: opacity .55s ease, transform .55s ease, box-shadow .25s ease, border-color .25s ease;
   cursor: pointer;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 2px 12px rgba(0,0,0,.05), 0 1px 3px rgba(0,0,0,.04);
+  box-shadow: var(--shadow-sm);
 }
 
 .step-card.step-vis {
@@ -131,8 +155,8 @@
 }
 
 .step-card:hover {
-  border-color: rgba(0,0,0,.14);
-  box-shadow: 0 8px 32px rgba(0,0,0,.1), 0 2px 8px rgba(0,0,0,.06);
+  border-color: rgba(0,0,0,.16);
+  box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
 

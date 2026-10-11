@@ -3,48 +3,48 @@
 /* ── Design tokens — light theme ── */
 :root {
   color-scheme: light;
-  --paper: #FFFDF9;
+  --paper: #FAFAF8;
   --ink: #111111;
-  --ink-soft: #3D3D3D;
-  --ink-faint: #6B6560;
-  --border: rgba(231, 228, 222, 0.9);
-  --surface: rgba(255, 255, 255, 0.86);
+  --ink-soft: #46474A;
+  --ink-faint: #76777A;
+  --border: rgba(0, 0, 0, 0.09);
+  --surface: #FFFFFF;
   --tint: #F4C9A8;
-  --tint-band: rgba(251, 235, 224, 0.68);
+  --tint-band: rgba(0, 0, 0, 0.035);
   --accent: #D4551A;
   --accent-ink: #FFFFFF;
   --font: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --shadow-sm: 0 1px 4px -1px rgba(20,10,4,.06), 0 4px 16px -4px rgba(20,10,4,.08);
-  --shadow-md: 0 4px 12px -2px rgba(20,10,4,.08), 0 16px 40px -8px rgba(20,10,4,.12);
-  --shadow-lg: 0 8px 24px -4px rgba(20,10,4,.1), 0 32px 64px -12px rgba(20,10,4,.16);
+  --shadow-sm: 0 1px 2px -1px rgba(0,0,0,.04), 0 3px 12px -4px rgba(0,0,0,.06);
+  --shadow-md: 0 2px 8px -2px rgba(0,0,0,.05), 0 12px 32px -8px rgba(0,0,0,.08);
+  --shadow-lg: 0 6px 20px -4px rgba(0,0,0,.07), 0 28px 56px -12px rgba(0,0,0,.12);
   --shadow-accent: 0 4px 20px -4px rgba(212,85,26,.3), 0 16px 48px -8px rgba(212,85,26,.18);
 }
 
 /* ── Dark theme ── */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #16130F;
-    --ink: #F3EFE7;
-    --ink-soft: #B4AB9C;
-    --ink-faint: #7C7365;
-    --border: rgba(51, 44, 34, 0.9);
-    --surface: rgba(30, 26, 21, 0.88);
+    --paper: #0A0A0A;
+    --ink: #F5F5F4;
+    --ink-soft: #ABABA9;
+    --ink-faint: #7A7A78;
+    --border: rgba(255, 255, 255, 0.1);
+    --surface: #161616;
     --tint: #4A3220;
-    --tint-band: rgba(43, 32, 24, 0.8);
+    --tint-band: rgba(255, 255, 255, 0.04);
     --accent: #EC7A3D;
     --accent-ink: #1A1005;
   }
 }
 
 :root[data-theme="dark"] {
-  --paper: #16130F;
-  --ink: #F3EFE7;
-  --ink-soft: #B4AB9C;
-  --ink-faint: #7C7365;
-  --border: rgba(51, 44, 34, 0.9);
-  --surface: rgba(30, 26, 21, 0.88);
+  --paper: #0A0A0A;
+  --ink: #F5F5F4;
+  --ink-soft: #ABABA9;
+  --ink-faint: #7A7A78;
+  --border: rgba(255, 255, 255, 0.1);
+  --surface: #161616;
   --tint: #4A3220;
-  --tint-band: rgba(43, 32, 24, 0.8);
+  --tint-band: rgba(255, 255, 255, 0.04);
   --accent: #EC7A3D;
   --accent-ink: #1A1005;
 }
@@ -53,24 +53,11 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
-/* ── Background layer (bolder bg.png) ── */
-html { background: #F4D0C4; }
-
-.site-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: saturate(1.65) contrast(1.08);
-  pointer-events: none;
-  will-change: transform;
-}
+html { background: var(--paper); }
 
 body {
   margin: 0;
-  background: transparent;
+  background: var(--paper);
   color: var(--ink);
   font-family: var(--font);
   -webkit-font-smoothing: antialiased;
@@ -217,15 +204,13 @@ img, svg { max-width: 100%; display: block; }
 
 .link-plain:hover { color: var(--ink); }
 
-/* ── Card base — frosted glass ── */
+/* ── Card base — crisp flat surface ── */
 .lcard {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 16px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow-sm);
-  transition: box-shadow .2s ease, transform .2s ease;
+  transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease;
 }
 
 .lcard:hover {

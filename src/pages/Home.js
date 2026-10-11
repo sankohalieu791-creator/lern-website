@@ -110,9 +110,9 @@ export default function Home() {
             <a href="https://getlern.com" target="_blank" rel="noopener noreferrer" className="btn-glass btn-glass-lg">
               Get started — it's free
             </a>
-            <a href="https://getlern.com" target="_blank" rel="noopener noreferrer" className="btn-glass btn-glass-lg">
-              See how it works
-            </a>
+            <Link to="/how-it-works" className="hp-ghost-link">
+              See how it works →
+            </Link>
           </div>
           <div className="hp-hero-preview">
             <RealDemoPlayer src="/demo/institution-demo.mp4" title="Where the future starts." />
