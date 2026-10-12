@@ -2,14 +2,26 @@
    Home — brand background with glass step cards
    ═══════════════════════════════════════════════ */
 
-/* The page-wide aurora texture (AnimatedBackground `fixed`) sits
-   behind every section on the page at z-index 0; the sections
-   themselves need z-index:1 to stack above it, and most of them have
-   no opaque background of their own (only the cards inside them do),
-   so the texture actually shows through in the gaps -- same "soft
-   pattern behind clean white cards" look as the reference. */
+/* The page-wide background texture sits behind every section at
+   z-index 0; the sections themselves need z-index:1 to stack above
+   it, and most of them have no opaque background of their own (only
+   the cards inside them do), so the texture actually shows through
+   in the gaps -- same "soft pattern behind clean white cards" look
+   as the reference. */
 .home-page { position: relative; }
 .home-page > section { position: relative; z-index: 1; }
+
+/* The actual reference photo, not a generated approximation of it --
+   same asset used behind the app's own sign-up screen. Fixed so it
+   stays put as the page scrolls past it. */
+.home-bg-texture {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 /* ── Hero — one real video filling a large rounded panel, headline
    overlaid directly on top of it instead of a separate framed window
@@ -116,34 +128,6 @@
   .hp-hero { border-radius: 20px; aspect-ratio: 9 / 14; max-height: none; }
   .hp-h1 { font-size: clamp(32px, 9vw, 48px); }
   .hp-sub { font-size: 15px; margin-bottom: 28px; }
-}
-
-/* ── Aurora background texture (AnimatedBackground.js) — large,
-   softly blurred overlapping glow blobs that drift and lean toward
-   the cursor. Sized to .hp-hero (its parent, which needs
-   position:relative + overflow:hidden, set above). ── */
-.aurora-bg {
-  position: absolute;
-  inset: -15% -10%;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-  background: #FFFCF8;
-}
-
-/* Page-wide variant -- sized to the viewport and fixed in place as
-   the page scrolls past it, rather than sized to one hero section. */
-.aurora-bg-fixed {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-}
-
-.aurora-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(70px);
-  will-change: transform;
 }
 
 /* ── Step cards ── */
