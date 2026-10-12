@@ -65,6 +65,79 @@ export default function About() {
         </div>
       </section>
 
+      {/* ── Team — moved up here, right after the mission, per direct
+          request: "the team needs to be up." Skill Wallet now sits
+          directly underneath it instead of above. ── */}
+      <section className="lsection about-team-section">
+        <div className="wrap">
+          <div className="section-head">
+            <h2>The team</h2>
+            <p>A small group of people who believed in this early enough to help build it.</p>
+          </div>
+          <div className="about-team-grid">
+            <div className="about-team-card lcard">
+              <div className="team-card-top team-card-top--photo">
+                <img src="/alieu.jpg" alt="Alieu Sankoh" className="team-card-photo" />
+              </div>
+              <div className="team-card-body">
+                <p className="team-name">Alieu Sankoh</p>
+                <p className="team-role">Founder & CEO</p>
+                <p className="team-bio">
+                  Sets product direction and runs the company day to day.
+                </p>
+              </div>
+            </div>
+            {/* Wider card -- a real bio, not a one-line role summary, so
+                it gets two columns' worth of room to breathe rather than
+                being crammed into the same width as everyone else's
+                short one-liner. */}
+            <div className="about-team-card about-team-card--wide lcard">
+              <div className="team-card-top team-card-top--photo">
+                <img src="/alex.jpg" alt="Alex" className="team-card-photo" style={{ objectPosition: 'center 22%' }} />
+              </div>
+              <div className="team-card-body">
+                <p className="team-name">Alex</p>
+                <p className="team-role">Head of Institutions & Training Providers</p>
+                <p className="team-bio">
+                  An experienced strategic leader with 15 years' experience, an MBA and Chartered
+                  Manager status, specialising in business development, strategic partnerships,
+                  operations and organisational growth. Extensive experience in public sector
+                  leadership, stakeholder engagement, commercial strategy and service innovation —
+                  with a strong focus on education and SEND, and on delivering measurable outcomes
+                  that make a tangible change to young people's lives with LERN.
+                </p>
+              </div>
+            </div>
+            <div className="about-team-card lcard">
+              <div className="team-card-top team-card-top--purple">
+                <span className="team-avatar">MA</span>
+              </div>
+              <div className="team-card-body">
+                <p className="team-name">Mayank</p>
+                <p className="team-role">Lead, Institutional Sales</p>
+                <p className="team-bio">
+                  Leads institutional sales alongside Alex — identifying and closing new schools,
+                  colleges and training providers.
+                </p>
+              </div>
+            </div>
+            <div className="about-team-card lcard">
+              <div className="team-card-top team-card-top--teal">
+                <span className="team-avatar">MI</span>
+              </div>
+              <div className="team-card-body">
+                <p className="team-name">Michael</p>
+                <p className="team-role">Head of Employer Partnerships</p>
+                <p className="team-bio">
+                  Leads on bringing employers onto the platform — making the case for why verified
+                  student work is a better starting point than a CV stack.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── LERN Skill Wallet ── */}
       <section className="lsection" style={{ paddingTop: 0 }}>
         <div className="wrap">
@@ -121,7 +194,7 @@ export default function About() {
       </section>
 
       {/* ── Founder story — no separate photo sidebar; Alieu appears
-          once, in the team grid below, same as everyone else. ── */}
+          once, in the team grid above, same as everyone else. ── */}
       <section className="lsection about-founder-section">
         <div className="wrap">
           <div className="about-founder">
@@ -155,71 +228,8 @@ export default function About() {
               <p>
                 I've had the support of a small, experienced team around me — people who've worked
                 in EdTech, safeguarding, and business who believed in this early enough to help
-                shape it. You'll find all of us, me included, in the team below.
+                shape it. You'll find all of us, me included, in the team above.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Team ── */}
-      <section className="lsection about-team-section">
-        <div className="wrap">
-          <div className="section-head">
-            <h2>The team</h2>
-            <p>A small group of people who believed in this early enough to help build it.</p>
-          </div>
-          <div className="about-team-grid">
-            <div className="about-team-card lcard">
-              <div className="team-card-top team-card-top--photo">
-                <img src="/alieu.jpg" alt="Alieu Sankoh" className="team-card-photo" />
-              </div>
-              <div className="team-card-body">
-                <p className="team-name">Alieu Sankoh</p>
-                <p className="team-role">Founder & CEO</p>
-                <p className="team-bio">
-                  Sets product direction and runs the company day to day.
-                </p>
-              </div>
-            </div>
-            <div className="about-team-card lcard">
-              <div className="team-card-top team-card-top--orange">
-                <span className="team-avatar">AL</span>
-              </div>
-              <div className="team-card-body">
-                <p className="team-name">Alex</p>
-                <p className="team-role">Head of Institutions & Training Providers</p>
-                <p className="team-bio">
-                  Responsible for getting schools, colleges and training providers onto LERN, and
-                  making sure the sales process runs properly.
-                </p>
-              </div>
-            </div>
-            <div className="about-team-card lcard">
-              <div className="team-card-top team-card-top--purple">
-                <span className="team-avatar">MA</span>
-              </div>
-              <div className="team-card-body">
-                <p className="team-name">Mayank</p>
-                <p className="team-role">Lead, Institutional Sales</p>
-                <p className="team-bio">
-                  Leads institutional sales alongside Alex — identifying and closing new schools,
-                  colleges and training providers.
-                </p>
-              </div>
-            </div>
-            <div className="about-team-card lcard">
-              <div className="team-card-top team-card-top--teal">
-                <span className="team-avatar">MI</span>
-              </div>
-              <div className="team-card-body">
-                <p className="team-name">Michael</p>
-                <p className="team-role">Head of Employer Partnerships</p>
-                <p className="team-bio">
-                  Leads on bringing employers onto the platform — making the case for why verified
-                  student work is a better starting point than a CV stack.
-                </p>
-              </div>
             </div>
           </div>
         </div>
