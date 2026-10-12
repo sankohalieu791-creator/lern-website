@@ -2,7 +2,16 @@
 <html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8" />
+    <!-- Two things going on here: an explicit modern SVG icon, plus a
+         freshly-NAMED PNG fallback (not a re-save of an old filename).
+         Chrome/Safari cache whatever they first saw at /favicon.ico
+         completely separately from normal HTTP caching -- a corrected
+         file at that same old path can sit invisible behind that cache
+         for days. A brand-new filename has no old cache entry to hide
+         behind, so browsers that honour <link rel="icon"> (basically
+         all current ones) show the real, current mark immediately. -->
     <link rel="icon" href="%PUBLIC_URL%/logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="%PUBLIC_URL%/brand-icon.png" type="image/png" sizes="192x192" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#FFFDF9" />
     <meta name="description" content="LERN helps young people turn real work into trusted, verified proof — so they get seen and hired safely through their school, college, or training provider." />
@@ -20,7 +29,9 @@
     <meta name="twitter:title" content="LERN — Verified proof of what a young person can do" />
     <meta name="twitter:description" content="LERN helps young people turn real work into trusted, verified proof — so they get seen and hired safely through their school, college, or training provider." />
     <meta name="twitter:image" content="https://lernapp.uk/og-image.svg" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.svg" />
+    <!-- iOS doesn't accept SVG here at all -- this was silently failing
+         before, not just stale. A real PNG, same fresh filename as above. -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/brand-icon.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
