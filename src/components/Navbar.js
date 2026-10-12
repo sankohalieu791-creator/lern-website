@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import './Navbar.css'
 
 const NAV_LINKS = [
@@ -21,11 +22,25 @@ function isActive(link, pathname) {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const [indicatorStyle, setIndicatorStyle] = useState({ opacity: 0 })
   const navRef = useRef(null)
   const location = useLocation()
 
   useEffect(() => { setOpen(false) }, [location.pathname])
+
+  /* transparent at the top of the page, frosted once scrolled — watching a
+     sentinel is cheaper than a scroll listener (apple-design-web skill) */
+  useEffect(() => {
+    const sentinel = document.getElementById('nav-sentinel')
+    if (!sentinel) return undefined
+    const observer = new IntersectionObserver(
+      ([entry]) => setScrolled(!entry.isIntersecting),
+      { threshold: 0 }
+    )
+    observer.observe(sentinel)
+    return () => observer.disconnect()
+  }, [])
 
   /* slide the tubelight indicator to the active link */
   useEffect(() => {
@@ -42,7 +57,7 @@ export default function Navbar() {
   }, [location.pathname])
 
   return (
-    <header className="site-header">
+    <header className={`site-header${scrolled ? ' is-scrolled' : ''}`}>
       <div className="wrap header-row">
 
         {/* Logo */}
@@ -58,8 +73,15 @@ export default function Navbar() {
 
         {/* Tubelight nav */}
         <nav className="tl-nav" ref={navRef} aria-label="Main navigation">
-          {/* sliding indicator */}
-          <span className="tl-indicator" style={indicatorStyle} aria-hidden />
+          {/* sliding indicator — a real spring, not a fixed-duration ease, so
+              clicking between links mid-slide retargets smoothly instead of
+              cutting to a new animation (apple-design skill, §3/§4) */}
+          <motion.span
+            className="tl-indicator"
+            animate={indicatorStyle}
+            transition={{ left: { type: 'spring', bounce: 0, duration: 0.4 }, width: { type: 'spring', bounce: 0, duration: 0.4 }, opacity: { duration: 0.15 } }}
+            aria-hidden
+          />
           {NAV_LINKS.map(link => (
             <Link
               key={link.to}

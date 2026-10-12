@@ -115,7 +115,10 @@ img, svg { max-width: 100%; display: block; }
   transform: translateY(-1px);
 }
 
-.btn-primary:active { transform: scale(.97); box-shadow: none; }
+/* Press feedback is instant (100ms), decoupled from the slower hover
+   transition — latency on the input path is the first thing a fluid
+   interface can't afford (apple-design skill, §1). */
+.btn-primary:active { transform: scale(.97); box-shadow: none; transition-duration: .1s; }
 
 .btn-primary-lg {
   background: var(--accent);
@@ -131,7 +134,7 @@ img, svg { max-width: 100%; display: block; }
   transform: translateY(-1px);
 }
 
-.btn-primary-lg:active { transform: scale(.98); box-shadow: none; }
+.btn-primary-lg:active { transform: scale(.98); box-shadow: none; transition-duration: .1s; }
 
 /* ── Liquid glass button ── */
 .btn-glass {
@@ -167,7 +170,7 @@ img, svg { max-width: 100%; display: block; }
   transform: translateY(-1px);
 }
 
-.btn-glass:active { transform: scale(.97); }
+.btn-glass:active { transform: scale(.97); transition-duration: .1s; }
 
 .btn-glass-lg {
   font-size: 16px;

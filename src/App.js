@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
-import bgPng from './bg.png'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import CookieBanner from './components/CookieBanner'
@@ -46,8 +45,10 @@ function RevealManager() {
 export default function App() {
   return (
     <Router>
-      <div className="site-bg" style={{ backgroundImage: `url(${bgPng})` }} aria-hidden="true" />
       <RevealManager />
+      {/* Watched by Navbar's IntersectionObserver — nav is transparent while
+          this is in view (top of page), frosted once it scrolls out. */}
+      <div id="nav-sentinel" aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, width: 1, height: 1, pointerEvents: 'none' }} />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
