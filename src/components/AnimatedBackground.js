@@ -24,7 +24,11 @@ const BLOBS = [
   { color: '255,233,214', size: 50, top: '20%', left: '22%', px: 14, py: 20, speed: 0.20, phase: 5.2 },
 ]
 
-export default function AnimatedBackground() {
+// `fixed` -- page-wide mode: sized/positioned to the whole viewport
+// instead of whatever element renders it (the original hero-scoped
+// use), mouse-tracked off `window` instead of a parent container, and
+// stays put (position: fixed) as the page scrolls past it.
+export default function AnimatedBackground({ fixed = false }) {
   const rootRef = useRef(null)
   const blobRefs = useRef([])
   const mouse = useRef({ x: 0.5, y: 0.5 })
@@ -37,13 +41,14 @@ export default function AnimatedBackground() {
     let t = 0
 
     const onMove = (e) => {
-      const r = parent.getBoundingClientRect()
+      const r = fixed ? { left: 0, top: 0, width: window.innerWidth, height: window.innerHeight } : parent.getBoundingClientRect()
       target.current = {
         x: (e.clientX - r.left) / r.width,
         y: (e.clientY - r.top) / r.height,
       }
     }
-    parent.addEventListener('mousemove', onMove)
+    const moveTarget = fixed ? window : parent
+    moveTarget.addEventListener('mousemove', onMove)
 
     function tick() {
       mouse.current.x += (target.current.x - mouse.current.x) * 0.04
@@ -64,12 +69,12 @@ export default function AnimatedBackground() {
 
     return () => {
       cancelAnimationFrame(raf.current)
-      parent.removeEventListener('mousemove', onMove)
+      moveTarget.removeEventListener('mousemove', onMove)
     }
-  }, [])
+  }, [fixed])
 
   return (
-    <div ref={rootRef} className="aurora-bg" aria-hidden="true">
+    <div ref={rootRef} className={fixed ? 'aurora-bg aurora-bg-fixed' : 'aurora-bg'} aria-hidden="true">
       {BLOBS.map((b, i) => (
         <span
           key={i}

@@ -2,6 +2,15 @@
    Home — brand background with glass step cards
    ═══════════════════════════════════════════════ */
 
+/* The page-wide aurora texture (AnimatedBackground `fixed`) sits
+   behind every section on the page at z-index 0; the sections
+   themselves need z-index:1 to stack above it, and most of them have
+   no opaque background of their own (only the cards inside them do),
+   so the texture actually shows through in the gaps -- same "soft
+   pattern behind clean white cards" look as the reference. */
+.home-page { position: relative; }
+.home-page > section { position: relative; z-index: 1; }
+
 /* ── Hero — one real video filling a large rounded panel, headline
    overlaid directly on top of it instead of a separate framed window
    sitting below the text (no role tabs any more either -- "just leave
@@ -121,6 +130,15 @@
   pointer-events: none;
   background: #FFFCF8;
 }
+
+/* Page-wide variant -- sized to the viewport and fixed in place as
+   the page scrolls past it, rather than sized to one hero section. */
+.aurora-bg-fixed {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
 .aurora-blob {
   position: absolute;
   border-radius: 50%;

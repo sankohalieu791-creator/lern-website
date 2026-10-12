@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import AnimatedBackground from '../components/AnimatedBackground'
 import './Home.css'
 
 /* ── MacBook Neo–style step cards ── */
@@ -95,6 +96,10 @@ function StepCard({ step, index }) {
 export default function Home() {
   return (
     <main className="home-page">
+      {/* The soft glowing wave texture, as its own page-wide backdrop
+          behind every section below the hero (the hero itself has the
+          video) -- fixed, so it stays put as the page scrolls past it. */}
+      <AnimatedBackground fixed />
 
       {/* ── HERO — one real video filling the panel, headline overlaid
           on top of it (no role tabs) ── */}
