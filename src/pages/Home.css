@@ -2,48 +2,26 @@
    Home — brand background with glass step cards
    ═══════════════════════════════════════════════ */
 
-/* ── Hero — the one deliberate spot of color on an otherwise neutral site ── */
+/* ── Hero — split: copy left, product right. The "swerve" canvas
+   (AnimatedBackground) sits behind both, recolored to one whisper-quiet
+   accent instead of the old loud multi-color wash. ── */
 .hp-hero {
-  padding-top: 160px;
+  padding-top: 140px;
   padding-bottom: 120px;
-  text-align: center;
   position: relative;
   overflow: hidden;
-}
-
-.hp-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(ellipse 900px 520px at 50% -8%, rgba(212, 85, 26, 0.14), transparent 65%),
-    radial-gradient(ellipse 700px 460px at 88% 18%, rgba(132, 174, 216, 0.14), transparent 60%),
-    var(--paper);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .hp-hero::before {
-    background:
-      radial-gradient(ellipse 900px 520px at 50% -8%, rgba(236, 122, 61, 0.16), transparent 65%),
-      radial-gradient(ellipse 700px 460px at 88% 18%, rgba(132, 174, 216, 0.1), transparent 60%),
-      var(--paper);
-  }
-}
-:root[data-theme="dark"] .hp-hero::before {
-  background:
-    radial-gradient(ellipse 900px 520px at 50% -8%, rgba(236, 122, 61, 0.16), transparent 65%),
-    radial-gradient(ellipse 700px 460px at 88% 18%, rgba(132, 174, 216, 0.1), transparent 60%),
-    var(--paper);
 }
 
 .hp-hero-inner {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 56px;
   align-items: center;
 }
+
+.hp-hero-copy { text-align: left; }
 
 .hp-eyebrow {
   font-size: 12px;
@@ -51,34 +29,32 @@
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   display: block;
 }
 
 .hp-h1 {
-  font-size: clamp(56px, 8.5vw, 108px);
-  line-height: 1.0;
-  letter-spacing: -0.045em;
+  font-size: clamp(44px, 5.2vw, 76px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
   font-weight: 700;
   color: var(--ink);
-  max-width: 14ch;
-  margin: 0 auto 28px;
+  margin: 0 0 24px;
 }
 
 .hp-sub {
-  font-size: 19px;
+  font-size: 18px;
   color: var(--ink-soft);
-  max-width: 48ch;
-  line-height: 1.7;
-  margin: 0 auto 52px;
+  max-width: 42ch;
+  line-height: 1.65;
+  margin: 0 0 40px;
 }
 
 .hp-btns {
   display: flex;
-  gap: 18px;
+  gap: 20px;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
 }
 
 .hp-ghost-link {
@@ -92,17 +68,23 @@
 .hp-ghost-link:hover { color: var(--ink); }
 
 .hp-hero-preview {
-  margin-top: 56px;
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
+@media (max-width: 960px) {
+  .hp-hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hp-hero-copy { text-align: center; }
+  .hp-h1 { margin-inline: auto; max-width: 16ch; }
+  .hp-sub { margin-inline: auto; }
+  .hp-btns { justify-content: center; }
+}
+
 @media (max-width: 860px) {
   .hp-hero { padding-top: 110px; padding-bottom: 80px; }
-  .hp-h1 { font-size: clamp(42px, 10vw, 68px); }
-  .hp-sub { font-size: 16px; margin-bottom: 36px; }
-  .hp-hero-preview { margin-top: 40px; }
+  .hp-h1 { font-size: clamp(38px, 9vw, 56px); }
+  .hp-sub { font-size: 16px; margin-bottom: 32px; }
 }
 
 /* ── Step cards ── */

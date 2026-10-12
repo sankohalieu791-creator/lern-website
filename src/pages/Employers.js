@@ -39,21 +39,21 @@ export default function Employers() {
   return (
     <main className="lpage">
       <section className="lpage-hero">
-        <div className="wrap">
-          <p className="eyebrow-plain">Employers · Hiring managers · Talent teams</p>
-          <h1>Hire from genuinely verified work — safely.</h1>
-          <p className="hero-sub">
-            Browse real, checked student work before any CV is involved. Every employer
-            account is verified before you see a single profile. Under-18s are never
-            contacted directly — everything routes through their school first.
-          </p>
-          <div className="hero-actions">
-            <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Start hiring safely</a>
-            <Link to="/pricing" className="link-accent">See pricing</Link>
+        <div className="wrap lpage-hero-grid">
+          <div>
+            <p className="eyebrow-plain">Employers · Hiring managers · Talent teams</p>
+            <h1>Hire from genuinely verified work — safely.</h1>
+            <p className="hero-sub">
+              Browse real, checked student work before any CV is involved. Every employer
+              account is verified before you see a single profile. Under-18s are never
+              contacted directly — everything routes through their school first.
+            </p>
+            <div className="hero-actions">
+              <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Start hiring safely</a>
+              <Link to="/pricing" className="link-accent">See pricing</Link>
+            </div>
           </div>
-          <div style={{ marginTop: 56 }}>
-            <RealDemoPlayer src="/demo/employer-demo.mp4" title="Built for employers." />
-          </div>
+          <RealDemoPlayer src="/demo/employer-demo.mp4" title="Built for employers." />
         </div>
       </section>
 

@@ -49,20 +49,20 @@ export default function Institutions() {
   return (
     <main className="lpage">
       <section className="lpage-hero">
-        <div className="wrap">
-          <p className="eyebrow-plain">Schools · Colleges · Sixth forms</p>
-          <h1>One platform for the whole school.</h1>
-          <p className="hero-sub">
-            Verified student work, attendance, and Work Experience — logged, reviewed,
-            and safely shared, without the admin overhead.
-          </p>
-          <div className="hero-actions">
-            <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Set up your school or college</a>
-            <Link to="/pricing" className="link-accent">See pricing</Link>
+        <div className="wrap lpage-hero-grid">
+          <div>
+            <p className="eyebrow-plain">Schools · Colleges · Sixth forms</p>
+            <h1>One platform for the whole school.</h1>
+            <p className="hero-sub">
+              Verified student work, attendance, and Work Experience — logged, reviewed,
+              and safely shared, without the admin overhead.
+            </p>
+            <div className="hero-actions">
+              <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Set up your school or college</a>
+              <Link to="/pricing" className="link-accent">See pricing</Link>
+            </div>
           </div>
-          <div style={{ marginTop: 56 }}>
-            <RealDemoPlayer src="/demo/institution-demo.mp4" title="Built for institutions." />
-          </div>
+          <RealDemoPlayer src="/demo/institution-demo.mp4" title="Built for institutions." />
         </div>
       </section>
 

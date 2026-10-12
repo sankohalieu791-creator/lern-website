@@ -25,13 +25,16 @@
   gap: 20px;
 }
 
-/* ── Logo ── */
+/* ── Logo — extra breathing room from the nav pill next to it ── */
 .logo {
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  margin-right: 28px;
   color: var(--ink);
 }
+
+@media (max-width: 1060px) { .logo { margin-right: 0; } }
 
 .logo svg {
   height: 20px;

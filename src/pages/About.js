@@ -21,13 +21,51 @@ const BELIEFS = [
 export default function About() {
   return (
     <main className="lpage">
-      <section className="lpage-hero">
+      <section className="lpage-hero about-hero-centered">
         <div className="wrap">
           <p className="eyebrow-plain">About LERN</p>
           <h1>We built the door we were never given.</h1>
           <div className="hero-actions">
             <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Get in touch</a>
             <Link to="/institutions" className="link-accent">For institutions</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Our mission ── */}
+      <section className="lsection" style={{ paddingBottom: 0 }}>
+        <div className="wrap">
+          <div className="section-head" style={{ textAlign: 'center', margin: '0 auto 48px', maxWidth: '60ch' }}>
+            <p className="eyebrow-plain">Our mission</p>
+            <h2>A CV shouldn't decide who gets a chance.</h2>
+          </div>
+          <div className="story-card">
+            <p>
+              The CV was built for a world where the only proof of ability was a piece of
+              paper — a degree, a reference, a job title. That world is already behind us.
+              Real ability shows up in what someone has actually built, fixed, designed, and
+              delivered, not in how well they can summarise it in two pages.
+            </p>
+            <p>
+              Our goal is to make the CV genuinely unnecessary — not replace it with a nicer
+              CV, remove the need for one. Every young person should be able to show real,
+              verified work instead: a brief they completed, a placement they showed up to, a
+              skill a tutor actually checked. That's a portfolio an employer can trust, built
+              from the moment someone starts learning, not assembled the week before an
+              application is due.
+            </p>
+            <p>
+              The same goes for university. Right now, the fastest route into most jobs and
+              apprenticeships still runs through a system that costs money and time most young
+              people don't have. We think the work itself should be the route in — not where
+              you studied, or whether you could afford to.
+            </p>
+            <p className="story-quote">
+              We're building toward a LERN Skill Wallet — one place a young person's verified
+              skills live for good, portable wherever they go next. It isn't live yet. When it
+              is, it'll work the same way everything else on LERN does: nothing counts until a
+              real person has checked it.
+            </p>
           </div>
         </div>
       </section>
@@ -41,12 +79,10 @@ export default function About() {
               can do and what the world gets to see of them.
             </p>
             <p>
-              Traditional routes into work — degrees, internships, a name on a CV — favour
-              people who can afford to wait. LERN doesn't. Students and young people complete
-              real, verified project briefs, build a profile that actually demonstrates their
-              ability rather than just claiming it, and get introduced to employers and
-              institutions through a platform designed to make that connection safe, credible,
-              and fast.
+              Students and young people complete real, verified project briefs, build a profile
+              that actually demonstrates their ability rather than just claiming it, and get
+              introduced to employers and institutions through a platform designed to make that
+              connection safe, credible, and fast.
             </p>
             <p>
               We work with schools, colleges, and institutions to give their students real
@@ -95,7 +131,7 @@ export default function About() {
                   className="about-founder-photo"
                 />
                 <p className="about-founder-name">Alieu Sankoh</p>
-                <p className="about-founder-role">Founder, LERN</p>
+                <p className="about-founder-role">Founder & CEO</p>
                 <p className="about-founder-note">
                   Aged 19. Building the platform he wishes had existed when he needed it.
                 </p>
@@ -135,7 +171,7 @@ export default function About() {
               </div>
               <div className="team-card-body">
                 <p className="team-name">Alex</p>
-                <p className="team-role">BD · Institutions & Providers</p>
+                <p className="team-role">Head of Institutions & Training Providers</p>
                 <p className="team-bio">
                   Leads on getting LERN into schools and colleges — the person who gets the right
                   doors open and makes sure institutions understand what they're getting.
@@ -148,7 +184,7 @@ export default function About() {
               </div>
               <div className="team-card-body">
                 <p className="team-name">Michael</p>
-                <p className="team-role">BD · Employers</p>
+                <p className="team-role">Head of Employer Partnerships</p>
                 <p className="team-bio">
                   Leads on bringing employers onto the platform — making the case for why verified
                   student work is a better starting point than a CV stack.

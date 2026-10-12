@@ -8,25 +8,28 @@ export default function AnimatedBackground() {
 
   useEffect(() => {
     const canvas = canvasRef.current
+    const parent = canvas.parentElement
     const ctx = canvas.getContext('2d')
     let t = 0
 
     function resize() {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
+      const r = parent.getBoundingClientRect()
+      canvas.width = r.width
+      canvas.height = r.height
     }
     resize()
 
     const onResize = () => resize()
     const onMove = (e) => {
+      const r = parent.getBoundingClientRect()
       target.current = {
-        x: e.clientX / window.innerWidth,
-        y: e.clientY / window.innerHeight,
+        x: (e.clientX - r.left) / r.width,
+        y: (e.clientY - r.top) / r.height,
       }
     }
 
     window.addEventListener('resize', onResize)
-    window.addEventListener('mousemove', onMove)
+    parent.addEventListener('mousemove', onMove)
 
     function arc(x0, y0, cx1, cy1, cx2, cy2, x1, y1, color, width, alpha) {
       ctx.save()
@@ -51,23 +54,18 @@ export default function AnimatedBackground() {
       const mx = mouse.current.x
       const my = mouse.current.y
 
-      // ── Base gradient ──────────────────────────────────────
-      const bg = ctx.createLinearGradient(0, 0, w * 0.85, h * 1.05)
-      bg.addColorStop(0.00, '#DDD0EC')  // lavender top-left
-      bg.addColorStop(0.20, '#EDD5C2')  // warm peach
-      bg.addColorStop(0.50, '#F5DFD0')  // light peach center
-      bg.addColorStop(0.78, '#ECCACE')  // rose-blush
-      bg.addColorStop(1.00, '#E4C2D8')  // pink bottom-right
-      ctx.fillStyle = bg
+      // ── Base — near-flat paper, not a loud wash (restraint: the
+      // swerve is the substance, color is one whisper-quiet accent) ──
+      ctx.fillStyle = '#FAFAF8'
       ctx.fillRect(0, 0, w, h)
 
-      // ── Mouse glow ─────────────────────────────────────────
+      // ── Mouse glow — a whisper of the brand accent, not a wash ──
       const gx = mx * w
       const gy = my * h
       const glow = ctx.createRadialGradient(gx, gy, 0, gx, gy, Math.min(w, h) * 0.55)
-      glow.addColorStop(0.0, 'rgba(255, 210, 165, 0.32)')
-      glow.addColorStop(0.5, 'rgba(255, 210, 165, 0.07)')
-      glow.addColorStop(1.0, 'rgba(255, 210, 165, 0.00)')
+      glow.addColorStop(0.0, 'rgba(212, 85, 26, 0.07)')
+      glow.addColorStop(0.5, 'rgba(212, 85, 26, 0.02)')
+      glow.addColorStop(1.0, 'rgba(212, 85, 26, 0.00)')
       ctx.fillStyle = glow
       ctx.fillRect(0, 0, w, h)
 
@@ -84,8 +82,8 @@ export default function AnimatedBackground() {
         cy2: h * 0.26 + py * 0.60,
         x1: w * 1.10, y1: h * 0.04 + py * 0.28,
       }
-      arc(a.x0, a.y0, a.cx1, a.cy1, a.cx2, a.cy2, a.x1, a.y1, 'rgba(238,190,158,0.9)', 110, 0.55)
-      arc(a.x0, a.y0, a.cx1, a.cy1, a.cx2, a.cy2, a.x1, a.y1, 'rgba(255,248,242,0.95)', 20, 0.70)
+      arc(a.x0, a.y0, a.cx1, a.cy1, a.cx2, a.cy2, a.x1, a.y1, 'rgba(212,85,26,0.9)', 110, 0.10)
+      arc(a.x0, a.y0, a.cx1, a.cy1, a.cx2, a.cy2, a.x1, a.y1, 'rgba(255,255,255,0.95)', 20, 0.55)
 
       // ── Curve B — lower secondary arc ──────────────────────
       const b = {
@@ -96,8 +94,8 @@ export default function AnimatedBackground() {
         cy2: h * 0.72 + py * 0.42,
         x1: w * 1.10, y1: h * 0.62 + py * 0.18,
       }
-      arc(b.x0, b.y0, b.cx1, b.cy1, b.cx2, b.cy2, b.x1, b.y1, 'rgba(220,172,158,0.85)', 80, 0.52)
-      arc(b.x0, b.y0, b.cx1, b.cy1, b.cx2, b.cy2, b.x1, b.y1, 'rgba(255,248,242,0.90)', 14, 0.65)
+      arc(b.x0, b.y0, b.cx1, b.cy1, b.cx2, b.cy2, b.x1, b.y1, 'rgba(212,85,26,0.7)', 80, 0.07)
+      arc(b.x0, b.y0, b.cx1, b.cy1, b.cx2, b.cy2, b.x1, b.y1, 'rgba(255,255,255,0.90)', 14, 0.45)
 
       // ── Curve C — upper left wisp ───────────────────────────
       const c = {
@@ -108,8 +106,8 @@ export default function AnimatedBackground() {
         cy2: h * 0.07 + Math.sin(t * 0.88) * 14,
         x1: w * 0.72 + px * 0.22, y1: h * -0.04 + py * 0.18,
       }
-      arc(c.x0, c.y0, c.cx1, c.cy1, c.cx2, c.cy2, c.x1, c.y1, 'rgba(185,195,228,0.75)', 58, 0.48)
-      arc(c.x0, c.y0, c.cx1, c.cy1, c.cx2, c.cy2, c.x1, c.y1, 'rgba(240,244,255,0.90)', 10, 0.60)
+      arc(c.x0, c.y0, c.cx1, c.cy1, c.cx2, c.cy2, c.x1, c.y1, 'rgba(17,17,17,0.5)', 58, 0.04)
+      arc(c.x0, c.y0, c.cx1, c.cy1, c.cx2, c.cy2, c.x1, c.y1, 'rgba(255,255,255,0.90)', 10, 0.40)
 
       // ── Curve D — right-edge vertical sweep ────────────────
       const d = {
@@ -120,8 +118,8 @@ export default function AnimatedBackground() {
         cy2: h * 0.80,
         x1: w * 1.05, y1: h * 1.02 + py * 0.12,
       }
-      arc(d.x0, d.y0, d.cx1, d.cy1, d.cx2, d.cy2, d.x1, d.y1, 'rgba(210,170,188,0.70)', 58, 0.45)
-      arc(d.x0, d.y0, d.cx1, d.cy1, d.cx2, d.cy2, d.x1, d.y1, 'rgba(255,244,248,0.85)', 10, 0.58)
+      arc(d.x0, d.y0, d.cx1, d.cy1, d.cx2, d.cy2, d.x1, d.y1, 'rgba(17,17,17,0.45)', 58, 0.035)
+      arc(d.x0, d.y0, d.cx1, d.cy1, d.cx2, d.cy2, d.x1, d.y1, 'rgba(255,255,255,0.85)', 10, 0.35)
 
       t += 0.0028
       raf.current = requestAnimationFrame(draw)
@@ -132,7 +130,7 @@ export default function AnimatedBackground() {
     return () => {
       cancelAnimationFrame(raf.current)
       window.removeEventListener('resize', onResize)
-      window.removeEventListener('mousemove', onMove)
+      parent.removeEventListener('mousemove', onMove)
     }
   }, [])
 
@@ -141,12 +139,11 @@ export default function AnimatedBackground() {
       ref={canvasRef}
       aria-hidden="true"
       style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
+        position: 'absolute',
+        inset: 0,
         width: '100%',
         height: '100%',
-        zIndex: -1,
+        zIndex: 0,
         pointerEvents: 'none',
       }}
     />

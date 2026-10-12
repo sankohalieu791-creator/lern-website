@@ -49,20 +49,20 @@ export default function TrainingProviders() {
   return (
     <main className="lpage">
       <section className="lpage-hero">
-        <div className="wrap">
-          <p className="eyebrow-plain">Training providers · Bootcamps · Employment programmes</p>
-          <h1>Everything a school gets, plus the evidence funders ask for.</h1>
-          <p className="hero-sub">
-            Attendance, course completion, and interview outcomes — compiled automatically
-            from work you're already recording, ready to export when a funder needs it.
-          </p>
-          <div className="hero-actions">
-            <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Set up your organisation</a>
-            <Link to="/pricing" className="link-accent">See pricing</Link>
+        <div className="wrap lpage-hero-grid">
+          <div>
+            <p className="eyebrow-plain">Training providers · Bootcamps · Employment programmes</p>
+            <h1>Everything a school gets, plus the evidence funders ask for.</h1>
+            <p className="hero-sub">
+              Attendance, course completion, and interview outcomes — compiled automatically
+              from work you're already recording, ready to export when a funder needs it.
+            </p>
+            <div className="hero-actions">
+              <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">Set up your organisation</a>
+              <Link to="/pricing" className="link-accent">See pricing</Link>
+            </div>
           </div>
-          <div style={{ marginTop: 56 }}>
-            <RealDemoPlayer src="/demo/provider-demo.mp4" title="Built for training providers." />
-          </div>
+          <RealDemoPlayer src="/demo/provider-demo.mp4" title="Built for training providers." />
         </div>
       </section>
 

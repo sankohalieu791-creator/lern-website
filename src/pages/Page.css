@@ -44,6 +44,23 @@
   flex-wrap: wrap;
 }
 
+/* ── Split hero — copy left, product demo right (role pages) ── */
+.lpage-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.lpage-hero-grid h1,
+.lpage-hero-grid .hero-sub {
+  max-width: none;
+}
+
+@media (max-width: 960px) {
+  .lpage-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
 /* ── Feature cards grid ── */
 .features-grid {
   display: grid;
