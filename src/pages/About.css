@@ -71,18 +71,6 @@
   box-shadow: var(--shadow-md);
 }
 
-/* Alex's card carries a full bio, not a one-line role summary -- two
-   columns' worth of width so the longer text has room to breathe
-   instead of wrapping into a tall, narrow tower next to everyone
-   else's short card. */
-.about-team-card--wide {
-  grid-column: span 2;
-}
-
-@media (max-width: 520px) {
-  .about-team-card--wide { grid-column: span 1; }
-}
-
 .team-card-top {
   height: 200px;
   position: relative;

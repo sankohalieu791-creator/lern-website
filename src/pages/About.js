@@ -87,13 +87,9 @@ export default function About() {
                 </p>
               </div>
             </div>
-            {/* Wider card -- a real bio, not a one-line role summary, so
-                it gets two columns' worth of room to breathe rather than
-                being crammed into the same width as everyone else's
-                short one-liner. */}
-            <div className="about-team-card about-team-card--wide lcard">
+            <div className="about-team-card lcard">
               <div className="team-card-top team-card-top--photo">
-                <img src="/alex.jpg" alt="Alex" className="team-card-photo" style={{ objectPosition: 'center 22%' }} />
+                <img src="/alex.jpg" alt="Alex" className="team-card-photo" style={{ objectPosition: 'center 30%' }} />
               </div>
               <div className="team-card-body">
                 <p className="team-name">Alex</p>
