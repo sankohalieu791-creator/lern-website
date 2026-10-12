@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Logo from '../components/Logo'
 import './Page.css'
 import './Safeguarding.css'
 import './About.css'
@@ -223,9 +224,12 @@ export default function About() {
             <a href="mailto:hello@lernapp.uk" className="btn btn-primary-lg">hello@lernapp.uk</a>
             <Link to="/institutions" className="link-accent">For institutions</Link>
           </div>
-          <p style={{ marginTop: '20px', fontSize: '13px', color: 'var(--ink-faint)' }}>
-            IRL Connect Ltd · Company No. 17200180
-          </p>
+          <div style={{ marginTop: '28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
+            <Logo height={20} color="var(--ink)" />
+            <p style={{ fontSize: '13px', color: 'var(--ink-faint)' }}>
+              IRL Connect Ltd · Company No. 17200180
+            </p>
+          </div>
         </div>
       </section>
     </main>
