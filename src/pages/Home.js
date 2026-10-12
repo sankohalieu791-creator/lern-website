@@ -101,9 +101,11 @@ export default function Home() {
           safeguarding section, and the CTA. */}
       <div className="home-bg-texture" aria-hidden="true" style={{ backgroundImage: 'url(/home-bg.png)' }} />
 
-      {/* ── HERO — one real video filling the panel, headline overlaid
-          on top of it (no role tabs) ── */}
+      {/* ── HERO — headline above the panel, one real video filling it
+          (bright, not washed out -- only the CTA needs scrim contrast
+          now), eyebrow below ── */}
       <section className="wrap hp-hero-wrap">
+        <h1 className="hp-h1-top">Work that follows you.</h1>
         <div className="hp-hero">
           <video
             className="hp-hero-video"
@@ -112,15 +114,9 @@ export default function Home() {
           />
           <div className="hp-hero-scrim" />
           <div className="hp-hero-inner">
-            <p className="hp-eyebrow">Verified · Trusted · Safe</p>
-            <h1 className="hp-h1">Work that follows you.</h1>
-            <p className="hp-sub">
-              LERN connects schools, colleges, training providers and employers
-              around real work — properly checked and safely shared.
-            </p>
             <div className="hp-btns">
               <a href="https://getlern.com" target="_blank" rel="noopener noreferrer" className="btn-glass btn-glass-lg">
-                Get started — it's free
+                Get started
               </a>
               <Link to="/how-it-works" className="hp-ghost-link">
                 See how it works →
@@ -128,6 +124,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <p className="hp-eyebrow-bottom">Verified · Trusted · Safe</p>
       </section>
 
       {/* ── STEP CARDS ── */}

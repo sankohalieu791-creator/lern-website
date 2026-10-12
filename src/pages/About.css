@@ -47,7 +47,7 @@
 
 .about-team-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
@@ -97,6 +97,10 @@
 
 .team-card-top--teal {
   background: linear-gradient(145deg, #C8DCF2 0%, #84AED8 100%);
+}
+
+.team-card-top--purple {
+  background: linear-gradient(145deg, #E3D9F7 0%, #AD92E0 100%);
 }
 
 .team-avatar {

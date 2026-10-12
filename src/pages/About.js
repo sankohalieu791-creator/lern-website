@@ -141,6 +141,12 @@ export default function About() {
                 right now.
               </p>
               <p>
+                LERN isn't the first thing I've built. I've started several platforms before this
+                one that didn't make it — including IRL, an earlier attempt at tackling social
+                media addiction. None of them survived, but each one taught me something I've
+                used to build LERN properly.
+              </p>
+              <p>
                 So I built a platform that measures people by what they produce, not by what they
                 could afford to study. It's still early — we're building carefully, with
                 safeguarding and safety built in from day one rather than bolted on afterward —
@@ -172,8 +178,7 @@ export default function About() {
                 <p className="team-name">Alieu Sankoh</p>
                 <p className="team-role">Founder & CEO</p>
                 <p className="team-bio">
-                  Aged 19. Built LERN from a personal frustration with a system that asks young
-                  people to prove themselves through credentials they can't afford.
+                  Sets product direction and runs the company day to day.
                 </p>
               </div>
             </div>
@@ -185,8 +190,21 @@ export default function About() {
                 <p className="team-name">Alex</p>
                 <p className="team-role">Head of Institutions & Training Providers</p>
                 <p className="team-bio">
-                  Leads on getting LERN into schools and colleges — the person who gets the right
-                  doors open and makes sure institutions understand what they're getting.
+                  Responsible for getting schools, colleges and training providers onto LERN, and
+                  making sure the sales process runs properly.
+                </p>
+              </div>
+            </div>
+            <div className="about-team-card lcard">
+              <div className="team-card-top team-card-top--purple">
+                <span className="team-avatar">MA</span>
+              </div>
+              <div className="team-card-body">
+                <p className="team-name">Mayank</p>
+                <p className="team-role">Lead, Institutional Sales</p>
+                <p className="team-bio">
+                  Leads institutional sales alongside Alex — identifying and closing new schools,
+                  colleges and training providers.
                 </p>
               </div>
             </div>

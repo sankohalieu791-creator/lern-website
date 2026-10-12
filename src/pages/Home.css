@@ -23,13 +23,24 @@
   background-repeat: no-repeat;
 }
 
-/* ── Hero — one real video filling a large rounded panel, headline
-   overlaid directly on top of it instead of a separate framed window
-   sitting below the text (no role tabs any more either -- "just leave
-   the video, put it up"). ── */
+/* ── Hero — headline sits above the panel (on the page's own
+   background, not the video), the video itself stays bright since
+   it's no longer carrying body text, and the eyebrow sits below.
+   Only the CTA at the bottom of the panel still needs scrim contrast. ── */
 .hp-hero-wrap {
   padding-top: 48px;
   padding-bottom: 0;
+}
+
+.hp-h1-top {
+  font-size: clamp(38px, 5.4vw, 72px);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: center;
+  margin: 0 auto 28px;
+  max-width: 16ch;
 }
 
 .hp-hero {
@@ -55,12 +66,12 @@
   display: block;
 }
 
-/* Scrim so the headline stays legible over whatever the recording is
-   showing underneath, regardless of what's on screen at any moment. */
+/* Only darkens the bottom strip, for the CTA's own contrast -- the
+   rest of the video stays bright and fully visible. */
 .hp-hero-scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10,8,6,.62) 0%, rgba(10,8,6,.30) 38%, rgba(10,8,6,.55) 100%);
+  background: linear-gradient(180deg, rgba(10,8,6,0) 0%, rgba(10,8,6,0) 62%, rgba(10,8,6,.5) 100%);
 }
 
 .hp-hero-inner {
@@ -70,39 +81,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   text-align: center;
   padding: 40px 24px;
 }
 
-.hp-eyebrow {
+.hp-eyebrow-bottom {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: #FFC9A3;
-  margin-bottom: 28px;
-  display: block;
-}
-
-.hp-h1 {
-  font-size: clamp(38px, 5.4vw, 72px);
-  line-height: 1.04;
-  letter-spacing: -0.04em;
-  font-weight: 700;
-  color: #fff;
-  margin: 0 0 20px;
-  max-width: 16ch;
-  text-shadow: 0 2px 24px rgba(0,0,0,.35);
-}
-
-.hp-sub {
-  font-size: 17px;
-  color: rgba(255,255,255,.82);
-  max-width: 46ch;
-  line-height: 1.6;
-  margin: 0 0 36px;
-  text-shadow: 0 1px 12px rgba(0,0,0,.3);
+  color: var(--accent);
+  text-align: center;
+  margin: 24px 0 0;
 }
 
 .hp-btns {
@@ -125,9 +116,8 @@
 
 @media (max-width: 860px) {
   .hp-hero-wrap { padding-top: 24px; }
+  .hp-h1-top { font-size: clamp(32px, 9vw, 48px); margin-bottom: 20px; }
   .hp-hero { border-radius: 20px; aspect-ratio: 9 / 14; max-height: none; }
-  .hp-h1 { font-size: clamp(32px, 9vw, 48px); }
-  .hp-sub { font-size: 15px; margin-bottom: 28px; }
 }
 
 /* ── Step cards ── */
