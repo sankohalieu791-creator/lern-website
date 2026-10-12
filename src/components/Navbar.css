@@ -95,6 +95,56 @@
   .tl-nav { display: none; }
 }
 
+/* ── Flyout: Institutions/Providers reveal a "For Students" link on
+   hover, rather than Students getting its own top-level nav slot. ── */
+.tl-item-group {
+  position: relative;
+  display: flex;
+}
+
+.tl-flyout {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 6px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+  white-space: nowrap;
+}
+
+.tl-item-group:hover .tl-flyout,
+.tl-item-group:focus-within .tl-flyout {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.tl-flyout a {
+  padding: 8px 16px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.tl-flyout a:hover {
+  color: var(--ink);
+  background: rgba(0,0,0,.04);
+}
+
 /* ── Header actions ── */
 .header-actions {
   display: flex;
@@ -148,6 +198,13 @@
 }
 
 .mobile-panel a:hover { background: rgba(0,0,0,.04); }
+
+.mobile-panel a.mobile-sublink {
+  padding-left: 22px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
 
 .mobile-actions {
   display: flex;

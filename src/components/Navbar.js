@@ -3,10 +3,15 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import './Navbar.css'
 
+// Institutions and Providers each reveal a small flyout on hover with
+// a link to the Students page -- per direct request, not a separate
+// top-level nav slot of its own, but still reachable from either role
+// context since that's where someone asking "what about the student
+// side?" is most likely to be looking from.
 const NAV_LINKS = [
   { to: '/', label: 'Home', exact: true },
-  { to: '/institutions', label: 'Institutions' },
-  { to: '/training-providers', label: 'Providers' },
+  { to: '/institutions', label: 'Institutions', children: [{ to: '/students', label: 'For Students' }] },
+  { to: '/training-providers', label: 'Providers', children: [{ to: '/students', label: 'For Students' }] },
   { to: '/employers', label: 'Employers' },
   { to: '/pricing', label: 'Pricing' },
   { to: '/help-desk', label: 'Help Desk' },
@@ -83,13 +88,29 @@ export default function Navbar() {
             aria-hidden
           />
           {NAV_LINKS.map(link => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={isActive(link, location.pathname) ? 'tl-active' : ''}
-            >
-              {link.label}
-            </Link>
+            link.children ? (
+              <div key={link.to} className="tl-item-group">
+                <Link
+                  to={link.to}
+                  className={isActive(link, location.pathname) ? 'tl-active' : ''}
+                >
+                  {link.label}
+                </Link>
+                <div className="tl-flyout">
+                  {link.children.map(c => (
+                    <Link key={c.to} to={c.to}>{c.label}</Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={isActive(link, location.pathname) ? 'tl-active' : ''}
+              >
+                {link.label}
+              </Link>
+            )
           ))}
         </nav>
 
@@ -116,8 +137,13 @@ export default function Navbar() {
       {/* Mobile drawer */}
       {open && (
         <div className="wrap mobile-panel">
-          {NAV_LINKS.map(({ to, label }) => (
-            <Link key={to} to={to} onClick={() => setOpen(false)}>{label}</Link>
+          {NAV_LINKS.map(({ to, label, children }) => (
+            <div key={to}>
+              <Link to={to} onClick={() => setOpen(false)}>{label}</Link>
+              {children && children.map(c => (
+                <Link key={c.to} to={c.to} className="mobile-sublink" onClick={() => setOpen(false)}>{c.label}</Link>
+              ))}
+            </div>
           ))}
           <div className="mobile-actions">
             <a className="link-plain" href="https://getlern.com" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>Log in</a>

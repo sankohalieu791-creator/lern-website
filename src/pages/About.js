@@ -61,11 +61,36 @@ export default function About() {
               people don't have. We think the work itself should be the route in — not where
               you studied, or whether you could afford to.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── LERN Skill Wallet ── */}
+      <section className="lsection" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="section-head" style={{ textAlign: 'center', margin: '0 auto 48px', maxWidth: '60ch' }}>
+            <p className="eyebrow-plain">The LERN Skill Wallet</p>
+            <h2>One place every verified skill lives, for good.</h2>
+          </div>
+          <div className="story-card">
+            <p>
+              A CV lists what someone studied. The Skill Wallet shows what they can actually
+              do — a growing, portable record of specific, real skills, each one backed by
+              evidence a tutor has checked, not a grade or a self-assessment.
+            </p>
+            <p>
+              It works alongside the briefs and courses a student is already doing, not as
+              extra homework. A tutor sets out the skills for their course and what counts
+              as proof for each one. As a student's real work gets verified, those skills
+              move through five honest levels — Not started, Beginner, Developing, Secure,
+              Advanced — and every level-up is tied to a specific, checked piece of work a
+              student can point back to.
+            </p>
             <p className="story-quote">
-              We're building toward a LERN Skill Wallet — one place a young person's verified
-              skills live for good, portable wherever they go next. It isn't live yet. When it
-              is, it'll work the same way everything else on LERN does: nothing counts until a
-              real person has checked it.
+              It's live now, in its first phase, built the same way everything else on LERN
+              is: nothing counts until a real person has checked it. It belongs to the
+              student, not the school or employer — built once, kept for good, and carried
+              with them into whatever comes next.
             </p>
           </div>
         </div>
@@ -95,12 +120,15 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── Founder story ── */}
+      {/* ── Founder story — no separate photo sidebar; Alieu appears
+          once, in the team grid below, same as everyone else. ── */}
       <section className="lsection about-founder-section">
         <div className="wrap">
           <div className="about-founder">
-            <div className="about-founder-text">
+            <div className="section-head" style={{ textAlign: 'center', margin: '0 auto 40px' }}>
               <h2>Why I built it</h2>
+            </div>
+            <div className="about-founder-text">
               <p>
                 My name's Alieu Sankoh. I'm 19, and I founded LERN.
               </p>
@@ -121,25 +149,8 @@ export default function About() {
               <p>
                 I've had the support of a small, experienced team around me — people who've worked
                 in EdTech, safeguarding, and business who believed in this early enough to help
-                shape it.
+                shape it. You'll find all of us, me included, in the team below.
               </p>
-            </div>
-            <div className="about-founder-aside">
-              <div className="about-founder-card">
-                <img
-                  src="/alieu.jpg"
-                  alt="Alieu Sankoh, founder of LERN"
-                  className="about-founder-photo"
-                />
-                <p className="about-founder-name">Alieu Sankoh</p>
-                <p className="about-founder-role">Founder & CEO</p>
-                <p className="about-founder-note">
-                  Aged 19. Building the platform he wishes had existed when he needed it.
-                </p>
-                <a href="mailto:hello@lernapp.uk" className="link-accent" style={{ fontSize: '14px' }}>
-                  hello@lernapp.uk
-                </a>
-              </div>
             </div>
           </div>
         </div>

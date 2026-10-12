@@ -2,12 +2,12 @@
    Home — brand background with glass step cards
    ═══════════════════════════════════════════════ */
 
-/* ── Hero — split: copy left, product right. The "swerve" canvas
-   (AnimatedBackground) sits behind both, recolored to one whisper-quiet
-   accent instead of the old loud multi-color wash. ── */
+/* ── Hero — centered headline, the real product demo big underneath.
+   AnimatedBackground (a soft glowing aurora-blob texture, not lines)
+   sits behind everything. ── */
 .hp-hero {
   padding-top: 140px;
-  padding-bottom: 120px;
+  padding-bottom: 100px;
   position: relative;
   overflow: hidden;
 }
@@ -15,13 +15,11 @@
 .hp-hero-inner {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-  gap: 56px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
 }
-
-.hp-hero-copy { text-align: left; }
 
 .hp-eyebrow {
   font-size: 12px;
@@ -34,18 +32,19 @@
 }
 
 .hp-h1 {
-  font-size: clamp(44px, 5.2vw, 76px);
+  font-size: clamp(44px, 5.8vw, 84px);
   line-height: 1.02;
   letter-spacing: -0.04em;
   font-weight: 700;
   color: var(--ink);
   margin: 0 0 24px;
+  max-width: 16ch;
 }
 
 .hp-sub {
   font-size: 18px;
   color: var(--ink-soft);
-  max-width: 42ch;
+  max-width: 48ch;
   line-height: 1.65;
   margin: 0 0 40px;
 }
@@ -55,6 +54,7 @@
   gap: 20px;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 }
 
 .hp-ghost-link {
@@ -67,24 +67,40 @@
 
 .hp-ghost-link:hover { color: var(--ink); }
 
-.hp-hero-preview {
-  width: 100%;
+/* The demo showcase -- big, full-width, sitting underneath the
+   headline rather than squeezed beside it. */
+.hp-hero-demo {
+  position: relative;
+  z-index: 1;
+  margin-top: 64px;
   display: flex;
   justify-content: center;
 }
 
-@media (max-width: 960px) {
-  .hp-hero-inner { grid-template-columns: 1fr; gap: 48px; }
-  .hp-hero-copy { text-align: center; }
-  .hp-h1 { margin-inline: auto; max-width: 16ch; }
-  .hp-sub { margin-inline: auto; }
-  .hp-btns { justify-content: center; }
-}
-
 @media (max-width: 860px) {
-  .hp-hero { padding-top: 110px; padding-bottom: 80px; }
+  .hp-hero { padding-top: 110px; padding-bottom: 72px; }
   .hp-h1 { font-size: clamp(38px, 9vw, 56px); }
   .hp-sub { font-size: 16px; margin-bottom: 32px; }
+  .hp-hero-demo { margin-top: 44px; }
+}
+
+/* ── Aurora background texture (AnimatedBackground.js) — large,
+   softly blurred overlapping glow blobs that drift and lean toward
+   the cursor. Sized to .hp-hero (its parent, which needs
+   position:relative + overflow:hidden, set above). ── */
+.aurora-bg {
+  position: absolute;
+  inset: -15% -10%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #FFFCF8;
+}
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  will-change: transform;
 }
 
 /* ── Step cards ── */

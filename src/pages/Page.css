@@ -44,21 +44,37 @@
   flex-wrap: wrap;
 }
 
-/* ── Split hero — copy left, product demo right (role pages) ── */
+/* ── Hero — centered copy, the real product demo big underneath
+   (role pages: Institutions/Providers/Employers). Was a side-by-side
+   split with a half-width video; too small and cramped sitting next
+   to the text, same fix as Home's own hero. ── */
 .lpage-hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 48px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+  gap: 48px;
 }
 
-.lpage-hero-grid h1,
+.lpage-hero-grid h1 {
+  max-width: 18ch;
+}
+
 .lpage-hero-grid .hero-sub {
-  max-width: none;
+  max-width: 54ch;
+  margin-inline: auto;
+}
+
+.lpage-hero-grid .hero-actions {
+  justify-content: center;
+}
+
+.lpage-hero-grid .ap-wrap {
+  width: 100%;
 }
 
 @media (max-width: 960px) {
-  .lpage-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .lpage-hero-grid { gap: 36px; }
 }
 
 /* ── Feature cards grid ── */

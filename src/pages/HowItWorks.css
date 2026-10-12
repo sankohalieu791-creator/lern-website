@@ -4,6 +4,28 @@
   border-bottom: 1px solid var(--border);
 }
 
+.hiw-hero .wrap {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hiw-hero h1,
+.hiw-hero .hero-sub {
+  margin-inline: auto;
+}
+
+/* Centered, per direct request -- was left-aligned like the rest of
+   the page's prose blocks; "Who we are" and "The problem we solve"
+   read better centered as the page's own opening statement. */
+.hiw-prose {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .hiw-prose p {
   font-size: 17px;
   color: var(--ink-soft);
@@ -140,6 +162,11 @@
   padding: 12px 0 12px 22px;
   border-bottom: 1px solid var(--border);
   position: relative;
+}
+
+.hiw-feature-list li strong {
+  color: var(--ink);
+  font-weight: 700;
 }
 
 .hiw-feature-list li:last-child { border-bottom: none; }

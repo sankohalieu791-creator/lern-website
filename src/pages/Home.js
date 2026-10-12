@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import RealDemoPlayer from '../components/RealDemoPlayer'
+import RoleDemoShowcase from '../components/RoleDemoShowcase'
 import AnimatedBackground from '../components/AnimatedBackground'
 import './Home.css'
 
@@ -98,29 +98,27 @@ export default function Home() {
   return (
     <main className="home-page">
 
-      {/* ── HERO — split: copy left, product right ── */}
+      {/* ── HERO — centered headline, real demo big underneath ── */}
       <section className="hp-hero">
         <AnimatedBackground />
         <div className="wrap hp-hero-inner">
-          <div className="hp-hero-copy">
-            <p className="hp-eyebrow">Verified · Trusted · Safe</p>
-            <h1 className="hp-h1">Work that follows you.</h1>
-            <p className="hp-sub">
-              LERN connects schools, colleges, training providers and employers
-              around real work — properly checked and safely shared.
-            </p>
-            <div className="hp-btns">
-              <a href="https://getlern.com" target="_blank" rel="noopener noreferrer" className="btn-glass btn-glass-lg">
-                Get started — it's free
-              </a>
-              <Link to="/how-it-works" className="hp-ghost-link">
-                See how it works →
-              </Link>
-            </div>
+          <p className="hp-eyebrow">Verified · Trusted · Safe</p>
+          <h1 className="hp-h1">Work that follows you.</h1>
+          <p className="hp-sub">
+            LERN connects schools, colleges, training providers and employers
+            around real work — properly checked and safely shared.
+          </p>
+          <div className="hp-btns">
+            <a href="https://getlern.com" target="_blank" rel="noopener noreferrer" className="btn-glass btn-glass-lg">
+              Get started — it's free
+            </a>
+            <Link to="/how-it-works" className="hp-ghost-link">
+              See how it works →
+            </Link>
           </div>
-          <div className="hp-hero-preview">
-            <RealDemoPlayer src="/demo/institution-demo.mp4" title="Where the future starts." />
-          </div>
+        </div>
+        <div className="wrap hp-hero-demo">
+          <RoleDemoShowcase />
         </div>
       </section>
 

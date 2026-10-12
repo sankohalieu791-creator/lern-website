@@ -5,7 +5,9 @@
 .ap-window {
   position: relative;
   width: 100%;
-  max-width: 780px;
+  /* Was 780px -- too small sitting on its own line underneath a hero
+     now that it's not squeezed into a half-width split column. */
+  max-width: 1040px;
   background: #fff;
   border-radius: 16px;
   overflow: hidden;

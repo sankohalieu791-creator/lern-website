@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import Institutions from './pages/Institutions'
 import TrainingProviders from './pages/TrainingProviders'
 import Employers from './pages/Employers'
+import Students from './pages/Students'
 import Pricing from './pages/Pricing'
 import About from './pages/About'
 import HowItWorks from './pages/HowItWorks'
@@ -56,6 +57,7 @@ export default function App() {
         <Route path="/schools" element={<Institutions />} />
         <Route path="/training-providers" element={<TrainingProviders />} />
         <Route path="/employers" element={<Employers />} />
+        <Route path="/students" element={<Students />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/about" element={<About />} />
         <Route path="/how-it-works" element={<HowItWorks />} />

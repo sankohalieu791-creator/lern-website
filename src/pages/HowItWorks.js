@@ -26,22 +26,37 @@ const STEPS = [
 ]
 
 const INSTITUTION_FEATURES = [
-  'Verified profiles of completed project work for every student on the platform — evidence institutions can point to for destinations reporting and careers-strategy compliance, not just a completion certificate.',
-  'A dashboard tracking student readiness across a whole cohort, so staff can see at a glance who is engaged, who is falling behind, and who is ready for an employer conversation — without chasing individual tutors for updates.',
-  'Flat, capped pricing that scales with intake, so the cost is predictable regardless of cohort size.',
-  'Safeguarding built in from day one, not added afterward — every brief and every verification happens inside a structure designed for young people, so institutions can offer real work experience without the liability of unsupervised external placements.',
+  { name: 'Feed', body: 'A live, school-wide feed of work your students have actually had verified — nothing appears until a tutor has checked it, so it never fills up with unverified claims or noise.' },
+  { name: 'Review', body: 'A structured queue for every submission, checked against the specific criteria the brief or skill asked for. Staff decide verified, returned for changes, or revoked — every decision is logged, and feedback goes straight back to the student.' },
+  { name: 'Skill Wallet', body: "Set up the skills for a course once, with the criteria that count as proof for each. As students' verified work comes in, their skills move through five levels — Not started, Beginner, Developing, Secure, Advanced — so progress is visible per skill, not just per subject." },
+  { name: 'Work Experience', body: 'Placements, daily attendance and supervisor sign-off tracked in one view, replacing the spreadsheets and email chains most schools currently run this through.' },
+  { name: 'Briefs & Workshops', body: 'Set real project briefs for any subject, and run live or in-person workshops students join from their own dashboard — both tracked the same way everything else on LERN is.' },
+  { name: 'Students', body: "A full roster per student: verified work, attendance, progress and skill levels, all in one place instead of scattered across different systems." },
+  { name: 'Guest invite', body: "A time-limited link that safely shares one student's verified profile with one employer — no employer account needed, and the link expires, so access is never left open-ended." },
+  { name: 'Job tracking', body: 'Every application tracked from first interest through to hired, so staff can see exactly where each student stands with an employer without chasing updates by email.' },
+  { name: 'Dashboard', body: 'Overdue reviews, flagged content and weekly activity at a glance — the things that need a staff member\'s attention, surfaced automatically instead of needing to be hunted for.' },
+  { name: 'Unlimited staff seats', body: 'Every teacher and admin who needs access is included in the one annual fee — no per-seat licensing to manage or budget around.' },
+  { name: 'Safeguarding', body: 'No employer ever contacts a student directly — every message routes through the school. Nothing appears on a profile until a tutor has verified it. Under-18s are never publicly searchable. Every reported post is hidden immediately and reviewed by a person.' },
 ]
 
 const PROVIDER_FEATURES = [
-  'Real project briefs that sit alongside existing courses, giving learners practical, verified experience without a separate placement to arrange.',
-  'Verified outcomes, not just attendance — proof a learner actually did the work, to the standard asked for, rather than a record that they turned up.',
-  'A direct route to employer visibility, so strong learners can be seen by employers before they\'ve even finished their course.',
+  { name: 'Feed & Review', body: 'The same verified-work pipeline as institutions, built for training cohorts — nothing shows on a learner\'s profile until it has been checked against clear criteria.' },
+  { name: 'Courses', body: 'Structured criteria that automatically become a trackable cohort — set it up once per course, and every learner\'s progress against it is visible from day one.' },
+  { name: 'Skill Wallet', body: "Set the skills a course teaches, with the proof that counts for each — as learners' work is verified, their skills move through five honest levels instead of a single pass/fail outcome." },
+  { name: 'Workshops', body: 'Online and in-person sessions learners join straight from their dashboard, with attendance tracked automatically.' },
+  { name: 'Students', body: 'A full roster — verified work, attendance, progress and skill levels — plus a safe way to share any one learner\'s profile directly with an employer.' },
+  { name: 'Job tracking', body: 'Every application tracked from first interest through to hired, so you always know where a learner stands with an employer.' },
+  { name: 'Dashboard', body: 'A live view of activity, outcomes and what needs your attention — the same real-time visibility institutions get.' },
+  { name: 'Bootcamp Evidence add-on', body: 'Attendance, completions and outcomes exported per cohort, built specifically for the funder and compliance reporting bootcamps and employment programmes are asked for.' },
 ]
 
 const EMPLOYER_FEATURES = [
-  'Seeing what a candidate actually built, before the CV — real, verified project work rather than a self-written list of skills.',
-  'Direct access to job-ready talent, sourced from verified profiles rather than a stack of unverified applications.',
-  'No placement fees, no long recruitment cycles — employers engage with students through project briefs, at a pace that suits them, instead of committing to a formal placement upfront.',
+  { name: 'Discover', body: 'Browse verified student and learner work before a single CV is involved — real, checked project output, not a self-written list of skills.' },
+  { name: 'Jobs', body: 'Post roles and manage every applicant from one pipeline, instead of juggling email threads and spreadsheets per vacancy.' },
+  { name: 'Candidates', body: 'A clear pipeline for every applicant — Applied, Reviewing, Shortlisted, Interview, Offer, Hired — so nothing gets lost between stages.' },
+  { name: 'Talent pools', body: 'LERN automatically keeps promising candidates warm for you, so strong people you\'re not ready to hire yet don\'t just disappear.' },
+  { name: 'Inbox', body: 'Every conversation with a young candidate is routed through their school first — you are never in direct, unsupervised contact with an under-18.' },
+  { name: 'Partners', body: 'Track every school and training provider relationship you\'ve built in one place, instead of losing context between separate email threads.' },
 ]
 
 const TIMELINE = [
@@ -146,7 +161,7 @@ export default function HowItWorks() {
               <p className="hiw-audience-sub">Schools, sixth forms, colleges</p>
             </div>
             <ul className="hiw-feature-list">
-              {INSTITUTION_FEATURES.map((f) => <li key={f}>{f}</li>)}
+              {INSTITUTION_FEATURES.map((f) => <li key={f.name}><strong>{f.name}</strong> — {f.body}</li>)}
             </ul>
             <Link to="/institutions" className="link-accent hiw-learn-link">Learn more about Institutions →</Link>
           </div>
@@ -157,7 +172,7 @@ export default function HowItWorks() {
               <p className="hiw-audience-sub">Bootcamps · Employment programmes</p>
             </div>
             <ul className="hiw-feature-list">
-              {PROVIDER_FEATURES.map((f) => <li key={f}>{f}</li>)}
+              {PROVIDER_FEATURES.map((f) => <li key={f.name}><strong>{f.name}</strong> — {f.body}</li>)}
             </ul>
             <Link to="/training-providers" className="link-accent hiw-learn-link">Learn more about Training Providers →</Link>
           </div>
@@ -168,7 +183,7 @@ export default function HowItWorks() {
               <p className="hiw-audience-sub">Hiring teams · Talent leads</p>
             </div>
             <ul className="hiw-feature-list">
-              {EMPLOYER_FEATURES.map((f) => <li key={f}>{f}</li>)}
+              {EMPLOYER_FEATURES.map((f) => <li key={f.name}><strong>{f.name}</strong> — {f.body}</li>)}
             </ul>
             <Link to="/employers" className="link-accent hiw-learn-link">Learn more about Employers →</Link>
           </div>

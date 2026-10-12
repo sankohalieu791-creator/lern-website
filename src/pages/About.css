@@ -24,24 +24,12 @@
   border-bottom: 1px solid var(--border);
 }
 
-.about-founder {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 64px;
-  align-items: start;
-}
-
-@media (max-width: 880px) {
-  .about-founder {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
-.about-founder-text h2 {
-  font-size: 34px;
-  letter-spacing: -0.025em;
-  margin-bottom: 28px;
+/* Single centered prose column now -- was a 2-column grid with a
+   sticky founder photo card alongside it; the photo lives once, in
+   the team grid below, instead of appearing twice on the page. */
+.about-founder-text {
+  max-width: 68ch;
+  margin-inline: auto;
 }
 
 .about-founder-text p {
@@ -51,58 +39,6 @@
 }
 
 .about-founder-text p + p { margin-top: 18px; }
-
-/* ── Founder card (sticky sidebar) ── */
-.about-founder-aside {
-  position: sticky;
-  top: 96px;
-}
-
-.about-founder-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.about-founder-photo {
-  width: 88px;
-  height: 88px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: 18% 22%;
-  border: 3px solid var(--surface);
-  outline: 2px solid var(--border);
-  margin-bottom: 12px;
-  display: block;
-}
-
-.about-founder-name {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--ink);
-}
-
-.about-founder-role {
-  font-size: 13px;
-  color: var(--accent);
-  font-weight: 600;
-  letter-spacing: .02em;
-  margin-bottom: 4px;
-}
-
-.about-founder-note {
-  font-size: 13.5px;
-  color: var(--ink-soft);
-  line-height: 1.6;
-  padding-top: 14px;
-  border-top: 1px solid var(--border);
-  margin-top: 8px;
-  margin-bottom: 10px;
-}
 
 /* ── Team section ── */
 .about-team-section {

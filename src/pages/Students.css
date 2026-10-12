@@ -1,0 +1,16 @@
+/* ── Students page ── */
+
+.students-hero .wrap {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.students-hero h1 {
+  max-width: 18ch;
+}
+
+.students-hero .hero-actions {
+  justify-content: center;
+}
