@@ -144,8 +144,12 @@ export default function About() {
           <div className="story-card">
             <p>
               A CV lists what someone studied. The Skill Wallet shows what they can actually
-              do — a growing, portable record of specific, real skills, each one backed by
-              evidence a tutor has checked, not a grade or a self-assessment.
+              do — a growing, portable record of specific, real skills, in two forms. Skills a
+              tutor sets for a course move through five levels as verified work comes in,
+              checked against real criteria. A student can also set their own goal for
+              something they're teaching themselves, then check in weekly with what they did
+              and proof of the work — no tutor step for that one, just a real, dated log an
+              employer can actually look through.
             </p>
             <p>
               It works alongside the briefs and courses a student is already doing, not as
@@ -157,9 +161,9 @@ export default function About() {
             </p>
             <p className="story-quote">
               It's live now, in its first phase, built the same way everything else on LERN
-              is: nothing counts until a real person has checked it. It belongs to the
-              student, not the school or employer — built once, kept for good, and carried
-              with them into whatever comes next.
+              is: every claim is backed by something real — a tutor's check, or a student's
+              own dated proof. It belongs to the student, not the school or employer — built
+              once, kept for good, and carried with them into whatever comes next.
             </p>
           </div>
         </div>

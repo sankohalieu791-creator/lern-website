@@ -11,7 +11,6 @@ function Check() {
 const INSTITUTION_FEATURES = [
   { label: 'Feed', note: 'verified work visible school-wide, tutor-approved before anything shows' },
   { label: 'Review', note: 'every submission assessed against clear criteria before it counts' },
-  { label: 'Skill Wallet', note: 'set skills per course; verified work moves students through five levels' },
   { label: 'Work Experience', note: 'placements, daily attendance and sign-off in one view' },
   { label: 'Briefs & Workshops', note: 'real project briefs, live sessions, all tracked' },
   { label: 'Students', note: 'full roster with verified work, attendance and progress' },
@@ -25,7 +24,6 @@ const INSTITUTION_FEATURES = [
 const PROVIDER_FEATURES = [
   { label: 'Feed & Review', note: 'verified-work pipeline built for training cohorts' },
   { label: 'Courses', note: 'structured criteria that become trackable cohorts automatically' },
-  { label: 'Skill Wallet', note: 'set skills per course; verified work moves learners through five levels' },
   { label: 'Workshops', note: 'online and in-person sessions learners join from their dashboard' },
   { label: 'Students', note: 'full roster with verified work, attendance and safe employer sharing' },
   { label: 'Guest invite', note: 'safely share one learner\'s profile with one employer' },
@@ -208,15 +206,16 @@ export default function Pricing() {
             <h2>A verified portfolio that follows you, not your school.</h2>
             <p>
               Every student joins at no cost, on every plan. They build a real Skill Wallet —
-              verified work, levelled per skill, checked by a tutor — that stays theirs for
-              good. It doesn't reset at the end of the year and it doesn't belong to the
-              institution that introduced them to it.
+              course skills levelled up as a tutor checks their work, plus their own goals for
+              skills they're teaching themselves, logged with weekly dated proof — that stays
+              theirs for good. It doesn't reset at the end of the year and it doesn't belong to
+              the institution that introduced them to it.
             </p>
           </div>
           <ul className="pc-students-list">
             <li><Check /><span>Join free, no card required, on every plan</span></li>
             <li><Check /><span>A Skill Wallet that follows them to their next school, course or job</span></li>
-            <li><Check /><span>Nothing counts until a real tutor has checked it</span></li>
+            <li><Check /><span>Course skills checked by a tutor; self-taught skills backed by their own dated proof</span></li>
             <li><Check /><span>Under-18s stay safe by design — never publicly searchable, never contacted directly</span></li>
           </ul>
         </div>

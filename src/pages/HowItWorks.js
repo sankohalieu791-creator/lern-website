@@ -28,7 +28,7 @@ const STEPS = [
 const INSTITUTION_FEATURES = [
   { name: 'Feed', body: 'A live, school-wide feed of work your students have actually had verified — nothing appears until a tutor has checked it, so it never fills up with unverified claims or noise.' },
   { name: 'Review', body: 'A structured queue for every submission, checked against the specific criteria the brief or skill asked for. Staff decide verified, returned for changes, or revoked — every decision is logged, and feedback goes straight back to the student.' },
-  { name: 'Skill Wallet', body: "Set up the skills for a course once, with the criteria that count as proof for each. As students' verified work comes in, their skills move through five levels — Not started, Beginner, Developing, Secure, Advanced — so progress is visible per skill, not just per subject." },
+  { name: 'Skill Wallet', body: "Set up the skills for a course once, with the criteria that count as proof for each. As students' verified work comes in, their skills move through five levels — Not started, Beginner, Developing, Secure, Advanced. Students can also set their own goal for something they're teaching themselves and check in weekly with proof — no tutor step needed for that part." },
   { name: 'Work Experience', body: 'Placements, daily attendance and supervisor sign-off tracked in one view, replacing the spreadsheets and email chains most schools currently run this through.' },
   { name: 'Briefs & Workshops', body: 'Set real project briefs for any subject, and run live or in-person workshops students join from their own dashboard — both tracked the same way everything else on LERN is.' },
   { name: 'Students', body: "A full roster per student: verified work, attendance, progress and skill levels, all in one place instead of scattered across different systems." },
@@ -42,7 +42,7 @@ const INSTITUTION_FEATURES = [
 const PROVIDER_FEATURES = [
   { name: 'Feed & Review', body: 'The same verified-work pipeline as institutions, built for training cohorts — nothing shows on a learner\'s profile until it has been checked against clear criteria.' },
   { name: 'Courses', body: 'Structured criteria that automatically become a trackable cohort — set it up once per course, and every learner\'s progress against it is visible from day one.' },
-  { name: 'Skill Wallet', body: "Set the skills a course teaches, with the proof that counts for each — as learners' work is verified, their skills move through five honest levels instead of a single pass/fail outcome." },
+  { name: 'Skill Wallet', body: "Set the skills a course teaches, with the proof that counts for each — as learners' work is verified, their skills move through five honest levels instead of a single pass/fail outcome. Learners can also log their own self-taught skills with weekly dated check-ins and proof, no tutor step needed." },
   { name: 'Workshops', body: 'Online and in-person sessions learners join straight from their dashboard, with attendance tracked automatically.' },
   { name: 'Students', body: 'A full roster — verified work, attendance, progress and skill levels — plus a safe way to share any one learner\'s profile directly with an employer.' },
   { name: 'Job tracking', body: 'Every application tracked from first interest through to hired, so you always know where a learner stands with an employer.' },
