@@ -3,15 +3,10 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import './Navbar.css'
 
-// Institutions and Providers each reveal a small flyout on hover with
-// a link to the Students page -- per direct request, not a separate
-// top-level nav slot of its own, but still reachable from either role
-// context since that's where someone asking "what about the student
-// side?" is most likely to be looking from.
 const NAV_LINKS = [
   { to: '/', label: 'Home', exact: true },
-  { to: '/institutions', label: 'Institutions', children: [{ to: '/students', label: 'For Students' }] },
-  { to: '/training-providers', label: 'Providers', children: [{ to: '/students', label: 'For Students' }] },
+  { to: '/institutions', label: 'Institutions' },
+  { to: '/training-providers', label: 'Providers' },
   { to: '/employers', label: 'Employers' },
   { to: '/pricing', label: 'Pricing' },
   { to: '/help-desk', label: 'Help Desk' },
