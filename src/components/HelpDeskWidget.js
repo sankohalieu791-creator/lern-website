@@ -43,13 +43,13 @@ export default function HelpDeskWidget() {
     <div className="hdw-wrap">
       {!open ? (
         <div className="hdw-closed">
-          <HelpDeskOrb size={64} eyeSize={12} onClick={() => setOpen(true)} />
+          <HelpDeskOrb size={64} onClick={() => setOpen(true)} />
           <p className="hdw-hint">Try it — click the orb</p>
         </div>
       ) : (
         <div className="hdw-panel">
           <div className="hdw-head">
-            <HelpDeskOrb size={34} eyeSize={7} active />
+            <HelpDeskOrb size={34} active />
             <div className="hdw-head-text">
               <strong>LERN Help Desk</strong>
               <span>Hand-written answers. Not generated.</span>

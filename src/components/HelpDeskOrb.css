@@ -1,17 +1,17 @@
 .hdo-orb {
   position: relative;
-  border-radius: 42% 58% 55% 45% / 45% 42% 58% 55%;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  background: #FBF4EA;
+  border: 1px solid #E7DCC9;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   cursor: pointer;
   flex-shrink: 0;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
+  padding: 0;
 }
 
 .hdo-orb:hover {
@@ -22,33 +22,4 @@
 .hdo-orb:active,
 .hdo-orb-active {
   transform: scale(0.95);
-}
-
-.hdo-eyes {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  animation: hdo-gaze 7s ease-in-out infinite;
-  transition: transform 0.12s ease-out;
-}
-
-.hdo-eyes.hdo-tracking {
-  animation-play-state: paused;
-}
-
-.hdo-eyes span {
-  display: block;
-  border-radius: 999px;
-  background: #2b2622;
-}
-
-@keyframes hdo-gaze {
-  0%, 6%   { transform: translate(0, 0); }
-  14%, 22% { transform: translate(-6px, 0); }
-  30%, 36% { transform: translate(0, 0); }
-  44%, 52% { transform: translate(6px, 0); }
-  60%, 66% { transform: translate(0, 0); }
-  72%, 80% { transform: translate(0, -6px); }
-  86%, 92% { transform: translate(0, 6px); }
-  97%, 100% { transform: translate(0, 0); }
 }
