@@ -8,8 +8,11 @@ const PROMISES = [
   "Reactions only — no open comments, no direct messaging between students.",
   "Every reported post is hidden while it's reviewed, and a person always decides what happens next — nothing is auto-removed.",
   "Every employer is checked — company registration, a genuine business email and website, and confirmation they're really who they say they are — before they get any access.",
-  "Data is held in the UK, with access limited to named individuals.",
+  "Access to data is limited to named individuals.",
 ]
+// "Data is held in the UK" removed per direct instruction -- actual
+// hosting region is eu-west-1 (Ireland), not the UK. Leave out until
+// the region is migrated and confirmed in writing.
 
 const INSTITUTION_DUTIES = [
   'Naming a safeguarding lead.',
