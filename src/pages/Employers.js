@@ -21,7 +21,7 @@ const FEATURES = [
   {
     name: 'Talent pools',
     icon: <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>,
-    body: "Save a candidate you like but aren't ready to hire yet. LERN keeps them warm automatically — a check-in message, a relevant workshop invite, a profile update prompt — on a cadence you set. You stay front of mind without any ongoing effort from your team.",
+    body: "Hire five of ten great applicants and the other five are usually gone for good — rejected, ghosted, and the pipeline restarts from zero next time a role opens. Drop your near-miss candidates into a talent pool instead. LERN keeps them warm automatically — a check-in message, a relevant workshop invite, a profile update prompt — on a cadence you set, with zero ongoing effort from your team.",
   },
   {
     name: 'Inbox',

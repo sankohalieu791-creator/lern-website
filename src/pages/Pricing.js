@@ -48,6 +48,15 @@ const EMPLOYER_TIERS = [
   { name: 'Enterprise', size: '500+', price: 'From £999', pools: 'Unlimited', postings: 'Unlimited' },
 ]
 
+const INSTITUTION_TIERS = [
+  { band: 'Under 750 students', price: '£1,500 / yr', cap: '' },
+  { band: '750–1,499 students', price: '£2,000 / yr', cap: '' },
+  { band: '1,500–2,499 students', price: '£2,500 / yr', cap: '' },
+  { band: '2,500–3,999 students', price: '£3,000 / yr', cap: '' },
+  { band: '4,000–5,999 students', price: '£4,500 / yr', cap: '' },
+  { band: '6,000+ students', price: 'On request', cap: '' },
+]
+
 const PROVIDER_TIERS = [
   { band: '1–99 learners', price: '£70 / learner / yr', cap: 'capped £6,500' },
   { band: '100–299 learners', price: '£6,500 / yr', cap: 'flat rate' },
@@ -78,13 +87,24 @@ export default function Pricing() {
               <p className="pc-label">Institutions</p>
               <p className="pc-subtitle">Schools &amp; colleges</p>
               <div className="pc-price-row">
-                <span className="pc-amount">£2,000</span>
+                <span className="pc-amount">From £1,500</span>
                 <span className="pc-period">/ year</span>
               </div>
               <p className="pc-desc">
-                Up to 750 students included. £2.50 per student above that,
-                capped at £12,000/yr. One annual fee — unlimited staff seats.
+                Scales with your roll. Flat annual fee by student band —
+                unlimited staff seats on every tier.
               </p>
+              <div className="pc-tiers">
+                {INSTITUTION_TIERS.map(t => (
+                  <div key={t.band} className="pc-tier-row">
+                    <span className="pc-tier-band">{t.band}</span>
+                    <div className="pc-tier-right">
+                      <span className="pc-tier-price">{t.price}</span>
+                      {t.cap && <span className="pc-tier-cap">{t.cap}</span>}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="pc-divider" />
             <div className="pc-features-wrap">

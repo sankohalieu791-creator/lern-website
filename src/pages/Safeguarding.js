@@ -8,11 +8,11 @@ const PROMISES = [
   "Reactions only — no open comments, no direct messaging between students.",
   "Every reported post is hidden while it's reviewed, and a person always decides what happens next — nothing is auto-removed.",
   "Every employer is checked — company registration, a genuine business email and website, and confirmation they're really who they say they are — before they get any access.",
-  "Access to data is limited to named individuals.",
+  "Data is held in the UK, with access limited to named individuals.",
 ]
-// "Data is held in the UK" removed per direct instruction -- actual
-// hosting region is eu-west-1 (Ireland), not the UK. Leave out until
-// the region is migrated and confirmed in writing.
+// Restored 15 Oct 2026 -- the region migration (eu-west-1 Ireland ->
+// eu-west-2 London) is now live and confirmed. See Privacy.js for the
+// full breakdown of what's UK-hosted vs Vercel's US-based app servers.
 
 const INSTITUTION_DUTIES = [
   'Naming a safeguarding lead.',

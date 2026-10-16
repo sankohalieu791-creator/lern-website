@@ -77,10 +77,12 @@ export default function Institutions() {
               Safeguarding checks happen offline, if they happen at all.
             </p>
             <p>
-              LERN replaces all of that. One platform the whole school uses — for verified
-              student work, placement tracking, employer relationships, and careers
-              activity — with safeguarding built into how every feature works, not added
-              as an afterthought.
+              LERN replaces all of that with an immutable, exportable compliance record.
+              Independent registers take live placement attendance completely separate
+              from your academic registers, so the data stays clean. When Ofsted asks
+              for evidence of Personal Development or T-Level placement delivery, you
+              export a full cohort profile in one click — who went where, whether they
+              turned up, and the verified project work they actually produced on-site.
             </p>
             <p className="story-quote">
               Students join free. Every member of staff gets a seat. You pay one flat

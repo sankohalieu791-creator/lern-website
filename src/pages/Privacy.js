@@ -72,10 +72,13 @@ export default function Privacy() {
 
           <h2>Where your data is stored</h2>
           <p>
-            Personal data held in our database and storage is stored in the European Economic
-            Area. We use Supabase (eu-west-1, Ireland) for database and storage, Vercel for
-            application hosting, and Agora for live video in online workshops (UK region).
-            These providers act as our sub-processors under data protection terms.
+            Personal data held in our database and storage is stored in the United Kingdom.
+            We use Supabase (eu-west-2, London) on AWS infrastructure for database and
+            storage, and Agora for live video in online workshops (UK region). Our
+            application itself is hosted by Vercel, whose servers that process requests
+            run in the United States; no personal data is stored there, only processed
+            in transit. These providers act as our sub-processors under data protection
+            terms.
           </p>
 
           <h2>How long we keep it</h2>

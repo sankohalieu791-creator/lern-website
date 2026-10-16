@@ -82,10 +82,12 @@ export default function TrainingProviders() {
               a report is due.
             </p>
             <p>
-              LERN pulls it together. Learners log and verify their work through the same
-              platform your tutors use to track attendance and progress. The Bootcamp
-              Evidence add-on compiles that data into the format funders ask for — per
-              learner, per cohort, exportable at any point.
+              LERN pulls attendance, completion tracking, and tutor sign-off together
+              automatically as the cohort runs — nothing is entered twice. It captures
+              engagement against DfE and ESFA funding guidelines as it happens, and the
+              moment a tutor approves a project, the platform locks the date, time, and
+              reviewer identity. The Bootcamp Evidence add-on turns that into the one
+              exportable record per learner, per cohort, that funders ask for.
             </p>
             <p className="story-quote">
               The evidence is a side effect of the platform working, not an extra job
